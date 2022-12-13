@@ -31,7 +31,8 @@ import Call from "./screens/MainScreens/Profile/Call";
 import Drawer from "./screens/Components/Drawer";
 import { useSelector } from "react-redux";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
-import Hospitals from "./screens/MainScreens/Hospitals";
+import Bottomtab from "./screens/Components/Bottomtab";
+import TopUsaHospitals from "./screens/MainScreens/TopUsaHospitals";
 
 const cache = new InMemoryCache();
 // Initialize Apollo Client
@@ -47,6 +48,7 @@ function App() {
       <div>
         <Drawer />
         <Outlet />
+        <Bottomtab />
       </div>
     );
   };
@@ -64,9 +66,9 @@ function App() {
             {/* Main */}
             {/* <Route path="home" element={<Home />} /> */}
             <Route path="home" element={<HomePage />} />
+            <Route path="hospitals" element={<TopUsaHospitals />} />
             <Route path="doctors" element={<Doctors />} />
             <Route path="surrogacy" element={<Surrogacy />} />
-            <Route path="hospitals" element={<Hospitals />} />
             {/* Doctor */}
             <Route path="doctorList" element={<DoctorList />} />
             <Route path="appointment" element={<Appointment />} />

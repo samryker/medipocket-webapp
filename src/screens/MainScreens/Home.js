@@ -3,6 +3,61 @@ import { useNavigate } from "react-router-dom";
 import Header from "../Components/Header";
 import "./styles.css";
 
+const icons = [
+  {
+    img: "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fhospitals%2Fh1.png?alt=media&token=aad33af5-a0d1-4d9a-b304-1153e6f7d284",
+    name: "hospital1"
+  },
+  {
+    img: "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fhospitals%2Fh2.png?alt=media&token=425ea13a-deb7-406d-ba00-d8b7c7371fa3",
+    name: "hospital2"
+  },
+  {
+    img: "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fhospitals%2Fh3.png?alt=media&token=6e552803-ea2f-4ea1-874a-829283a6f585",
+    name: "hospital3"
+  },
+  {
+    img: "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fhospitals%2Fh4.png?alt=media&token=67f98059-0d40-4598-ac5e-ddf6d33c9d96",
+    name: "hospital4"
+  },
+  {
+    img: "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fhospitals%2Fh5.png?alt=media&token=a1fcb186-f2bd-487c-b6c6-874315683248",
+    name: "hospital5"
+  },
+  {
+    img: "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fhospitals%2Fh6.png?alt=media&token=ec9a3863-67fe-4499-b961-d832a0a489b6",
+    name: "hospital6"
+  },
+  {
+    img: "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fhospitals%2Fh7.png?alt=media&token=3fb78455-b51e-46d8-a54d-5a68ffd56d2c",
+    name: "hospital7"
+  },
+  {
+    img: "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fhospitals%2Fh8.png?alt=media&token=5070d9c5-9b3c-4df2-acdd-1fb50aaa4d17",
+    name: "hospital8"
+  },
+  {
+    img: "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fhospitals%2Fh9.png?alt=media&token=766cf45f-e260-410f-af66-6413099f8de4",
+    name: "hospital9"
+  },
+  {
+    img: "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fhospitals%2Fh10.png?alt=media&token=43b84f5c-78b7-4382-add6-209246e742f8",
+    name: "hospital10"
+  },
+  {
+    img: "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fhospitals%2Fh11.png?alt=media&token=573a2b2e-ad60-4e28-b2d5-6501d7c399df",
+    name: "hospital11"
+  },
+  {
+    img: "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fhospitals%2Fh12.png?alt=media&token=1720acb6-8b40-4b43-b1e9-8a7db76abc84",
+    name: "hospital12"
+  },
+  {
+    img: "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fhospitals%2Fh14.png?alt=media&token=ad082ab6-dfd9-4652-8bf9-a58c7a6f8138",
+    name: "hospital13"
+  },
+]
+
 const bg_img =
   "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/assets%2Fimages%2FhomeBg.png?alt=media&token=3cbc2277-915d-4ad6-85df-dcc98f84e7f7";
 export default function Home() {

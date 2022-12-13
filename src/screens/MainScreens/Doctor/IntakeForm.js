@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
@@ -22,11 +22,100 @@ export default function IntakeForm() {
   const [codeFromUser, setCodeFromUser] = useState("");
   const [phoneVerified, setPhoneVerified] = useState(false);
   const [errorsOfUser, setErrorsOfUser] = useState("");
+
+  // Inputs
+  const [mynumber, setnumber] = useState("");
+  const [otp, setotp] = useState("");
+  const [show, setshow] = useState(false);
+  const [final, setfinal] = useState("");
+
+  // Sent OTP
+  const signin = () => {
+    try {
+      const appVerifier = window.recaptchaVerifier;
+      signInWithPhoneNumber(auth, phone, appVerifier)
+        .then((confirmationResult) => {
+          checkCode(confirmationResult);
+          setshow(true);
+          alert("code sent");
+        })
+        .catch((error) => {
+          console.log("Error; SMS not sent", error);
+          window.location.reload();
+        });
+    } catch (error) {
+      console.log("error line 265 => ", error);
+    }
+  };
+
+  // Validate OTP
+  const ValidateOtp = () => {
+    if (otp === null || final === null) return;
+    final
+      .confirm(otp)
+      .then((result) => {
+        // success
+      })
+      .catch((err) => {
+        alert("Wrong code");
+      });
+  };
+
+  const checkCode = (confirmationResult) => {
+    confirmationResult
+      .confirm(codeFromUser)
+      .then((result) => {
+        // User signed in successfully.
+        const user = result.user;
+        // ...
+      })
+      .catch((error) => {
+        // User couldn't sign in (bad verification code?)
+        // ...
+      });
+  };
+  const onSignInSubmit = (response) => {
+    try {
+      console.log("Response ::::::", response);
+      const appVerifier = window.recaptchaVerifier;
+      signInWithPhoneNumber(auth, phone, appVerifier)
+        .then((confirmationResult) => {
+          console.log("here onSignInSubmit line 83");
+          checkCode(confirmationResult);
+        })
+        .catch((error) => {
+          console.log("Error; SMS not sent", error);
+        });
+    } catch (error) {
+      console.log("error line 265 => ", error);
+    }
+  };
+
+  const handleVerifyPhone = () => {
+    console.log("here");
+    try {
+      console.log("inside trycatch 1 ");
+      window.recaptchaVerifier = new RecaptchaVerifier(
+        "sign-in-button",
+        {
+          callback: (response) => {
+            console.log("response line 297 => ", response);
+            // onSignInSubmit(response);
+          },
+        },
+        auth
+      );
+      console.log("inside trycatch 2 ");
+    } catch (error) {
+      console.log("error from recapther", error);
+    }
+  };
+
   // f2
   const [name, setName] = useState("");
   const [birth, setBirth] = useState("");
   const [gender, setGender] = useState("");
-  const [phone, setPhone] = useState("+21629738044");
+  const [phone, setPhone] = useState("");
   // f3
   const [f3, setF3] = useState("");
   // f4
@@ -263,49 +352,6 @@ export default function IntakeForm() {
     setIndicatorLoad(false);
   };
 
-  const checkCode = (confirmationResult) => {
-    confirmationResult
-      .confirm(codeFromUser)
-      .then((result) => {
-        // User signed in successfully.
-        const user = result.user;
-        // ...
-      })
-      .catch((error) => {
-        // User couldn't sign in (bad verification code?)
-        // ...
-      });
-  };
-  const onSignInSubmit = (response) => {
-    try {
-      console.log("Response ::::::", response);
-      const appVerifier = window.recaptchaVerifier;
-      signInWithPhoneNumber(auth, phone, appVerifier)
-        .then((confirmationResult) => {
-          checkCode(confirmationResult);
-        })
-        .catch((error) => {
-          console.log("Error; SMS not sent", error);
-        });
-    } catch (error) {
-      console.log("error line 265 => ", error);
-    }
-  };
-
-  const handleVerifyPhone = () => {
-    window.recaptchaVerifier = new RecaptchaVerifier(
-      "sign-in-button",
-      {
-        size: "invisible",
-        callback: (response) => {
-          console.log("response line 297 => ", response);
-          onSignInSubmit(response);
-        },
-      },
-      auth
-    );
-  };
-
   return (
     <div className="age-container">
       {/* subContainer */}
@@ -398,35 +444,36 @@ export default function IntakeForm() {
                   placeholder="PhoneNumber"
                 />
               )}
-
-              <div
-                id="sign-in-button"
-                style={{
-                  width: "80px",
-                  backgroundColor: "#384062",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  padding: "0px",
-                  position: "absolute",
-                  top: errorsOfUser.length > 0 ? 22 : 20,
-                  right: 4,
-                  borderRadius: "8px",
-                  cursor: "pointer",
-                }}
-                onClick={handleVerifyPhone}
-              >
-                <p
+              {phone.length > 10 && (
+                <div
                   style={{
-                    fontSize: 16,
-                    color: "#ffffff",
-                    lineHeight: "6px",
+                    width: "80px",
+                    backgroundColor: "#384062",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
                     padding: "0px",
+                    position: "absolute",
+                    top: errorsOfUser.length > 0 ? 22 : 20,
+                    right: 4,
+                    borderRadius: "8px",
+                    cursor: "pointer",
                   }}
+                  id="sign-in-button"
+                  onClick={handleVerifyPhone}
                 >
-                  Verify
-                </p>
-              </div>
+                  <p
+                    style={{
+                      fontSize: 16,
+                      color: "#ffffff",
+                      lineHeight: "6px",
+                      padding: "0px",
+                    }}
+                  >
+                    Verify
+                  </p>
+                </div>
+              )}
               {phoneVerified && (
                 <input
                   className="intake-input"

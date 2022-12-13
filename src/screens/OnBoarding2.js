@@ -1,8 +1,9 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import './styles.css'
 
 const bg_url =
-  "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2FonBoarding2-min.png?alt=media&token=d5ee09e5-8207-4af4-9b72-2189cd4674b8";
+  "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fon2.png?alt=media&token=0ec24e08-36c0-4ce9-b3a1-2a8b97b81436";
 
 export default function OnBoarding2() {
   const navigate = useNavigate();

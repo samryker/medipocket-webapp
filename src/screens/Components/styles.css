@@ -250,3 +250,40 @@
     z-index: 1;
 }
 /* DoctorCrdModel2 */
+/* BottomTab */
+.bottom-tab {
+    background-color: #ffffff;
+    width: 100vw !important;
+    height: 60px;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 999999999;
+}
+.bottom-tab-item{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+.bottom-tab-icon {
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+    margin-bottom: 0;
+    margin-top: 10px;
+}
+.bottom-tab-title {
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+    color: #269081;
+    margin-top: 1px;
+}
+/* BottomTab */

@@ -6,7 +6,6 @@
     align-items:center;
     justify-content:center;
     background-color: #40e0d0;
-    
 }
 .splash-logo {
     width: 20vw;
@@ -14,7 +13,6 @@
     min-width: 150px;
     min-height: 150px;
     object-fit: contain;
-
 }
 /* onBoarding1 Screen */
 .onBoarding-container {
@@ -28,7 +26,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
 }
 .onBoarding-logo {
     width: 6vw;
@@ -36,23 +33,25 @@
     min-width: 150px;
     min-height: 150px;
     object-fit: contain;
-    margin-bottom: 50px;
+    margin-bottom: 0px;
 }
 .onBoarding-title-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: fixed;
+    bottom: 100px;
 }
 .onBoarding-title1 {
     text-align: center;
     color: #ffffff;
-    font-size: 36px;
+    font-size: 24px;
 }
 .onBoarding-title2 {
     text-align: center;
     color: #ffffff;
-    font-size: 24px;
+    font-size: 16px;
     max-width: 80%;
 }
 .onBoarding-next-btn {
@@ -255,4 +254,317 @@
 }
 .shadow1 {
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 2px 0 rgba(0, 0, 0, 0.19);
+}
+
+.homeTitle
+{
+    text-align: center;
+}
+.homeTitle span{
+text-decoration: underline;
+text-decoration-color: #29ddc6;
+}
+.firstBlocWrapper{
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+
+}
+.homeComponent{
+    width:200px;
+    height: 200px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+}
+/* img */
+.bgImgHome1 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+.bgImgHome2 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+/* img */
+.homeComponentContent{
+    background: white;
+    z-index: 2;
+    position: relative;
+    color: #000;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 4px 0;
+    padding-left: 12px;
+    width: 100%;
+    opacity: 0.8;
+}
+.homeComponentContent h3
+{
+    margin: 0;
+    font-size: 16px;
+}
+
+.homeComponentContent p
+{
+    margin: 0;
+    font-size: 12px;
+}
+
+
+.absImg{
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 159px;
+    width:109px;
+    border-radius: 20px;
+    object-fit: contain;
+
+}
+
+.secondBlocWrapper{
+/* text-align: center; */
+}
+.secondBlocWrapper{
+
+}
+
+.secondBlocSubWrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.secBlocElement{
+    width: 150px;
+    height: 150px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    border-radius: 20px;
+}
+/* .marRight3Percent{
+    margin-right: 3.33333%;
+} */
+.secImg{
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+.thirdBlocWrapper{
+    margin-bottom: 20px;
+
+}
+.thirdBlocWrapper h2{
+ 
+
+}
+.thirdBlocSubWrapper
+{
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+}
+.thirdBlocElement
+{
+    width: 150px;
+    margin: 10px;
+    height: 150px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: none;
+    border-radius: 20px;
+}
+
+.thirdBlocElement .content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.thirdImg{
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.thirdBlocElement .content h4{
+    margin: 0;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+
+.fourthBlocWrapper{
+    /* overflow: scroll; */
+    margin-bottom: 30px;
+
+}
+.fourthBlocWrapper h2{
+ 
+
+}
+.fourthBlocSubWrapper
+{
+    display: flex;
+    /* overflow: scroll; */
+    overflow-y: hidden;
+    overflow-x: scroll;
+}
+.fourthBlocElement
+{
+    width: 170px;
+    margin: 10px;
+    height: 170px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: none;
+    border-radius: 20px;
+}
+
+.fourthBlocElement .content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.fourthImg{
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+}
+
+.fourthBlocElement .content h4{
+    margin: 0;
+    font-weight: 600;
+    margin-top: 10px;
+    font-size: 12px;
+}
+.fourthBlocElement .content p{   
+     margin: 0;
+    font-size: 14px;
+}
+
+.greenBtn{
+    background-color: #44dbc8;
+    border: none;
+    color: #fff;
+    padding: 20px 40px;
+    text-align: center;
+    margin: 20px auto;
+    font-weight: bold;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+}
+.lastBloc .content{
+    background: #fff;
+    padding: 12px 20px;
+    border-radius: 15px;
+}
+.lastBloc .content p{
+    font-size: 14px;
+}
+
+.lastBloc{
+    margin-bottom: 150px;
+}
+
+
+.topHosBlocElement
+{
+    width: 45%;
+    margin: 10px 2.5%;
+    height: 200px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: none;
+    border-radius: 20px;
+}
+
+.topHosBlocElement .content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.topHosBlocElement .content h4{
+    margin: 0;
+    font-weight: 600;
+    margin-top: 10px;
+}
+.topHosBlocElement .content p{   
+     margin: 0;
+    font-size: 14px;
+}
+
+.blocsWrapper{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.topHosBlocElement img{
+    width: 165px;
+    height: 80px;
+    border-radius: 10px;
+    object-fit: contain;
+}
+
+
+
+.greenBtn .iconImg{
+    object-fit: contain;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+.greenBtn p{
+    margin: 0;
+    font-size: 18px;
+}
+
+.greenBtn .arraowImg{
+    object-fit: cover;
+    width: 16px;
+    height: 16px;
+    margin-left: 10px;
+}
+
+
+.shadowHome{
+    filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.1));
+}
+.mg80{
+    margin-bottom: 80px;
 }

@@ -1,3 +1,43 @@
+/* header */
+.header-surrogacy{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 8%;
+    margin-bottom: 20px;
+    padding: 5px 0;
+}
+.header-surrogacy-left{
+    display: flex;
+    flex-direction: row;
+}
+.header-surrogacy-iconStyle {
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+}
+.header-surrogacy-text {
+    font-size: 20px;
+    font-weight: 600;
+    color: #384062;
+    margin-top: 10px;
+}
+.home-logo-logo-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    padding-top: 20px;
+}
+.home-logo-logo-container2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* header */
 .home-container {
     display: flex;
     flex: 1;
@@ -254,27 +294,30 @@ color: #ffffff;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    padding: 0 20px;
-    margin-bottom: 50px;
+    padding: 0;
+    margin-bottom: 10px;
 }
 .surrogacy-section1-container-content {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0;
+    padding: 0 10px;
+    width: 300px;
 }
 .surrogacy-section1-container-img-container {
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
     padding: 0;
+    width: 280px;
 }
 .surrogacy-section1-container-img {
-    width: 250px;
+    width: 280px;
     object-fit: contain;
 }
 .surrogacy-section1-container-desc {
-    width: 250px;
+    width: 280px;
+    height: 330px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -387,7 +430,7 @@ color: #ffffff;
     margin-bottom: 25px;
 }
 .surrogacy-section2-container-title2 {
-    font-size: 16px;
+    font-size: 14px;
     line-height: 18px;
     font-weight: 700;
     text-align: left;
@@ -410,28 +453,30 @@ color: #ffffff;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 5px;
+    padding: 0 10px;
 }
 .surrogacy-section2-container-icon {
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     object-fit: contain;
-    margin: 0 10px;
+    margin: 0 15px;
 }
 .surrogacy-section2-separator {
-    height: 30px;
-    width: 3px;
+    height: 15px;
+    width: 2px;
     background-color: #40e0d0;
     border-radius: 10px;
-    opacity: 0.5;
-    margin: 10px 0;
-    margin-left: 32px;
+    opacity: 0.3;
+    margin-top: 3px;
+    margin-bottom: 0px;
+    margin-left: 42px;
 }
 .surrogacy-section4-container-img-container{
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
     padding: 0;
-    width: 90%;
+    width: 95%;
 }
 .surrogacy-section4-container-img {
     width: 100%;
@@ -440,13 +485,13 @@ color: #ffffff;
     border-top-right-radius: 30px;
 }
 .surrogacy-section4-container-desc{
-    width: 90%;
+    width: 95%;
     position: relative;
     display: flex;
     flex-direction: column;
     background-color: #ffffff;
     border-radius: 30px;
-    margin-top: -50px;
+    margin-top: -28px;
 }
 .surrogacy-section4-container-desc-content{
     padding: 35px;
@@ -469,26 +514,27 @@ color: #ffffff;
     padding: 20px;
 }
 .surrogacy-section6-container-row-item {
-    width: 120px;
+    width: 100px;
+    height: 100px;
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: #ffffff;
-    border-radius: 8px;
-    padding: 20px 5px;
+    border-radius:20px;
+    padding: 5px;
     margin: 0 10px;
     cursor: pointer;
 }
 .surrogacy-section6-container-row-item-icon {
-    width: 80px;
-    height: 80px;
+    width: 50px;
+    height: 50px;
     border-radius: 8px;
     object-fit: contain;
 }
 .surrogacy-section6-container-row-item-text{
-    font-size: 12px;
+    font-size: 10px;
     line-height: 16px;
     font-weight: 700;
     text-align: center;
@@ -496,6 +542,8 @@ color: #ffffff;
     padding: 0;
     margin-bottom: 5px;
     color: #5C5C5C;
+    max-width: 80px;
+    height: 30px;
 }
 /* Surrogacy */
 /* media query */
@@ -508,11 +556,17 @@ color: #ffffff;
     }
 }
 @media only screen and (max-width: 680px) {
+    .surrogacy-section1-container-content {
+        width: 240px;
+    }
+    .surrogacy-section1-container-img-container {
+        width: 200px;
+    }
     .surrogacy-section1-container-img {
-        width: 180px;
+        width: 200px;
     }
     .surrogacy-section1-container-desc {
-        width: 180px;
+        width: 200px;
     }
     .surrogacy-section1-container-desc-next {
         width: 35px;
