@@ -1,0 +1,258 @@
+/* splash Screen */
+.splash-container {
+    width: 100vw;
+    height: 100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background-color: #40e0d0;
+    
+}
+.splash-logo {
+    width: 20vw;
+    height: 20vw;
+    min-width: 150px;
+    min-height: 150px;
+    object-fit: contain;
+
+}
+/* onBoarding1 Screen */
+.onBoarding-container {
+    background-color: #40e0d0;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.onBoarding-logo {
+    width: 6vw;
+    height: 6vw;
+    min-width: 150px;
+    min-height: 150px;
+    object-fit: contain;
+    margin-bottom: 50px;
+}
+.onBoarding-title-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.onBoarding-title1 {
+    text-align: center;
+    color: #ffffff;
+    font-size: 36px;
+}
+.onBoarding-title2 {
+    text-align: center;
+    color: #ffffff;
+    font-size: 24px;
+    max-width: 80%;
+}
+.onBoarding-next-btn {
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    background-color: #40e0d0;
+    border-radius: 8px;
+    padding: 10px 25px;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* Oussama Css Style */
+
+
+.myContainer {
+    width: 100vw;
+    height: 100vh;
+
+    /* display:flex; */
+    /* align-items:center;
+    justify-content:center; */
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color:#f0f4f7;
+}
+@media screen and (min-width: 400px) {
+    .myContainer {
+        padding-left: 30%;
+        padding-right: 30%;
+        width: auto; 
+    }
+  }
+.headerCard{
+    /* background-color:blue; */
+     background-color:#f5f6f8;
+    width: 80%; 
+    margin: 0 auto;
+    padding: 30px 20px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 50px 0px rgba(205, 205, 221, 1);
+-webkit-box-shadow: 5px 5px 50px 0px rgba(205, 205, 221, 1);
+-moz-box-shadow: 5px 5px 50px 0px rgba(205, 205, 221, 1);
+}
+.headerCardH1{
+    color: #384062;
+    font-size: 30px;
+    font-weight: "bold";
+    margin-left: 10px;
+    margin: 0px;
+    line-height: 29px;
+}
+.headerScrollView::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
+.headerScrollView{
+    /* scrollbar-width: 0; */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+    flex-direction:row;
+    width: 80%;
+    /* margin: 0 auto; */
+    margin-top: 30px;
+    flex-wrap:wrap;
+    overflow: auto;
+    white-space: nowrap;
+    height: 50px;
+}
+
+
+.buttonHeader{
+    /* background-color: white; */
+    width: 45px;
+    height: 45px;
+    margin: 0 10px;
+    border-radius: 50px;
+    padding: 10px;
+}
+
+.imgStyle{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/*  Doctors list styling */
+
+.doctorCard{
+    border-radius: 25px;
+    background-color:#f5f6f8;
+    padding: 20px;
+    margin: 10px;
+    /* flex-direction:'column';
+    display: flex; */
+}
+
+.doctorCardTop{
+    flex-direction:'row';
+    display: flex;
+}
+
+.doctorCardLeft{
+    width: 70%;
+}
+.doctorInfo{}
+.doctorInfo h2,.doctorInfo h5{
+
+}
+.doctorInfo h2{
+    font-weight: bold;
+}
+.doctorInfo h5{
+    font-weight:400 ;
+    color: #384062;
+}
+.doctorName{
+    color: #384062;
+    font-size: 16px;
+    font-weight: "bold";
+    margin-left: 10px;
+    margin: 0px;
+    line-height: 20px;
+
+}
+.doctorLocation{}
+.doctorSpeciality{}
+.doctorImgContainer{
+    width: 30%;
+}
+.doctorImgStyle{
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    z-index:  1;
+}
+.doctorCardBottom{
+
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+}
+.doctorCardBottom .doctorExperience p{
+    color: #f9c37e;
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: 20px;
+}
+.doctorCardBottom button{
+    background-color: #f7f9f8;
+    border-radius: 8px;
+    padding: 10px 20px;
+    border: 0;
+    font-weight: bold;
+}
+
+.looadMore{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.looadMore button{
+    background-color: #40e0d0;
+    border: none;
+    font-size: 16px;
+    color: white;
+    border-radius: 10px;
+    margin: 15px;
+    padding: 8px 15px 8px 15px;
+}
+
+/* Doctor Profile Styling */
+.feeBox{
+    background-color: #fff;
+    width: 45%;
+    height: 100px;
+    margin: 0 20;
+    border-radius: 10%;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.aboutDoctor{
+    border-radius: 25px;
+    background-color:#f5f6f8;
+    padding: 20px;
+    margin: 10px;
+    line-height: 28px;
+}
+.aboutDoctor p{
+    color:#6E8FA3
+}
+
+.feeTitle{
+    display: block;
+}
+.shadow1 {
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 2px 0 rgba(0, 0, 0, 0.19);
+}

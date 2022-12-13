@@ -1,0 +1,529 @@
+.home-container {
+    display: flex;
+    flex: 1;
+    background-color: #ffffff;
+    overflow-x: hidden;
+    padding: 0 30%;
+    height: 100%;
+}
+.home-subContainer {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    height: 100%;
+}
+.home-headerCards {
+    /* width: 100vw;  */
+    display: flex;
+    /* flex: 1; */
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 30px;
+}
+.home-headerCard {
+    cursor: pointer;
+    border-radius: 10px;
+    width: 35%;
+    padding: 0 10px;
+}
+.home-cardImg {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.home-headerCardContent {
+    background-color: #40e0d0;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 10px 0;
+    margin-top: -20px;
+}
+.shadow {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.home-headerCardTitle {
+    color: #000000;
+    font-size: 20px;
+    text-align: center;
+    margin: 5px 0;
+    font-weight: 800;
+}
+.home-headerCardDescription{
+    color: #000000;
+    font-size: 16px;
+    text-align: center;
+    padding: 0 10px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+.home-specialitiesContainer {
+    margin: 10px;
+    margin-top: 20px;
+    padding: 20px;
+}
+.home-specialitiesText{
+    font-size: 28px;
+    font-weight: 900;
+    color: #3C4248;
+}
+/* spec */
+.home-menuContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0 20px;
+    margin-bottom: 50px;
+}
+.home-cardContainer99{
+    /* width: 25%; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.home-menuCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* margin: 10px; */
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    border: 1px solid #efefef;
+    background-color: #ffffff;
+    padding: 5px 0;
+    margin-right: 10px;
+
+}
+.home-cardContainer99Img {
+    width: 35px;
+    height: 35px;
+    /* margin: 5px 15px; */
+}
+.home-menuCardTitle {
+    font-size: 18px;
+    color:#3C4248 ;
+    text-align: center;
+    font-weight: 700;
+}
+.home-menuCardTitle1 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #808080;
+    text-align: center;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+.home-videoConsult {
+    margin: 20px 0;
+    padding: 5px 100px;
+    align-items: center;
+    cursor: pointer;
+}
+.home-videoConsultText {
+    background-color: #40e0d0;
+    color: #ffffff;
+    font-size: 20px;
+    text-align: center;
+    padding: 10px 15px;
+    border-radius: 6px;
+}
+/* doctors */
+.age-container {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    background-color: #f0f4f7;
+    padding: 0 30%;
+    height: 100%;
+    position: relative;
+}
+.intake-card {
+    width: 80%;
+    border-radius: 25px;
+    background-color: #f5f6f8;
+    padding: 30px 15px;
+    margin: 15px;
+}
+.doctor-card {
+    width: 80%;
+    border-radius: 25px;
+    background-color: #ffffff;
+    padding: 30px 15px;
+    margin: 15px;
+    display: flex;
+    flex-direction: row;
+}
+.doctors-card-title {
+    color: #384062;
+    font-size: 40px;
+    font-weight: 900;
+    margin: 0;
+    padding-left: 10px;
+    margin-bottom: 5px;
+}
+.age-scrollContainer {   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f4f7;
+}
+.shadow1 {
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 2px 0 rgba(0, 0, 0, 0.19);
+}
+.doctors-horizontal-list{
+    width: 100%;
+    overflow-x: scroll;
+}
+.doctors-list-icons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 20px 0;
+}
+.doctors-list-icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    /* padding: 10px; */
+    margin:0 20px;
+}
+.doctors-list-icon {
+    width: 35px;
+    height: 35px;
+    padding: 20px;
+}
+.doctors-loading {
+   width: 100%;
+   text-align: center;
+   font-size: 14px;
+   color: #40e0d0; 
+   margin: 20px 0;
+}
+/* noChat */
+.noChat {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+margin-top: 5%;
+height: 100%;
+margin-bottom: 100%;
+}
+.noChatText1{
+text-align: center;
+font-size: 22px;
+color: #000000;
+max-width: 80%;
+margin-bottom: 10px;
+}
+.noChatText2 {
+    text-align: center;
+    font-size: 14px;
+    color: #000000;
+    max-width: 80%;
+    margin-bottom: 50px;
+}
+/* noChat */
+.doctors-relevant {
+background-color: #40e0d0;
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+align-items: center;
+border-radius: 10px;
+margin: 15px 0;
+padding: 8px 15px;
+}
+.doctors-relevant-text {
+font-size: 18px;
+font-weight: 600;
+color: #ffffff;
+}
+/* Surrogacy */
+.surrogacy-section1-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 20px;
+    margin-bottom: 50px;
+}
+.surrogacy-section1-container-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+.surrogacy-section1-container-img-container {
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    padding: 0;
+}
+.surrogacy-section1-container-img {
+    width: 250px;
+    object-fit: contain;
+}
+.surrogacy-section1-container-desc {
+    width: 250px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border-radius: 25px;
+    /* padding: 15px; */
+    margin-top: -30px;
+}
+.surrogacy-section1-container-desc-content{
+    padding: 35px 20px;
+}
+.surrogacy-section1-container-desc-title1 {
+    font-size: 22px;
+    line-height: 14px;
+    font-weight: 600;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 25px;
+}
+.surrogacy-section1-container-desc-title2{
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: 600;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 10px;
+}
+.surrogacy-section1-container-desc-title3 {
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 400;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 20px;
+    color: #5C5C5C;
+}
+.surrogacy-section1-container-desc-title4 {
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 500;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 5px;
+    color: #5C5C5C;
+}
+.surrogacy-section1-container-desc-title5{
+    font-size: 24px;
+    line-height: 18px;
+    font-weight: 500;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    color: #40e0d0;
+    margin-right: 3px;
+}
+.surrogacy-section1-container-desc-content-special{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+.surrogacy-section1-container-desc-content-special2{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.surrogacy-section1-container-desc-next {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: #D8FFF3;
+    cursor: pointer;
+}
+.surrogacy-section1-container-vector{
+    width: 20px;
+    height: 20px;
+    margin-top: 10px;
+    margin-left: 10px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 4px;
+    background-color: #40e0d0;
+    margin-right: 5px;
+}
+.surrogacy-section2-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.surrogacy-section2-container-content{
+    padding: 35px 10px;
+}
+.surrogacy-section2-container-title1{
+    font-size: 22px;
+    line-height: 18px;
+    font-weight: 700;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 25px;
+}
+.surrogacy-section2-container-title2 {
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 700;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 5px;
+    color: #5C5C5C;
+}
+.green-underline {
+    width: 75px;
+    height: 4px;
+    border-radius: 10px;
+    background-color: #40e0d0;
+    align-self: flex-start;
+    margin-top: -15px;
+}
+.surrogacy-section2-container-row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 20px;
+}
+.surrogacy-section2-container-icon {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    margin: 0 10px;
+}
+.surrogacy-section2-separator {
+    height: 30px;
+    width: 3px;
+    background-color: #40e0d0;
+    border-radius: 10px;
+    opacity: 0.5;
+    margin: 10px 0;
+    margin-left: 32px;
+}
+.surrogacy-section4-container-img-container{
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    padding: 0;
+    width: 90%;
+}
+.surrogacy-section4-container-img {
+    width: 100%;
+    object-fit: contain;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+.surrogacy-section4-container-desc{
+    width: 90%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border-radius: 30px;
+    margin-top: -50px;
+}
+.surrogacy-section4-container-desc-content{
+    padding: 35px;
+}
+.surrogacy-section4-container-desc-title1{
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 20px;
+    color: #5C5C5C;
+}
+.surrogacy-section6-container-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+.surrogacy-section6-container-row-item {
+    width: 120px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px 5px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+.surrogacy-section6-container-row-item-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    object-fit: contain;
+}
+.surrogacy-section6-container-row-item-text{
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 5px;
+    color: #5C5C5C;
+}
+/* Surrogacy */
+/* media query */
+@media only screen and (max-width: 1000px) {
+    .age-container {
+        padding: 0 5px;
+    }
+    .submit-container {
+        width: 80%;
+    }
+}
+@media only screen and (max-width: 680px) {
+    .surrogacy-section1-container-img {
+        width: 180px;
+    }
+    .surrogacy-section1-container-desc {
+        width: 180px;
+    }
+    .surrogacy-section1-container-desc-next {
+        width: 35px;
+        height: 35px;
+    }
+    .surrogacy-section1-container-vector{
+        width: 18px;
+        height: 18px;
+        margin-top: 8px;
+        margin-left: 10px;
+    }
+}
+
+

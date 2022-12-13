@@ -1,0 +1,320 @@
+/* from age */
+.age-container {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    background-color: #f0f4f7;
+    padding: 0 30%;
+    height: 100%;
+    position: relative;
+}
+.age-subContainer {
+    display: flex;
+    flex-direction: column;
+}
+.age-header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f0f4f7;
+    height: 60px;
+}
+.age-headerSub {
+    padding: 10px;
+    cursor: pointer;
+}
+.age-backIcon {
+    color: #384062;
+    font-size: 24px;
+    margin-right: 10px;
+}
+.age-titleContainer {
+    padding: 5px;
+}
+.age_emptySpace {
+    width: 60px;
+}
+.age-scrollContainer {   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f4f7;
+}
+.shadow1 {
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 2px 0 rgba(0, 0, 0, 0.19);
+}
+/* intake form */
+.intake-imgStyle {
+    width: 100px;
+    height: 40px;
+    object-fit: contain;
+}
+.intake-card {
+    width: 80%;
+    border-radius: 25px;
+    background-color: #f5f6f8;
+    padding: 30px 15px;
+    margin: 15px;
+}
+.intake-error-field {
+    border: 2px solid red !important;
+}
+.intake-card-title {
+    color: #384062;
+    font-size: 24px;
+    font-weight: 900;
+    margin: 0;
+    line-height: 30px;
+    padding-left: 10px;
+    margin-bottom: 5px;
+}
+.intake-card-title3 {
+    color: #384062;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0;
+    line-height: 22px;
+    padding-left: 10px;
+    margin-bottom: 5px;
+}
+.intake-card-title4 {
+    color: #384062;
+    font-size: 18px;
+    font-weight: 900;
+    padding-left: 5px;
+    margin-top: 10px;
+}
+.intake-inputs-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+    width: 90%;
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 20px;
+    margin-bottom: 0;
+}
+.intake-input-container {
+    width: 100%;
+}
+.intake-input{
+    outline: none;
+    border: 0;
+    font-size: 16px;
+    background-color: #f0f4f7;
+    border-radius: 8px;
+    width: 95%;
+    margin-top: 20px;
+    color: #000000;
+    padding: 10px;
+}
+.intake-input-with-label {
+    margin-top: 0;
+}
+.intake-input-with-label-title {
+    margin-top: 20px;
+}
+.intake-input-other {
+    width: 100%;
+}
+.intake-input-container22 {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 15px 5px;
+}
+.intake-checkbox-container {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.intake-checkbox {
+    margin-right: 15px;
+    border-radius: 6px;
+    padding: 5px;
+    border: 2px solid #40e0d0;
+}
+.intake-checkbox-title {
+    margin: 0 5px;
+    margin-right: 10px;
+    font-size: 16px;
+    color: #000000;
+}
+.intake-checkbox-container-margin {
+    margin-bottom: 15px;
+}
+/* submit */
+.submit-container {
+    /* position: absolute;
+    bottom: 0px; */
+    width: 30%;
+    margin: 20px 0;
+    cursor: pointer;
+    
+}
+.submit1 {
+    background-color: #40e0d0 ;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 8px;
+    padding: 10px;
+    width: 80%;
+    margin-bottom: 50px;
+}
+.submit-text {
+    color: #ffffff;
+    font-size: 20px;
+    text-align: center;
+    margin: 0;
+    padding: 12px 0;
+}
+/* doctor List */
+.searchMain {
+padding: 10px 20px;
+}
+.searchContainer {
+    width: 95%;
+    background-color: #ffffff;
+    /* color: #40e0d0; */
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0 20px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.searchContainer1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.saerch {
+width: 20px;
+height: 20px;
+margin-right: 10px;
+object-fit: contain;
+}
+.searchInput {
+font-size: 18px;
+margin-right: 10px;
+color: #6E8FA3;
+}
+.searchInput1 {
+font-size: 18px;
+font-weight: 700;
+}
+.specContainer {
+    margin: 10px;
+    margin-top: 20px;
+    width: 100%;
+}
+.specTitle{
+    font-size: 22px;
+    font-weight: 700;
+    color: #3C4248;
+    max-width: 80%;
+}
+.filter-model {
+    z-index: 100000000000;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    background-color: #f0f4f7;
+    position: absolute;
+    top: 100px;
+    left: 32%;
+    min-width: 300px;
+}
+.doctor-model-card-by-model {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-radius: 25px;
+    background-color: #ffffff;
+    /* padding: 30px 20px; */
+    /* margin-bottom: 25px; */
+    
+}
+.sumpthom-model{
+    font-size: 14px;
+    line-height: 10px;
+    color: #6E8FA3;
+}
+.model-content {
+    margin: 20px;
+    background-color: #f0f4f7;
+    border-radius: 20px;
+    padding: 30px;
+    width: 100%;
+}
+.ModelTitleView {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.optionContent {
+    width: 100%;
+    cursor: pointer;
+}
+.optionContainer {
+    width: 100%;
+    padding: 5px 10px;
+}
+.close-model {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    height: 50px;
+    cursor: pointer;
+}
+.close-text {
+    color: #000000;
+    font-size: 20px;
+    line-height: 18px;
+    padding: 8px 12px;
+    border-radius: 50px;
+    border: 2px solid #000000;
+}
+.model-title-text {
+    color: #000000;
+    font-size: 28px;
+    line-height: 20px;
+    width: 100%;
+    text-align: center;
+}
+/* doctor List */
+/* appointment */
+.home-subContainer {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* appointment */
+/* media query */
+@media only screen and (max-width: 1000px) {
+    .age-container {
+        padding: 0 5px;
+    }
+    .submit-container {
+        width: 80%;
+    }
+    .filter-model {
+        left: 20%;
+    }
+}

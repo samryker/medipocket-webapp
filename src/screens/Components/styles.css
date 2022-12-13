@@ -1,0 +1,252 @@
+/* header */
+.header-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 10%;
+    min-height: 60px;
+    padding: 20px 50px;
+}
+.header-headerSub {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.header-iconStyle {
+    margin-right: 0;
+    font-size: 35px;
+    color: #000000;
+}
+.header-imgStyle {
+    width: 100px;
+    height: 40px;
+    object-fit: contain;
+}
+.usa-specialist {
+    font-size: 24px;
+    font-weight: 600;
+    color: #384062;
+}
+
+/* Drawer */
+.drawer-container {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    /* align-items: center; */
+    width: 20%;
+    height: 100%;
+    min-width: 250px;
+    background-color: #f0f4f7;
+    padding: 20px;
+    /* border-right: 1px solid #000000; */
+    position: absolute;
+    left: 0;
+    z-index: 999999;
+}
+.drawer-profileStyle{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.drawer-imgStyle{
+    width: 100px;
+    height: 80px;
+    object-fit: contain;
+}
+.drawer-drawerContent {
+    padding: 0;
+}
+.drawer-drawerItem {
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 12px;
+    padding-left: 15px;
+    margin-bottom: 15px;  
+}
+.drawer-drawerItem2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 12px;
+    padding-left: 15px;
+    margin-bottom: 15px;  
+    margin-top: -30px;
+}
+.drawer-drawerIcon {
+    font-size: 25px;
+    color:#9ba8bb ;
+    margin-right: 15px;
+}
+.drawer-drawerIcon2 {
+    font-size: 25px;
+    color:#ffffff00 ;
+    margin-right: 15px;
+}
+.drawer-drawerText {
+    color: #20283d;
+    font-size: 18px;
+    font-weight: 800;
+}
+.drawer-drawerText2 {
+    color: #808080;
+    font-size: 16px;
+    font-weight: 600;
+}
+.drawer-closeContainer {
+    cursor: pointer;
+    position: relative;
+    top: 10px;
+    width: 100%;
+}
+.drawer-drawerIcon3 {
+    font-size: 25px;
+    color:#9ba8bb ;
+    padding: 10px; 
+    position: absolute;
+}
+/* Doctor */
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.doctor-model-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    border-radius: 25px;
+    background-color: #f0f4f7;
+    padding: 30px 20px;
+    margin-bottom: 25px;
+    
+}
+.doctor-model-card1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    border-radius: 25px;
+    background-color: #ffffff;
+    padding: 30px 20px;
+    margin-bottom: 25px;
+}
+.doctor-card-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 50px;
+}
+.doctor-card-left {
+    width: 100%;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.doctor-card-content-title1{
+    color: #384062;
+    font-size: 26px;
+    font-weight: 700;       
+    margin: 0;
+    margin-bottom: 10px;
+}
+.doctor-card-content-title2{
+    color: #6E8FA3;
+    font-size: 12px;
+    margin: 0;
+    margin-bottom: 10px;
+}
+.doctor-card-right {
+    width: 100%;
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    align-items: center;
+}
+.doctor-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    z-index: 1;
+    object-fit: cover;
+}
+.shadow1 {
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 2px 0 rgba(0, 0, 0, 0.19);
+}
+.doctor-bottom-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /* margin-top: 10px; */
+    width: 100%;
+}
+.doctor-bottom-card-left {
+    color: #f9c37e;
+    margin-left: 10px;
+    font-weight: 800;
+    font-size: 36px;
+    line-height: 18px;
+}
+.doctor-bottom-card-right {
+    background-color: #f7f9f8;
+    border-radius: 8px;
+    padding: 0px 30px;
+    cursor: pointer;
+}
+.doctor-btn-style-text {
+    font-size: 14px;
+    font-weight: 800;
+    color: #384062;
+}
+.fees-box {
+    padding:10px 30px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    background-color: #ffffff;
+}
+.boxNb {
+    font-weight: 800;
+    font-size: 26px;
+    line-height: 18px;
+    margin-top: 5px;
+}
+/* DoctorCrdModel2 */
+.doctorCard2 {
+    position: relative;
+    margin-top: 50px;
+    width: 95%;
+    margin-bottom: 20px;
+}
+.imgContainer {
+    position: absolute;
+    top: -30px;
+}
+.doctor-avatar2 {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    z-index: 1;
+}
+/* DoctorCrdModel2 */
