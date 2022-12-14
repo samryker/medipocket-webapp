@@ -50,7 +50,7 @@ export default function Bottomtab() {
   if (show) return null;
   return (
     <div className="bottom-tab">
-      <div className="bottom-tab-item">
+      <div className="bottom-tab-item" onClick={() => navigate('/home')} >
         <img
           src={icons[0].img}
           alt={icons[0].name}
@@ -58,7 +58,7 @@ export default function Bottomtab() {
         />
         <p className="bottom-tab-title">Home</p>
       </div>
-      <div className="bottom-tab-item">
+      <div className="bottom-tab-item" onClick={() => navigate('/doctors')} >
         <img
           src={icons[1].img}
           alt={icons[1].name}

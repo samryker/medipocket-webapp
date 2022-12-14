@@ -279,6 +279,7 @@ text-decoration-color: #29ddc6;
     position: relative;
     display: flex;
     align-items: flex-end;
+    cursor: pointer;
 }
 /* img */
 .bgImgHome1 {
@@ -353,8 +354,8 @@ text-decoration-color: #29ddc6;
 }
 
 .secBlocElement{
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
     background-color: #fff;
     display: flex;
     justify-content: center;
@@ -366,8 +367,8 @@ text-decoration-color: #29ddc6;
     margin-right: 3.33333%;
 } */
 .secImg{
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     object-fit: contain;
 }
 .thirdBlocWrapper{
@@ -405,8 +406,8 @@ text-decoration-color: #29ddc6;
 }
 
 .thirdImg{
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     object-fit: contain;
 }
 
@@ -437,13 +438,14 @@ text-decoration-color: #29ddc6;
 {
     width: 170px;
     margin: 10px;
-    height: 170px;
+    /* height: 170px; */
     background: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
     flex: none;
     border-radius: 20px;
+    padding: 25px 0;
 }
 
 .fourthBlocElement .content{
@@ -454,20 +456,21 @@ text-decoration-color: #29ddc6;
 }
 
 .fourthImg{
-    width: 80px;
-    height: 80px;
-    border-radius: 10px;
+    width: 90px;
+    height: 90px;
+    border-radius: 25px;
 }
 
 .fourthBlocElement .content h4{
     margin: 0;
     font-weight: 600;
     margin-top: 10px;
-    font-size: 12px;
+    font-size: 16px;
 }
 .fourthBlocElement .content p{   
      margin: 0;
     font-size: 14px;
+    margin-top: 5px;
 }
 
 .greenBtn{
@@ -476,7 +479,7 @@ text-decoration-color: #29ddc6;
     color: #fff;
     padding: 20px 40px;
     text-align: center;
-    margin: 20px auto;
+    margin: 10px auto;
     font-weight: bold;
     border-radius: 10px;
     display: flex;
@@ -487,11 +490,11 @@ text-decoration-color: #29ddc6;
 }
 .lastBloc .content{
     background: #fff;
-    padding: 12px 20px;
+    padding: 12px 40px;
     border-radius: 15px;
 }
 .lastBloc .content p{
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .lastBloc{
@@ -503,7 +506,7 @@ text-decoration-color: #29ddc6;
 {
     width: 45%;
     margin: 10px 2.5%;
-    height: 200px;
+    height: 250px;
     background: #fff;
     display: flex;
     justify-content: center;
@@ -522,10 +525,15 @@ text-decoration-color: #29ddc6;
     margin: 0;
     font-weight: 600;
     margin-top: 10px;
+    max-width: 95%;
+    text-align: center;
+    margin-bottom: 5px;
 }
 .topHosBlocElement .content p{   
-     margin: 0;
+    margin: 0;
     font-size: 14px;
+    max-width: 90%;
+    text-align: center;
 }
 
 .blocsWrapper{

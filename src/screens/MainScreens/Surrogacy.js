@@ -70,7 +70,7 @@ const icons = [
 export default function Surrogacy() {
   const navigate = useNavigate();
   return (
-    <div className="age-container" style={{ backgroundColor: "#F5F5F5" }}>
+    <div className="age-container" style={{ backgroundColor: "#ffffff" }}>
       <div className="home-subContainer">
         {/* Header */}
         <div className="header-surrogacy">
@@ -407,7 +407,7 @@ export default function Surrogacy() {
           >
             <p
               className="surrogacy-section2-container-title1"
-              style={{ marginBottom: "0px" }}
+              style={{ marginBottom: "20px" }}
             >
               Parenthood is for Everyone
             </p>

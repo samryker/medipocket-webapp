@@ -271,6 +271,7 @@
     justify-content: center;
     align-items: center;
     padding: 15px;
+    cursor: pointer;
 }
 .bottom-tab-icon {
     width: 25px;

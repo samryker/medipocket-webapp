@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { FaArrowLeft } from "react-icons/fa";
 import { AiOutlineCloseCircle } from "react-icons/ai";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { gql, useQuery } from "@apollo/client";
 import "./styles.css";

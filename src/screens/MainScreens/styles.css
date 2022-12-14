@@ -4,9 +4,10 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    height: 8%;
-    margin-bottom: 20px;
-    padding: 5px 0;
+    height: 50px;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-bottom: 1px solid #40e0d050;
 }
 .header-surrogacy-left{
     display: flex;
@@ -18,10 +19,11 @@
     object-fit: contain;
 }
 .header-surrogacy-text {
-    font-size: 20px;
-    font-weight: 600;
+    font-size: 22px;
+    font-weight: 700;
     color: #384062;
-    margin-top: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
 }
 .home-logo-logo-container {
     display: flex;
@@ -230,15 +232,15 @@
     justify-content: center;
     align-items: center;
     background-color: #ffffff;
-    width: 80px;
-    height: 80px;
+    width: 60px !important;
+    height: 60px !important;
     border-radius: 40px;
     /* padding: 10px; */
-    margin:0 20px;
+    margin:0 10px;
 }
 .doctors-list-icon {
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
     padding: 20px;
 }
 .doctors-loading {
@@ -314,6 +316,8 @@ color: #ffffff;
 .surrogacy-section1-container-img {
     width: 280px;
     object-fit: contain;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
 }
 .surrogacy-section1-container-desc {
     width: 280px;

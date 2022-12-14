@@ -68,10 +68,134 @@ const icons = [
     img: "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fsurrogacy15.PNG?alt=media&token=f80062a1-27ea-47d5-abdf-6e6b83c4bc58",
   },
 ];
+const surrogacy = [
+  {
+    img: process.env.PUBLIC_URL + "/icons/surrogacy/surrogacy1.png",
+    title: "Infertility",
+    desc: [
+      {
+        desc: "USA Infertility Experts",
+      },
+      {
+        desc: "Top Fertility Clinics",
+      },
+      {
+        desc: "Ovulation Induction",
+      },
+      {
+        desc: "Artificial Insemination",
+      },
+      {
+        desc: "IVF",
+      },
+    ],
+  },
+  {
+    img: process.env.PUBLIC_URL + "/icons/surrogacy/surrogacy2.png",
+    title: "Surrogacy",
+    desc: [
+      {
+        desc: "Gender Selection",
+      },
+      {
+        desc: "Genetic Screening",
+      },
+      {
+        desc: "Egg / Sperm Donors",
+      },
+      {
+        desc: "Surrogate Mother USA",
+      },
+      {
+        desc: "Baby USA Passport",
+      },
+    ],
+  },
+];
+const hospitals1 = [
+  {
+    img: "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fhospitals%2Fh1.png?alt=media&token=aad33af5-a0d1-4d9a-b304-1153e6f7d284",
+    name: "h1",
+  },
+  {
+    img: "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fhospitals%2Fh2.png?alt=media&token=425ea13a-deb7-406d-ba00-d8b7c7371fa3",
+    name: "h2",
+  },
+  {
+    img: "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fhospitals%2Fh3.png?alt=media&token=6e552803-ea2f-4ea1-874a-829283a6f585",
+    name: "h3",
+  },
+];
+const hospitals2 = [
+  {
+    img: "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fhospitals%2Fh4.png?alt=media&token=67f98059-0d40-4598-ac5e-ddf6d33c9d96",
+    name: "h1",
+  },
+  {
+    img: "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fhospitals%2Fh5.png?alt=media&token=a1fcb186-f2bd-487c-b6c6-874315683248",
+    name: "h2",
+  },
+  {
+    img: "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fhospitals%2Fh6.png?alt=media&token=ec9a3863-67fe-4499-b961-d832a0a489b6",
+    name: "h3",
+  },
+];
+const specialities = [
+  {
+    img: process.env.PUBLIC_URL + "/icons/i1.png",
+    name: "Oncology",
+  },
+  {
+    img: process.env.PUBLIC_URL + "/icons/i2.png",
+    name: "Cardiology",
+  },
+  {
+    img: process.env.PUBLIC_URL + "/icons/i3.png",
+    name: "Neurology",
+  },
+  {
+    img: process.env.PUBLIC_URL + "/icons/i4.png",
+    name: "Rare Diseases",
+  },
+  {
+    img: process.env.PUBLIC_URL + "/icons/i5.png",
+    name: "Mental Health",
+  },
+  {
+    img: process.env.PUBLIC_URL + "/icons/i6.png",
+    name: "Infertility",
+  },
+];
+const doctors = [
+  {
+    img: process.env.PUBLIC_URL + "/icons/doctors/doctor1.png",
+    name: "Dr. A. Eli Gabayan",
+    spec: "Surgeon",
+    place: "Boston, USA",
+  },
+  {
+    img: process.env.PUBLIC_URL + "/icons/doctors/doctor2.png",
+    name: "Dr. Sam Najmabadi",
+    spec: "Therapist",
+    place: "San Francisco, USA",
+  },
+  {
+    img: process.env.PUBLIC_URL + "/icons/doctors/doctor3.png",
+    name: "Dr. Raj Kanodia",
+    spec: "Dentist",
+    place: "New York, USA",
+  },
+  {
+    img: process.env.PUBLIC_URL + "/icons/doctors/doctor4.png",
+    name: "Dr. John Doe",
+    spec: "Therapist",
+    place: "Los Angeles, USA",
+  },
+];
 export default function HomePage() {
   const navigate = useNavigate();
   return (
-    <div className="age-container">
+    <div className="age-container" style={{ backgroundColor: "#ffffff" }}>
       {/* Header */}
       <div className="header-surrogacy">
         <div className="home-logo-logo-container">
@@ -198,50 +322,18 @@ export default function HomePage() {
       <div className="secondBlocWrapper">
         <h2>Top USA Hospitals</h2>
         <div className="secondBlocSubWrapper">
-          <div className="secBlocElement shadowHome">
-            <img
-              alt=""
-              src="https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fhome_page%2FRectangle%202887.png?alt=media&token=15230067-798e-4955-8fa2-94a3f7aef135"
-              className="secImg"
-            />
-          </div>
-          <div className="secBlocElement shadowHome">
-            <img
-              alt=""
-              src="https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fhome_page%2FRectangle%202887%20(1).png?alt=media&token=e8238509-42d5-4705-84e5-d2f25946de49"
-              className="secImg"
-            />
-          </div>
-          <div className="secBlocElement shadowHome">
-            <img
-              alt=""
-              src="https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fhome_page%2FRectangle%202887%20(2).png?alt=media&token=5039cd04-f9b8-4b8b-83b2-70711264b796"
-              className="secImg"
-            />
-          </div>
+          {hospitals1.map((item, index) => (
+            <div key={index} className="secBlocElement shadowHome">
+              <img alt={item.name} src={item.img} className="secImg" />
+            </div>
+          ))}
         </div>
         <div className="secondBlocSubWrapper">
-          <div className="secBlocElement shadowHome">
-            <img
-              alt=""
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQf5SnYxdaGT574Cik0XagpFtmoM0OHiKZxY8LSmsPDJuY_IiZAyWX5D1MKVzs_2rIjSgU&usqp=CAU"
-              className="secImg"
-            />
-          </div>
-          <div className="secBlocElement shadowHome">
-            <img
-              alt=""
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQf5SnYxdaGT574Cik0XagpFtmoM0OHiKZxY8LSmsPDJuY_IiZAyWX5D1MKVzs_2rIjSgU&usqp=CAU"
-              className="secImg"
-            />
-          </div>
-          <div className="secBlocElement shadowHome">
-            <img
-              alt=""
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQf5SnYxdaGT574Cik0XagpFtmoM0OHiKZxY8LSmsPDJuY_IiZAyWX5D1MKVzs_2rIjSgU&usqp=CAU"
-              className="secImg"
-            />
-          </div>
+          {hospitals2.map((item, index) => (
+            <div key={index} className="secBlocElement shadowHome">
+              <img alt={item.name} src={item.img} className="secImg" />
+            </div>
+          ))}
         </div>
         <PrimaryButton
           icon="https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fhome_page%2FplusIcon.png?alt=media&token=c711231f-3471-42f3-9fa8-9b5b0f1a78ee"
@@ -251,143 +343,29 @@ export default function HomePage() {
       <div className="thirdBlocWrapper">
         <h2>Specialities</h2>
         <div className="thirdBlocSubWrapper">
-          <div className="thirdBlocElement shadowHome">
-            <div className="content">
-              <img
-                alt=""
-                src={process.env.PUBLIC_URL + "/icons/i1.png"}
-                className="thirdImg"
-              />
-              <h4>Oncology</h4>
+          {specialities.map((item, index) => (
+            <div key={index} className="thirdBlocElement shadowHome">
+              <div className="content">
+                <img alt={item.name} src={item.img} className="thirdImg" />
+                <h4>{item.name}</h4>
+              </div>
             </div>
-          </div>
-          <div className="thirdBlocElement shadowHome">
-            <div className="content">
-              <img
-                alt=""
-                src={process.env.PUBLIC_URL + "/icons/i2.png"}
-                className="thirdImg"
-              />
-              <h4>Cardiology</h4>
-            </div>
-          </div>
-          <div className="thirdBlocElement shadowHome">
-            <div className="content">
-              <img
-                alt=""
-                src={process.env.PUBLIC_URL + "/icons/i3.png"}
-                className="thirdImg"
-              />
-              <h4>Neurology</h4>
-            </div>
-          </div>
-          <div className="thirdBlocElement shadowHome">
-            <div className="content">
-              <img
-                alt=""
-                src={process.env.PUBLIC_URL + "/icons/i4.png"}
-                className="thirdImg"
-              />
-              <h4>Rare Diseases</h4>
-            </div>
-          </div>
-          <div className="thirdBlocElement shadowHome">
-            <div className="content">
-              <img
-                alt=""
-                src={process.env.PUBLIC_URL + "/icons/i5.png"}
-                className="thirdImg"
-              />
-              <h4>Mental Health</h4>
-            </div>
-          </div>
-          <div className="thirdBlocElement shadowHome">
-            <div className="content">
-              <img
-                alt=""
-                src={process.env.PUBLIC_URL + "/icons/i6.png"}
-                className="thirdImg"
-              />
-              <h4>Infertility</h4>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
       <div className="fourthBlocWrapper">
         <h2>Top USA Specialities</h2>
         <div className="fourthBlocSubWrapper">
-          <div className="fourthBlocElement shadowHome">
-            <div className="content">
-              <img
-                alt=""
-                src="https://www.datocms-assets.com/32170/1643755032-eli-gabayan.jpg"
-                className="fourthImg"
-              />
-              <h4>Dr. A. Eli Gabayan</h4>
-              <p>Surgeon </p>
-              <p> Boston, USA </p>
+          {doctors.map((item, index) => (
+            <div key={index} className="fourthBlocElement shadowHome">
+              <div className="content">
+                <img alt={item.name} src={item.img} className="fourthImg" />
+                <h4>{item.name}</h4>
+                <p>{item.spec} </p>
+                <p>{item.place}</p>
+              </div>
             </div>
-          </div>
-          <div className="fourthBlocElement shadowHome">
-            <div className="content">
-              <img
-                alt=""
-                src="https://www.datocms-assets.com/32170/1643755032-eli-gabayan.jpg"
-                className="fourthImg"
-              />
-              <h4>Dr. A. Eli Gabayan</h4>
-              <p>Surgeon </p>
-              <p> Boston, USA </p>
-            </div>
-          </div>
-          <div className="fourthBlocElement shadowHome">
-            <div className="content">
-              <img
-                alt=""
-                src="https://www.datocms-assets.com/32170/1643755032-eli-gabayan.jpg"
-                className="fourthImg"
-              />
-              <h4>Dr. A. Eli Gabayan</h4>
-              <p>Surgeon </p>
-              <p> Boston, USA </p>
-            </div>
-          </div>
-          <div className="fourthBlocElement shadowHome">
-            <div className="content">
-              <img
-                alt=""
-                src="https://www.datocms-assets.com/32170/1643755032-eli-gabayan.jpg"
-                className="fourthImg"
-              />
-              <h4>Dr. A. Eli Gabayan</h4>
-              <p>Surgeon </p>
-              <p> Boston, USA </p>
-            </div>
-          </div>
-          <div className="fourthBlocElement shadowHome">
-            <div className="content">
-              <img
-                alt=""
-                src="https://www.datocms-assets.com/32170/1643755032-eli-gabayan.jpg"
-                className="fourthImg"
-              />
-              <h4>Dr. A. Eli Gabayan</h4>
-              <p>Surgeon </p>
-              <p> Boston, USA </p>
-            </div>
-          </div>
-          <div className="fourthBlocElement shadowHome">
-            <div className="content">
-              <img
-                alt=""
-                src="https://www.datocms-assets.com/32170/1643755032-eli-gabayan.jpg"
-                className="fourthImg"
-              />
-              <h4>Dr. A. Eli Gabayan</h4>
-              <p>Surgeon </p>
-              <p> Boston, USA </p>
-            </div>
-          </div>
+          ))}
         </div>
         <PrimaryButton
           icon="https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fhome_page%2FheartAnalIcon.png?alt=media&token=5e75f4b0-f093-4e7a-a9d1-12d6b6240232"
@@ -396,13 +374,13 @@ export default function HomePage() {
       </div>
       {/* section 1 */}
       <div>
-        <h2>Top USA Specialities</h2>
-        <div className="surrogacy-section1-container">
+        <h2>Bring Your Baby Home</h2>
+        <div className="surrogacy-section1-container" style={{ marginTop: "40px", marginBottom: "40px" }}>
           <div className="surrogacy-section1-container-content">
             <div className="surrogacy-section1-container-img-container shadowHome">
               <img
-                src={icons[0].img}
-                alt={icons[0].name}
+                src={surrogacy[0].img}
+                alt={surrogacy[0].title}
                 className="surrogacy-section1-container-img"
               />
             </div>
@@ -412,7 +390,7 @@ export default function HomePage() {
             >
               <div className="surrogacy-section1-container-desc-content">
                 <p className="surrogacy-section1-container-desc-title1">
-                  Infertility
+                  {surrogacy[0].title}
                 </p>
                 <div
                   className="surrogacy-section1-container-desc-content-special2"
@@ -420,7 +398,7 @@ export default function HomePage() {
                 >
                   <div className="dot" />
                   <p className="surrogacy-section1-container-desc-title4">
-                    USA Infertility Experts
+                    {surrogacy[0].desc[0].desc}
                   </p>
                 </div>
                 <div
@@ -429,7 +407,7 @@ export default function HomePage() {
                 >
                   <div className="dot" />
                   <p className="surrogacy-section1-container-desc-title4">
-                    Top Fertility Clinics
+                    {surrogacy[0].desc[1].desc}
                   </p>
                 </div>
                 <div
@@ -438,7 +416,7 @@ export default function HomePage() {
                 >
                   <div className="dot" />
                   <p className="surrogacy-section1-container-desc-title4">
-                    Ovulation Induction
+                    {surrogacy[0].desc[2].desc}
                   </p>
                 </div>
                 <div
@@ -447,7 +425,7 @@ export default function HomePage() {
                 >
                   <div className="dot" />
                   <p className="surrogacy-section1-container-desc-title4">
-                    Artificial Insemination
+                    {surrogacy[0].desc[3].desc}
                   </p>
                 </div>
                 <div
@@ -456,7 +434,7 @@ export default function HomePage() {
                 >
                   <div className="dot" />
                   <p className="surrogacy-section1-container-desc-title4">
-                    IVF
+                    {surrogacy[0].desc[4].desc}
                   </p>
                 </div>
               </div>
@@ -475,8 +453,8 @@ export default function HomePage() {
           <div className="surrogacy-section1-container-content">
             <div className="surrogacy-section1-container-img-container shadowHome">
               <img
-                src={icons[1].img}
-                alt={icons[1].name}
+                src={surrogacy[1].img}
+                alt={surrogacy[1].title}
                 className="surrogacy-section1-container-img"
               />
             </div>
@@ -486,7 +464,7 @@ export default function HomePage() {
             >
               <div className="surrogacy-section1-container-desc-content">
                 <p className="surrogacy-section1-container-desc-title1">
-                  Surrogacy
+                  {surrogacy[1].title}
                 </p>
                 <div
                   className="surrogacy-section1-container-desc-content-special2"
@@ -494,7 +472,7 @@ export default function HomePage() {
                 >
                   <div className="dot" />
                   <p className="surrogacy-section1-container-desc-title4">
-                    Gender Selection
+                    {surrogacy[1].desc[0].desc}
                   </p>
                 </div>
                 <div
@@ -503,7 +481,7 @@ export default function HomePage() {
                 >
                   <div className="dot" />
                   <p className="surrogacy-section1-container-desc-title4">
-                    Genetic Screening
+                    {surrogacy[1].desc[1].desc}
                   </p>
                 </div>
                 <div
@@ -512,7 +490,7 @@ export default function HomePage() {
                 >
                   <div className="dot" />
                   <p className="surrogacy-section1-container-desc-title4">
-                    Egg / Sperm Donors
+                    {surrogacy[1].desc[2].desc}
                   </p>
                 </div>
                 <div
@@ -521,7 +499,7 @@ export default function HomePage() {
                 >
                   <div className="dot" />
                   <p className="surrogacy-section1-container-desc-title4">
-                    Surrogate Mother USA
+                    {surrogacy[1].desc[3].desc}
                   </p>
                 </div>
                 <div
@@ -530,7 +508,7 @@ export default function HomePage() {
                 >
                   <div className="dot" />
                   <p className="surrogacy-section1-container-desc-title4">
-                    Baby USA Passport
+                    {surrogacy[1].desc[4].desc}
                   </p>
                 </div>
               </div>
