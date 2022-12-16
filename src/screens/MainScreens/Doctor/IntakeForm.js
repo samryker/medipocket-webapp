@@ -3,9 +3,14 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
 import "./styles.css";
-import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
+// import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 import { auth } from "../../../firebase/utils";
-
+import {
+  getAuth,
+  RecaptchaVerifier,
+  signInWithPhoneNumber,
+} from "firebase/auth";
+// import { firebase, auth } from './firebase';
 const mapState = ({ user }) => ({
   doctorName: user.doctorName,
 });
@@ -91,24 +96,75 @@ export default function IntakeForm() {
     }
   };
 
-  const handleVerifyPhone = () => {
-    console.log("here");
+  // -------- New Code For Firebase OTP Start Here --------
+
+  const verifyOTP = (e) => {
+    let otp = e.target.value;
+    // setotp(otp);
+    setCodeFromUser(e.target.value);
+    if (otp.length === 6) {
+      // Verify OTP
+      let confirmationResult = window.confirmationResult;
+      confirmationResult
+        .confirm(otp)
+        .then((result) => {
+          const user = result.user;
+        })
+        .catch((e) => {
+          console.log("error form confirmationResult =>", e);
+        });
+    }
+  };
+  const generateRecaptcha = () => {
+    console.log("generateRecaptcha");
     try {
-      console.log("inside trycatch 1 ");
       window.recaptchaVerifier = new RecaptchaVerifier(
-        "sign-in-button",
+        "recaptcha-container",
         {
+          size: "invisible",
           callback: (response) => {
-            console.log("response line 297 => ", response);
-            // onSignInSubmit(response);
+            console.log("response", response);
+            // reCAPTCHA solved, allow signInWithPhoneNumber.
+            // onSignInSubmit();
           },
         },
         auth
       );
-      console.log("inside trycatch 2 ");
+    } catch (error) {
+      console.log("error from generateRecaptcha", error);
+    }
+  };
+
+  const handleVerifyPhone = (e) => {
+    e.preventDefault();
+    console.log("here handleVerifyPhone");
+    try {
+      generateRecaptcha();
+      let appVerifier = window.recaptchaVerifier;
+      signInWithPhoneNumber(auth, phone, appVerifier)
+        .then((confirmationResult) => {
+          window.confirmationResult = confirmationResult;
+          setPhoneVerified(true);
+        })
+        .catch((e) => {
+          console.log("error =>", e);
+        });
     } catch (error) {
       console.log("error from recapther", error);
     }
+    // --- Rami Code ----
+    // console.log("inside trycatch 1 ");
+    // window.recaptchaVerifier = new RecaptchaVerifier(
+    //   "sign-in-button",
+    //   {
+    //     callback: (response) => {
+    //       console.log("response line 297 => ", response);
+    //       // onSignInSubmit(response);
+    //     },
+    //   },
+    //   auth
+    // );
+    // console.log("inside trycatch 2 ");
   };
 
   // f2
@@ -416,69 +472,74 @@ export default function IntakeForm() {
               className="intake-input-container"
               style={{ position: "relative" }}
             >
-              {errorsOfUser.length > 0 ? (
-                <>
+              <form action="" onSubmit={handleVerifyPhone}>
+                {errorsOfUser.length > 0 ? (
+                  <>
+                    <input
+                      className="intake-input intake-error-field"
+                      value={phone}
+                      onChange={(e) => setPhone(e.target.value)}
+                      placeholder="PhoneNumber"
+                    />
+                    <div style={{ width: "100%" }}>
+                      <p
+                        style={{
+                          color: "red",
+                          fontSize: "10px",
+                          margin: "5px 0",
+                        }}
+                      >
+                        * Phone Number and verification Required !
+                      </p>
+                    </div>
+                  </>
+                ) : (
                   <input
-                    className="intake-input intake-error-field"
+                    className="intake-input"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
                     placeholder="PhoneNumber"
                   />
-                  <div style={{ width: "100%" }}>
+                )}
+
+                {phone.length > 10 && (
+                  <button
+                    style={{
+                      width: "80px",
+                      backgroundColor: "#384062",
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      padding: "0px",
+                      position: "absolute",
+                      top: errorsOfUser.length > 0 ? 22 : 20,
+                      right: 4,
+                      borderRadius: "8px",
+                      cursor: "pointer",
+                    }}
+                    // id="sign-in-button"
+                    // onClick={handleVerifyPhone}
+                    type="submit"
+                  >
                     <p
                       style={{
-                        color: "red",
-                        fontSize: "10px",
-                        margin: "5px 0",
+                        fontSize: 16,
+                        color: "#ffffff",
+                        lineHeight: "6px",
+                        padding: "0px",
                       }}
                     >
-                      * Phone Number and verification Required !
+                      Verify
                     </p>
-                  </div>
-                </>
-              ) : (
-                <input
-                  className="intake-input"
-                  value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
-                  placeholder="PhoneNumber"
-                />
-              )}
-              {phone.length > 10 && (
-                <div
-                  style={{
-                    width: "80px",
-                    backgroundColor: "#384062",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    padding: "0px",
-                    position: "absolute",
-                    top: errorsOfUser.length > 0 ? 22 : 20,
-                    right: 4,
-                    borderRadius: "8px",
-                    cursor: "pointer",
-                  }}
-                  id="sign-in-button"
-                  onClick={handleVerifyPhone}
-                >
-                  <p
-                    style={{
-                      fontSize: 16,
-                      color: "#ffffff",
-                      lineHeight: "6px",
-                      padding: "0px",
-                    }}
-                  >
-                    Verify
-                  </p>
-                </div>
-              )}
+                  </button>
+                )}
+                <div id="recaptcha-container"></div>
+              </form>
               {phoneVerified && (
                 <input
                   className="intake-input"
                   value={codeFromUser}
-                  onChange={(e) => setCodeFromUser(e.target.value)}
+                  onChange={(e) => verifyOTP(e)}
                   placeholder="Code"
                 />
               )}
