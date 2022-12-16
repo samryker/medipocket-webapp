@@ -37,8 +37,8 @@ export default function Pregnant() {
   };
   const handleSubmit = () => {
     if (selected.length !== 0) {
-      dispatch(updateSympthomPregnant(selected))
-      navigate("/country")
+      dispatch(updateSympthomPregnant(selected));
+      navigate("/country");
     } else {
       setSelectError("* Select a gender is Required");
     }
@@ -61,7 +61,7 @@ export default function Pregnant() {
       <div className="age-scrollContainer">
         <p className="age-cardTitle2">Welcome to the DR. AI</p>
         <img
-          src="https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/assets%2Ficons%2Fsympthom%2Fequality.png?alt=media&token=47681ef1-3f78-499e-a60c-0a0bd41773db"
+          src={process.env.PUBLIC_URL + "/icons/sympthoms/equality.png"}
           alt="gender"
           className="gender-img"
         />
@@ -73,16 +73,20 @@ export default function Pregnant() {
         </div>
         <div className="gender-content">
           <div
-            className={`shadow1 ${pregnantState ? "gender-card2" : "gender-card"}`}
+            className={`shadow1 ${
+              pregnantState ? "gender-card2" : "gender-card"
+            }`}
             onClick={handlePregnant}
           >
             <img
-              src="https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/assets%2Ficons%2Fsympthom%2Fwoman.png?alt=media&token=47c838d9-52fe-4d81-951b-fc521303ab32"
+              src={process.env.PUBLIC_URL + "/icons/sympthoms/woman.png"}
               alt="male"
               className="gender-icon-style"
             />
             <p className={pregnantState ? "age-title22" : "age-title2"}>Yes</p>
-            <p className={pregnantState ? "age-title22" : "age-title2"}>Pregnant</p>
+            <p className={pregnantState ? "age-title22" : "age-title2"}>
+              Pregnant
+            </p>
           </div>
           <div
             className={`shadow1 ${
@@ -91,7 +95,7 @@ export default function Pregnant() {
             onClick={handleDontKnowPregnant}
           >
             <img
-              src="https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/assets%2Ficons%2Fsympthom%2Ffemale.png?alt=media&token=83529e04-433a-4b5c-b9a9-f7156aea7b0d"
+              src={process.env.PUBLIC_URL + "/icons/sympthoms/female.png"}
               alt="female"
               className="gender-icon-style"
             />
@@ -109,7 +113,7 @@ export default function Pregnant() {
             onClick={handleNotPregnant}
           >
             <img
-              src="https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/assets%2Ficons%2Fsympthom%2Fpregnant.png?alt=media&token=2b024101-ae05-4356-810a-e232ff4fd6a5"
+              src={process.env.PUBLIC_URL + "/icons/sympthoms/pregnant.png"}
               alt="female"
               className="gender-icon-style"
             />

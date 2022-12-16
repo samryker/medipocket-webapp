@@ -58,7 +58,7 @@ export default function DoctorCardModel2(props) {
                   <img src={img} alt="img" className="doctor-avatar2" />
                 ) : (
                   <img
-                    src="https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/assets%2Ficons%2Fplaceholder.png?alt=media&token=50c889a1-fb4c-4e92-af36-034f6a9f6cdf"
+                    src={process.env.PUBLIC_URL + "/icons/placeholder.png"}
                     alt="img"
                     className="doctor-avatar2"
                   />

@@ -192,7 +192,7 @@ export default function DoctorList() {
           >
             <div className="searchContainer1">
               <img
-                src="https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/assets%2Ficons%2Ffilter.png?alt=media&token=a6a047ab-6ee2-4597-9675-c38608e3ef62"
+                src={process.env.PUBLIC_URL + "/icons/filter.png"}
                 alt="search"
                 className="saerch"
               />
@@ -201,7 +201,7 @@ export default function DoctorList() {
             <p className="searchInput1">{search}</p>
           </div>
         </div>
-        <DoctorCardModel2
+        {/* <DoctorCardModel2
           name={"Dr. Jordon Geller"}
           desc={"California ,USA"}
           img={
@@ -217,7 +217,7 @@ export default function DoctorList() {
           duration={"20"}
           navigate={navigate}
           type="2"
-        />
+        /> */}
         {/* Flatlist */}
         {showNoDoctor ? (
           <div className="noChat">

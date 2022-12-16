@@ -396,6 +396,7 @@ text-decoration-color: #29ddc6;
     align-items: center;
     flex: none;
     border-radius: 20px;
+    cursor: pointer;
 }
 
 .thirdBlocElement .content{
@@ -446,6 +447,7 @@ text-decoration-color: #29ddc6;
     flex: none;
     border-radius: 20px;
     padding: 25px 0;
+    cursor: pointer;
 }
 
 .fourthBlocElement .content{

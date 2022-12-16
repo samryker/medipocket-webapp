@@ -295,7 +295,7 @@ export default function Result() {
           <div className="age-headerSub" onClick={() => navigate("/home")}>
             <img
               className="result-logo"
-              src="https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/assets%2Flogo.png?alt=media&token=fc05e438-598e-47ea-8858-9bc564f5f989"
+              src={process.env.PUBLIC_URL + "/icons/drawer/logoMedi.png"}
               alt="logo"
             />
           </div>
@@ -320,7 +320,7 @@ export default function Result() {
             <p className="age-title2">Possible Causes in just 2 minutes</p>
             <img
               className="result-light-icon"
-              src="https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/assets%2Ficons%2Fsympthom%2Flight.png?alt=media&token=027bc0a1-686f-4032-aea6-73575a09e183"
+              src={process.env.PUBLIC_URL + "/icons/light.png"}
               alt="light"
             />
             <p className="age-title1">Possible Causes</p>
@@ -329,7 +329,7 @@ export default function Result() {
           {showNote && (
             <div className="result-note shadow1">
               <img
-                src="https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/assets%2Ficons%2Fredflag.png?alt=media&token=23785d76-ccf2-45ec-be97-ede89073456b"
+                src={process.env.PUBLIC_URL + "/icons/redflag.png"}
                 className="result-red-flag-icon"
                 alt="img"
               />
@@ -354,7 +354,7 @@ export default function Result() {
                     {diagnose1}{" "}
                     {spec1Flag && (
                       <img
-                        src="https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/assets%2Ficons%2Fredflag.png?alt=media&token=23785d76-ccf2-45ec-be97-ede89073456b"
+                        src={process.env.PUBLIC_URL + "/icons/redflag.png"}
                         className="result-red-flag"
                         alt="red-flag"
                       />
@@ -369,7 +369,7 @@ export default function Result() {
                     {diagnose2}
                     {spec2Flag && (
                       <img
-                        src="https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/assets%2Ficons%2Fredflag.png?alt=media&token=23785d76-ccf2-45ec-be97-ede89073456b"
+                        src={process.env.PUBLIC_URL + "/icons/redflag.png"}
                         className="result-red-flag"
                         alt="red-flag"
                       />
@@ -384,7 +384,7 @@ export default function Result() {
                     {diagnose3}{" "}
                     {spec3Flag && (
                       <img
-                        src="https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/assets%2Ficons%2Fredflag.png?alt=media&token=23785d76-ccf2-45ec-be97-ede89073456b"
+                        src={process.env.PUBLIC_URL + "/icons/redflag.png"}
                         className="result-red-flag"
                         alt="red-flag"
                       />
@@ -401,7 +401,7 @@ export default function Result() {
                         {diagnose4}{" "}
                         {spec4Flag && (
                           <img
-                            src="https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/assets%2Ficons%2Fredflag.png?alt=media&token=23785d76-ccf2-45ec-be97-ede89073456b"
+                            src={process.env.PUBLIC_URL + "/icons/redflag.png"}
                             className="result-red-flag"
                             alt="red-flag"
                           />
@@ -416,7 +416,7 @@ export default function Result() {
                         {diagnose5}{" "}
                         {spec5Flag && (
                           <img
-                            src="https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/assets%2Ficons%2Fredflag.png?alt=media&token=23785d76-ccf2-45ec-be97-ede89073456b"
+                            src={process.env.PUBLIC_URL + "/icons/redflag.png"}
                             className="result-red-flag"
                             alt="red-flag"
                           />
@@ -431,7 +431,7 @@ export default function Result() {
                         {diagnose6}{" "}
                         {spec6Flag && (
                           <img
-                            src="https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/assets%2Ficons%2Fredflag.png?alt=media&token=23785d76-ccf2-45ec-be97-ede89073456b"
+                            src={process.env.PUBLIC_URL + "/icons/redflag.png"}
                             className="result-red-flag"
                             alt="red-flag"
                           />
@@ -446,7 +446,7 @@ export default function Result() {
                         {diagnose7}{" "}
                         {spec7Flag && (
                           <img
-                            src="https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/assets%2Ficons%2Fredflag.png?alt=media&token=23785d76-ccf2-45ec-be97-ede89073456b"
+                            src={process.env.PUBLIC_URL + "/icons/redflag.png"}
                             className="result-red-flag"
                             alt="red-flag"
                           />
@@ -461,7 +461,7 @@ export default function Result() {
                         {diagnose8}{" "}
                         {spec8Flag && (
                           <img
-                            src="https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/assets%2Ficons%2Fredflag.png?alt=media&token=23785d76-ccf2-45ec-be97-ede89073456b"
+                            src={process.env.PUBLIC_URL + "/icons/redflag.png"}
                             className="result-red-flag"
                             alt="red-flag"
                           />
@@ -476,7 +476,7 @@ export default function Result() {
                         {diagnose9}{" "}
                         {spec9Flag && (
                           <img
-                            src="https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/assets%2Ficons%2Fredflag.png?alt=media&token=23785d76-ccf2-45ec-be97-ede89073456b"
+                            src={process.env.PUBLIC_URL + "/icons/redflag.png"}
                             className="result-red-flag"
                             alt="red-flag"
                           />
@@ -491,7 +491,7 @@ export default function Result() {
                         {diagnose10}{" "}
                         {spec10Flag && (
                           <img
-                            src="https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/assets%2Ficons%2Fredflag.png?alt=media&token=23785d76-ccf2-45ec-be97-ede89073456b"
+                            src={process.env.PUBLIC_URL + "/icons/redflag.png"}
                             className="result-red-flag"
                             alt="red-flag"
                           />

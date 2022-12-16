@@ -157,7 +157,7 @@ export default function Describe() {
       <div className="age-scrollContainer">
         <p className="age-cardTitle2">Welcome to the DR. AI</p>
         <img
-          src="https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/assets%2Ficons%2Fsympthom%2Fnotes.png?alt=media&token=3ded13d5-a1bd-4dbc-80d4-1ebd758fdb4b"
+          src={process.env.PUBLIC_URL + "/icons/sympthoms/notes.png"}
           alt="describe"
           className="gender-img"
         />
@@ -182,7 +182,7 @@ export default function Describe() {
                 >
                   <p className="describe-word-style2">{item}</p>
                   <img
-                    src="https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/assets%2Ficons%2Fsympthom%2Fclose.png?alt=media&token=7179b5d1-2b8b-46ff-89b5-b6b5a474c46c"
+                    src={process.env.PUBLIC_URL + "/icons/sympthoms/close.png"}
                     className="describe-plus-icon"
                     alt="img"
                   />
@@ -195,7 +195,7 @@ export default function Describe() {
           <div className="describe-search-main shadow1">
             <img
               className="describe-search-icon"
-              src="https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/assets%2Ficons%2Fsearch.png?alt=media&token=102ca289-8daa-42a8-bc21-02903cd95d68"
+              src={process.env.PUBLIC_URL + "/icons/sympthoms/search.png"}
               alt="img"
             />
             <input
@@ -214,7 +214,7 @@ export default function Describe() {
             >
               <img
                 className="describe-add-btn-icon"
-                src="https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/assets%2Ficons%2Fsympthom%2Fplus.png?alt=media&token=f9ee0e65-92a1-4f4e-84df-a50cb981af74"
+                src={process.env.PUBLIC_URL + "/icons/sympthoms/plus.png"}
                 alt="img"
               />
             </div>
@@ -230,7 +230,7 @@ export default function Describe() {
               >
                 <p className="describe-word-style">{item}</p>
                 <img
-                  src="https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/assets%2Ficons%2Fsympthom%2Fplus.png?alt=media&token=f9ee0e65-92a1-4f4e-84df-a50cb981af74"
+                  src={process.env.PUBLIC_URL + "/icons/sympthoms/plus.png"}
                   className="describe-add-btn-icon"
                   alt="img"
                 />

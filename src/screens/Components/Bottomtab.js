@@ -5,19 +5,19 @@ import "./styles.css";
 
 const icons = [
   {
-    img: "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2FbottomTab1.PNG?alt=media&token=29258db2-5f33-494a-beb4-f316099e1d19",
+    img: process.env.PUBLIC_URL + "/icons/bottomTab/bottomTab1.png",
     name: "bottom icon 1",
   },
   {
-    img: "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2FbottomTab2.PNG?alt=media&token=7e969c57-1f75-40a9-87dd-a32bc2f916ab",
+    img: process.env.PUBLIC_URL + "/icons/bottomTab/bottomTab2.png",
     name: "bottom icon 2",
   },
   {
-    img: "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2FbottomTab3.PNG?alt=media&token=0a1f49cb-1ba4-4177-b940-f198f7744589",
+    img: process.env.PUBLIC_URL + "/icons/bottomTab/bottomTab3.png",
     name: "bottom icon 3",
   },
   {
-    img: "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2FbottomTab4.PNG?alt=media&token=b0c4add6-6203-4842-8a99-032cb51f0223",
+    img: process.env.PUBLIC_URL + "/icons/bottomTab/bottomTab4.png",
     name: "bottom icon 4",
   },
 ];

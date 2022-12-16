@@ -2,8 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./styles.css";
 
-const bg_url =
-  "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fon5.png?alt=media&token=7e1ce2bf-4e4d-419d-bd91-23ae76e18048";
+const bg_url = process.env.PUBLIC_URL + "/icons/onBoarding/on5.png";
 
 export default function OnBoarding1() {
   const navigate = useNavigate();

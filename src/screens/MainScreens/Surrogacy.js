@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./styles.css";
 import { IoMdArrowBack } from "react-icons/io";
@@ -7,63 +6,63 @@ import { IoMdArrowBack } from "react-icons/io";
 const icons = [
   {
     name: "surrogacy 1",
-    img: "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fsurrogacy1.png?alt=media&token=40042125-f551-47c6-82b2-77c35ec33921",
+    img: process.env.PUBLIC_URL + "/icons/surrogacy/surrogacy3.png",
   },
   {
     name: "surrogacy 2",
-    img: "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fsurrogacy2.png?alt=media&token=c1f08820-3800-471d-9478-f6a704dafcd6",
+    img: process.env.PUBLIC_URL + "/icons/surrogacy/surrogacy4.png",
   },
   {
     name: "surrogacy 3",
-    img: "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fsurrogacy3.png?alt=media&token=ebc733e4-e5ea-4f70-94bf-ad2a51485de2",
+    img: process.env.PUBLIC_URL + "/icons/surrogacy/surrogacy5.png",
   },
   {
     name: "surrogacy 4",
-    img: "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fsurrogacy4.PNG?alt=media&token=17cbec1f-19f9-4cc5-b939-6112c0529969",
+    img: process.env.PUBLIC_URL + "/icons/surrogacy/surrogacy6.png",
   },
   {
     name: "surrogacy 5",
-    img: "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fsurrogacy5.PNG?alt=media&token=8c125d34-6ab1-4515-ade6-07222d0c1891",
+    img: process.env.PUBLIC_URL + "/icons/surrogacy/surrogacy7.png",
   },
   {
     name: "surrogacy 6",
-    img: "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fsurrogacy6.PNG?alt=media&token=3ce6ffdf-52c3-411c-bcc7-89041863ff1f",
+    img: process.env.PUBLIC_URL + "/icons/surrogacy/surrogacy8.png",
   },
   {
     name: "surrogacy 7",
-    img: "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fsurrogacy7.png?alt=media&token=d985f7bc-545e-411a-bdeb-09c4e421bd16",
+    img: process.env.PUBLIC_URL + "/icons/surrogacy/surrogacy9.png",
   },
   {
     name: "surrogacy 8",
-    img: "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fsurrogacy8.PNG?alt=media&token=9e197333-eb39-40ad-a15a-2710a238daef",
+    img: process.env.PUBLIC_URL + "/icons/surrogacy/surrogacy10.png",
   },
   {
     name: "surrogacy 9",
-    img: "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fsurrogacy9.PNG?alt=media&token=a953a080-36c9-47cb-817c-f1dfb5928f9b",
+    img: process.env.PUBLIC_URL + "/icons/surrogacy/surrogacy11.png",
   },
   {
     name: "surrogacy 10",
-    img: "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fsurrogacy10.PNG?alt=media&token=d302633a-8dab-4033-b0a1-2f802b128cdc",
+    img: process.env.PUBLIC_URL + "/icons/surrogacy/surrogacy12.png",
   },
   {
     name: "surrogacy 11",
-    img: "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fsurrogacy11.PNG?alt=media&token=7ac419de-c3c8-429f-9c05-1a4343566928",
+    img: process.env.PUBLIC_URL + "/icons/surrogacy/surrogacy13.png",
   },
   {
     name: "surrogacy 12",
-    img: "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fsurrogacy12.PNG?alt=media&token=6104155a-d12e-49a2-8524-e1b0f5c1b40c",
+    img: process.env.PUBLIC_URL + "/icons/surrogacy/surrogacy14.png",
   },
   {
     name: "surrogacy 13",
-    img: "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fsurrogacy13.PNG?alt=media&token=67c9981e-d228-428e-8e46-87743119fbfa",
+    img: process.env.PUBLIC_URL + "/icons/surrogacy/surrogacy15.png",
   },
   {
     name: "surrogacy 14",
-    img: "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fsurrogacy14.PNG?alt=media&token=6a2a9bb6-0ba2-4747-9300-a45258eea58c",
+    img: process.env.PUBLIC_URL + "/icons/surrogacy/surrogacy16.png",
   },
   {
     name: "surrogacy 15",
-    img: "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fsurrogacy15.PNG?alt=media&token=f80062a1-27ea-47d5-abdf-6e6b83c4bc58",
+    img: process.env.PUBLIC_URL + "/icons/surrogacy/surrogacy17.png",
   },
 ];
 
@@ -329,7 +328,7 @@ export default function Surrogacy() {
             />
             <p> Free USA Surrogacy Consultation </p>
             <img
-              src="https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fhome_page%2Frightarrow.png?alt=media&token=9e5d95d9-267c-41f1-924f-de52f014109b"
+              src={process.env.PUBLIC_URL + "/icons/rightarrow.png"}
               alt=""
               className="arraowImg"
             />
@@ -390,7 +389,7 @@ export default function Surrogacy() {
             />
             <p> Let Us Bring Your Baby Home </p>
             <img
-              src="https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fhome_page%2Frightarrow.png?alt=media&token=9e5d95d9-267c-41f1-924f-de52f014109b"
+              src={process.env.PUBLIC_URL + "/icons/rightarrow.png"}
               alt=""
               className="arraowImg"
             />

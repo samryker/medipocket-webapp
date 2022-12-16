@@ -1563,7 +1563,7 @@ export default function Country() {
       <div className="age-scrollContainer">
         <p className="age-cardTitle2">Welcome to the DR. AI</p>
         <img
-          src="https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/assets%2Ficons%2Fsympthom%2Fcountries.png?alt=media&token=8c1804f5-c46c-4591-9455-ca0f06818a7d"
+          src={process.env.PUBLIC_URL + "/icons/sympthoms/countries.png"}
           alt="gender"
           className="gender-img"
         />
