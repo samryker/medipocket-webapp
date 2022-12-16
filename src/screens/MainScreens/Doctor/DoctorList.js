@@ -5,6 +5,7 @@ import Header from "../../Components/Header";
 import { useNavigate } from "react-router-dom";
 import DoctorCardModel2 from "../../Components/Models/DoctorCardModel2";
 import "./styles.css";
+import ModelComp from "../../Components/ModelComp";
 
 const mapState = ({ user }) => ({
   filter: user.filter,
@@ -201,7 +202,7 @@ export default function DoctorList() {
             <p className="searchInput1">{search}</p>
           </div>
         </div>
-        {/* <DoctorCardModel2
+        <DoctorCardModel2
           name={"Dr. Jordon Geller"}
           desc={"California ,USA"}
           img={
@@ -217,7 +218,7 @@ export default function DoctorList() {
           duration={"20"}
           navigate={navigate}
           type="2"
-        /> */}
+        />
         {/* Flatlist */}
         {showNoDoctor ? (
           <div className="noChat">
@@ -262,36 +263,15 @@ export default function DoctorList() {
             <p className="noChatText1">No Doctors with this filter yet.</p>
           </div>
         ) : null} */}
+      </div>
         {/* filter Modal */}
         {filterModal && (
-          <div className="filter-model">
-            <div className="model-content shadow1">
-              <div
-                onClick={() => setFilterModal(false)}
-                className="close-model"
-              >
-                <p className="close-text">X</p>
-              </div>
-              <div className="ModelTitleView">
-                <p className="model-title-text">Specializations</p>
-              </div>
-              {specList &&
-                specList.map((item, index) => (
-                  <div className="optionContent" key={index}>
-                    <div className="optionContainer">
-                      <div
-                        className="doctor-model-card-by-model shadow1"
-                        onPress={() => handleSlected(item)}
-                      >
-                        <p className="sumpthom-model">{item}</p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-            </div>
-          </div>
+          <ModelComp
+            specList={specList}
+            setFilterModal={setFilterModal}
+            handleSlected={handleSlected}
+          />
         )}
-      </div>
     </div>
   );
 }

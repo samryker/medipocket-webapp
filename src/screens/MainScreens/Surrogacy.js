@@ -80,7 +80,7 @@ export default function Surrogacy() {
           <div style={{ width: "20px" }} />
         </div>
         {/* section 1 */}
-        <div className="surrogacy-section1-container">
+        <div className="surrogacy-section1-container" style={{ marginTop: "40px" }}>
           <div className="surrogacy-section1-container-content">
             <div className="surrogacy-section1-container-img-container shadowHome">
               <img
@@ -411,7 +411,7 @@ export default function Surrogacy() {
               Parenthood is for Everyone
             </p>
           </div>
-          <div className="surrogacy-section6-container-row">
+          <div className="surrogacy-section6-container-row last-surrogacy-margin">
             <div
               className="surrogacy-section6-container-row-item shadowHome"
               onClick={() => navigate("/intakeForm")}

@@ -259,6 +259,7 @@
 .homeTitle
 {
     text-align: center;
+    margin-bottom: 70px;
 }
 .homeTitle span{
 text-decoration: underline;
@@ -271,7 +272,7 @@ text-decoration-color: #29ddc6;
 
 }
 .homeComponent{
-    width:200px;
+    width:48%;
     height: 200px;
     margin: 0 auto;
     margin-bottom: 20px;
@@ -465,7 +466,7 @@ text-decoration-color: #29ddc6;
 
 .fourthBlocElement .content h4{
     margin: 0;
-    font-weight: 600;
+    font-weight: 700;
     margin-top: 10px;
     font-size: 16px;
 }
@@ -500,7 +501,7 @@ text-decoration-color: #29ddc6;
 }
 
 .lastBloc{
-    margin-bottom: 150px;
+    margin-bottom: 550px !important;
 }
 
 
@@ -560,7 +561,7 @@ text-decoration-color: #29ddc6;
     margin-right: 10px;
 }
 .greenBtn p{
-    margin: 0;
+    margin: 0 8px;
     font-size: 18px;
 }
 
@@ -577,4 +578,27 @@ text-decoration-color: #29ddc6;
 }
 .mg80{
     margin-bottom: 80px;
+}
+
+@media only screen and (max-width: 480px) {
+.topHosBlocElement
+{
+    width: 45%;
+    margin: 10px 2.5%;
+    height: 220px;
+}
+.topHosBlocElement .content h4{
+    margin: 0;
+    font-weight: 600;
+    max-width: 95%;
+    font-size: 14px !important;
+    margin-bottom: 10px;
+}
+.topHosBlocElement .content p{   
+    font-size: 12px !important;
+}
+.topHosBlocElement img{
+    width: 120px;
+    height: 80px;
+}
 }

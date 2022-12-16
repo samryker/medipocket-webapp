@@ -109,7 +109,10 @@ const icons = [
 export default function TopUsaHospitals() {
   const navigate = useNavigate();
   return (
-    <div className="age-container" style={{ backgroundColor: "#ffffff" }}>
+    <div
+      className="age-container"
+      style={{ backgroundColor: "#ffffff", paddingBottom: "150px" }}
+    >
       {/* Header */}
       <div className="header-surrogacy">
         <div className="header-surrogacy-left" onClick={() => navigate(-1)}>
@@ -131,11 +134,12 @@ export default function TopUsaHospitals() {
           );
         })}
       </div>
-      <PrimaryButton
-        icon={process.env.PUBLIC_URL + "/icons/Group.png"}
-        name="Request Appointment"
-      />
-      <div style={{ height: "150px" }} />
+      <div style={{ paddingBottom: "100px" }}>
+        <PrimaryButton
+          icon={process.env.PUBLIC_URL + "/icons/Group.png"}
+          name="Request Appointment"
+        />
+      </div>
     </div>
   );
 }

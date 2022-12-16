@@ -118,9 +118,9 @@ export default function Age() {
         </div>
       </div>
       {/* scroll */}
-      <div className="age-scrollContainer">
+      <div className="age-scrollContainer" style={{ paddingBottom: "50px" }}>
         <p className="age-cardTitle2">Welcome to the DR. AI</p>
-        <div style={{ alignItems: "center", width: "100%", marginBottom: 50 }}>
+        <div style={{ alignItems: "center", width: "100%", marginBottom: 30 }}>
           <div>
             <p className="age-title1">Select Age Range</p>
             <p className="age-title2">Please select your age range</p>
@@ -306,17 +306,24 @@ export default function Age() {
             </div>
           </div>
         </div>
-        {selectError.length !== 0 ? (
-          <p className="error1">{selectError}</p>
-        ) : null}
-        {/* Submit */}
+        {/* submit */}
         <div
-          className={`submit-container ${check ? "submit1" : "submit2"}`}
+          className={`${check ? "submit1" : "submit2"}`} 
           onClick={handleSubmit}
         >
           <p className="submit-text">Submit</p>
         </div>
+        {selectError.length !== 0 ? (
+          <p className="error1">{selectError}</p>
+        ) : null}
       </div>
+        {/* Submit */}
+        {/* <div
+          className={`submit-container ${check ? "submit1" : "submit2"}`}
+          onClick={handleSubmit}
+        >
+          <p className="submit-text">Submit</p>
+        </div> */}
     </div>
   );
 }

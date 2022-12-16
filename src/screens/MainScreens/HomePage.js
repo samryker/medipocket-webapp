@@ -3,7 +3,10 @@ import { useNavigate } from "react-router-dom";
 import "./styles.css";
 import PrimaryButton from "../Components/PrimaryButton";
 import { useDispatch, useSelector } from "react-redux";
-import { resetFilterSuccess, updateDoctorFilter } from "../../redux/User/user.actions";
+import {
+  resetFilterSuccess,
+  updateDoctorFilter,
+} from "../../redux/User/user.actions";
 
 const icons = [
   {
@@ -225,7 +228,7 @@ export default function HomePage() {
     dispatch(updateDoctorFilter("Fertility"));
   };
   return (
-    <div className="age-container" style={{ backgroundColor: "#ffffff" }}>
+    <div className="age-container" style={{ padding: "15px !important" }}>
       {/* Header */}
       <div className="header-surrogacy">
         <div className="home-logo-logo-container">
@@ -350,7 +353,7 @@ export default function HomePage() {
         </div>
       </div>
       <div className="secondBlocWrapper">
-        <h2>Top USA Hospitals</h2>
+        <h2 className="homeTitle">Top USA Hospitals</h2>
         <div className="secondBlocSubWrapper">
           {hospitals1.map((item, index) => (
             <div key={index} className="secBlocElement shadowHome">
@@ -365,13 +368,14 @@ export default function HomePage() {
             </div>
           ))}
         </div>
+        <div style={{ width: "100%", height: "50px" }} />
         <PrimaryButton
           icon={process.env.PUBLIC_URL + "/icons/plusIcon.png"}
           name="View USA Hospitals"
         />
       </div>
       <div className="thirdBlocWrapper">
-        <h2>Specialities</h2>
+        <h2 className="homeTitle">Specialities</h2>
         <div className="thirdBlocSubWrapper">
           {/* oncology */}
           <div className="thirdBlocElement shadowHome" onClick={handleSpec1}>
@@ -440,9 +444,10 @@ export default function HomePage() {
             </div>
           </div>
         </div>
+        <div style={{ width: "100%", height: "20px" }} />
       </div>
       <div className="fourthBlocWrapper">
-        <h2>Top USA Specialities</h2>
+        <h2 className="homeTitle">Top USA Specialities</h2>
         <div className="fourthBlocSubWrapper">
           {doctors.map((item, index) => (
             <div key={index} className="fourthBlocElement shadowHome">
@@ -455,14 +460,17 @@ export default function HomePage() {
             </div>
           ))}
         </div>
-        <PrimaryButton
-          icon={process.env.PUBLIC_URL + "/icons/heartAnalIcon.png"}
-          name="More USA Doctors"
-        />
+        <div style={{ width: "100%", height: "20px" }} />
       </div>
+      <PrimaryButton
+        icon={process.env.PUBLIC_URL + "/icons/heartAnalIcon.png"}
+        name="More USA Doctors"
+      />
       {/* section 1 */}
       <div>
-        <h2>Bring Your Baby Home</h2>
+        <h2 className="homeTitle" style={{ paddingTop: "10px" }}>
+          Bring Your Baby Home
+        </h2>
         <div
           className="surrogacy-section1-container"
           style={{ marginTop: "40px", marginBottom: "40px" }}
@@ -621,8 +629,8 @@ export default function HomePage() {
           name="Book Free Call Surrogacy USA"
         />
       </div>
-      <div className="lastBloc ">
-        <h2>MediPocket World</h2>
+      <div className="lastBloc " style={{ paddingBottom: "120px" }}>
+        <h2 className="homeTitle">MediPocket World</h2>
         <div className="content shadowHome">
           <p>
             When facing life-changing illness, getting access to premium
@@ -632,6 +640,7 @@ export default function HomePage() {
           </p>
         </div>
       </div>
+      <div style={{ height: "150px !important" }} />
     </div>
   );
 }

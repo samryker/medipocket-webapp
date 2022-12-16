@@ -317,7 +317,7 @@ export default function Result() {
           }}
         >
           <div className="result-header-container">
-            <p className="age-title2">Possible Causes in just 2 minutes</p>
+            <p className="age-cardTitle2">Possible Causes in just 2 minutes</p>
             <img
               className="result-light-icon"
               src={process.env.PUBLIC_URL + "/icons/light.png"}
@@ -340,7 +340,7 @@ export default function Result() {
                 <AiOutlineCloseCircle className="result-closeIcon" />
               </div>
               <p className="age-title1">Note</p>
-              <p className="result-note-parag">
+              <p className="age-cardTitle2">
                 Red Flag conditions are serious and need to be treated in
                 Emergency Room or Urgent Care
               </p>

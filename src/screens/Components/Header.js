@@ -47,8 +47,8 @@ export default function Header(props) {
               )}
             </>
           )}
-          {isProfile ? (
-            <div style={{ width: 20 }}></div>
+          <div style={{ width: 20 }}></div>
+          {/* {isProfile ? (
           ) : (
             <div
               className="header-headerSub"
@@ -56,7 +56,7 @@ export default function Header(props) {
             >
               <IoMdMenu className="header-iconStyle" />
             </div>
-          )}
+          )} */}
         </>
       )}
     </div>

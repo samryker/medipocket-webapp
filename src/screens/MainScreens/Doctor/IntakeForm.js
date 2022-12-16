@@ -20,7 +20,7 @@ export default function IntakeForm() {
   const { doctorName } = useSelector(mapState);
   const [indicatorLoad, setIndicatorLoad] = useState(false);
   const [help, setHelp] = useState(false);
-  const [help2, setHelp2] = useState(false);
+  const [help2, setHelp2] = useState(true);
   const [modalHome, setModalHome] = useState(false);
   const [modalBack, setModalBack] = useState(false);
 
@@ -1105,6 +1105,49 @@ export default function IntakeForm() {
           <p className="submit-text">Submit</p>
         </div>
       </div>
+      {/* Success Model */}
+      {help && (
+        <div className="success-model-intakeform shadow1">
+          <p
+            className="intake-card-title3"
+            style={{
+              textAlign: "center",
+              marginTop: "20px",
+              marginBottom: "100px",
+              fontSize: "20px",
+            }}
+          >
+            Your details have been submitted Successfully
+          </p>
+          <div className="backhomeBtn" onClick={() => navigate("/home")}>
+            <p className="backhomeText">Back home</p>
+          </div>
+        </div>
+      )}
+      {/* close Model */}
+      {help2 && (
+        <div className="success-model-intakeform shadow1">
+          <p
+            className="intake-card-title3"
+            style={{
+              textAlign: "center",
+              marginTop: "20px",
+              marginBottom: "100px",
+              fontSize: "20px",
+            }}
+          >
+            You can only back to the home page
+          </p>
+          <div className="intakeForm-concon">
+            <div className="backhomeBtn" onClick={() => navigate(-1)}>
+              <p className="backhomeText">Back Home</p>
+            </div>
+            <div className="backhomeBtn" onClick={() => setHelp2(false)}>
+              <p className="backhomeText">Cancel</p>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

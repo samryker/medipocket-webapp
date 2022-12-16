@@ -164,7 +164,7 @@ export default function Describe() {
         <div style={{ alignItems: "center", width: "100%", marginBottom: 50 }}>
           <div>
             <p className="age-title1">Select symptoms</p>
-            <p className="age-title2">
+            <p className="age-cardTitle2">
               Please describe in your own words or select symptoms from list
             </p>
           </div>
