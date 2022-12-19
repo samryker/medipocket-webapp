@@ -180,7 +180,11 @@
 }
 /* country */
 .country-flag-container {
-    margin: 100px 0;
+    margin: 20px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .country-parag {
     color: #000000;
@@ -195,6 +199,12 @@
     margin: 20px 0;
     line-height: 29px;
     text-align: center;
+}
+.flag-style{
+    /* width: 60px; */
+    height: 30px;
+    object-fit: contain;
+    border-radius: 8px;
 }
 /* describe */
 .describe-title1 {

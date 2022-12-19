@@ -20,9 +20,7 @@ export default function IntakeForm() {
   const { doctorName } = useSelector(mapState);
   const [indicatorLoad, setIndicatorLoad] = useState(false);
   const [help, setHelp] = useState(false);
-  const [help2, setHelp2] = useState(true);
-  const [modalHome, setModalHome] = useState(false);
-  const [modalBack, setModalBack] = useState(false);
+  const [help2, setHelp2] = useState(false);
 
   const [codeFromUser, setCodeFromUser] = useState("");
   const [phoneVerified, setPhoneVerified] = useState(false);

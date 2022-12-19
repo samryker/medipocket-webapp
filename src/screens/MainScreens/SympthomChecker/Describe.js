@@ -15,7 +15,7 @@ export default function Describe() {
   const [selected, setSelected] = useState([]);
   const [selectError, setSelectError] = useState("");
   const getPredictive = async () => {
-    await fetch("https://apiscsandbox.isabelhealthcare.com/predictive-p", {
+    await fetch("https://apiscsandbox.isabelhealthcare.com/predictive-text", {
       method: "GET",
       headers: {
         Accept: "application/json",
@@ -35,7 +35,7 @@ export default function Describe() {
       });
   };
   useEffect(() => {
-    fetch("https://apiscsandbox.isabelhealthcare.com/predictive-p", {
+    fetch("https://apiscsandbox.isabelhealthcare.com/predictive-text", {
       method: "GET",
       headers: {
         Accept: "application/json",

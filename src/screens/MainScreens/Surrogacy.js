@@ -398,7 +398,7 @@ export default function Surrogacy() {
         {/* Section 6 */}
         <div
           className="surrogacy-section2-container"
-          style={{ marginTop: "20px", marginBottom: "100px" }}
+          style={{ marginTop: "20px", paddingBottom: "150px" }}
         >
           <div
             className="surrogacy-section2-container-content"
@@ -411,7 +411,7 @@ export default function Surrogacy() {
               Parenthood is for Everyone
             </p>
           </div>
-          <div className="surrogacy-section6-container-row last-surrogacy-margin">
+          <div className="surrogacy-section6-container-row">
             <div
               className="surrogacy-section6-container-row-item shadowHome"
               onClick={() => navigate("/intakeForm")}
