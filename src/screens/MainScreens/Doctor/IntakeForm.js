@@ -26,6 +26,10 @@ export default function IntakeForm() {
 
   const [codeFromUser, setCodeFromUser] = useState("");
   const [phoneVerified, setPhoneVerified] = useState(false);
+  // verifiedIsGood = 0 means not clicked to verify
+  // verifiedIsGood = 1 means clicked and true
+  // verifiedIsGood = 2 means clicked and false invalid code
+  const [verifiedIsGood, setVerifiedIsGood] = useState(0);
   const [errorsOfUser, setErrorsOfUser] = useState("");
 
   // Inputs
@@ -99,20 +103,27 @@ export default function IntakeForm() {
   // -------- New Code For Firebase OTP Start Here --------
 
   const verifyOTP = (e) => {
-    let otp = e.target.value;
+    e.preventDefault();
+    // let otp = e.target.value;
     // setotp(otp);
-    setCodeFromUser(e.target.value);
-    if (otp.length === 6) {
+    // setCodeFromUser(e.target.value);
+    if (codeFromUser.length === 6) {
       // Verify OTP
       let confirmationResult = window.confirmationResult;
       confirmationResult
-        .confirm(otp)
+        .confirm(codeFromUser)
         .then((result) => {
-          const user = result.user;
+          console.log("result success =>", result, codeFromUser);
+          setVerifiedIsGood(1);
+          // const user = result.user;
         })
         .catch((e) => {
           console.log("error form confirmationResult =>", e);
+          console.log("codeFromUser", codeFromUser);
+          setVerifiedIsGood(2);
         });
+    } else {
+      console.log("Invalid OTP");
     }
   };
   const generateRecaptcha = () => {
@@ -495,6 +506,7 @@ export default function IntakeForm() {
                   </>
                 ) : (
                   <input
+                    disabled={verifiedIsGood !== 0}
                     className="intake-input"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
@@ -504,6 +516,7 @@ export default function IntakeForm() {
 
                 {phone.length > 10 && (
                   <button
+                    disabled={verifiedIsGood !== 0}
                     style={{
                       width: "80px",
                       backgroundColor: "#384062",
@@ -536,13 +549,53 @@ export default function IntakeForm() {
                 <div id="recaptcha-container"></div>
               </form>
               {phoneVerified && (
-                <input
-                  className="intake-input"
-                  value={codeFromUser}
-                  onChange={(e) => verifyOTP(e)}
-                  placeholder="Code"
-                />
+                <div style={{ position: "relative" }}>
+                  <form action="" onSubmit={verifyOTP}>
+                    <input
+                      disabled={verifiedIsGood !== 0}
+                      className="intake-input"
+                      value={codeFromUser}
+                      onChange={(e) => setCodeFromUser(e.target.value)}
+                      placeholder="Code"
+                    />
+                    <button
+                      disabled={verifiedIsGood !== 0}
+                      style={{
+                        width: "auto",
+                        backgroundColor:
+                          verifiedIsGood === 0
+                            ? "#384062"
+                            : verifiedIsGood === 1
+                            ? "#4BB543"
+                            : "#FF0000 ",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        padding: "7.5px 15px 7.5px 15px",
+                        position: "absolute",
+                        top: errorsOfUser.length > 0 ? 22 : 20,
+                        right: 4,
+                        borderRadius: "8px",
+                        cursor: "pointer",
+                        //*
+                        fontSize: 16,
+                        color: "#ffffff",
+                        // padding: "0px",
+                      }}
+                      // id="sign-in-button"
+                      // onClick={handleVerifyPhone}
+                      type="submit"
+                    >
+                      {verifiedIsGood === 0
+                        ? "Verify OTP"
+                        : verifiedIsGood === 1
+                        ? "Valid ✓"
+                        : "Invalid ✘"}
+                    </button>
+                  </form>
+                </div>
               )}
+
               {phoneError.length === 0 ? null : (
                 <p className="intake-error">{phoneError}</p>
               )}

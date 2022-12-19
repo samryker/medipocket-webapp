@@ -33,6 +33,7 @@ import { useSelector } from "react-redux";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import Bottomtab from "./screens/Components/Bottomtab";
 import TopUsaHospitals from "./screens/MainScreens/TopUsaHospitals";
+import PaytmLogin from "./screens/MainScreens/PaytmLogin";
 
 const cache = new InMemoryCache();
 // Initialize Apollo Client
@@ -90,6 +91,7 @@ function App() {
             <Route path="doctorPayment" element={<DoctorPayment />} />
             <Route path="beforecall" element={<BeforeCall />} />
             <Route path="call" element={<Call />} />
+            <Route path="paytmTest" element={<PaytmLogin />} />
           </Route>
         </Routes>
       </BrowserRouter>
