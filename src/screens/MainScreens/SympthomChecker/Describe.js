@@ -46,7 +46,6 @@ export default function Describe() {
     })
       .then((response) => response.json())
       .then((res) => {
-        console.log("response => ", res);
         if (res?.predictive_text) setPredictive(res.predictive_text);
       })
       .catch((error) => {

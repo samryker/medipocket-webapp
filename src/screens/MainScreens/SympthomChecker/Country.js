@@ -1454,9 +1454,9 @@ const isabelCountries = [
 const icons = [
   {
     url: process.env.PUBLIC_URL + "/icons/india_flag.png",
-    name: "india"
-  }
-] 
+    name: "india",
+  },
+];
 
 const mapState = ({ user }) => ({
   pregnant: user.pregnant,
@@ -1504,7 +1504,7 @@ export default function Country() {
     )
       .then((response) => response.json())
       .then((res) => {
-        console.log('country res from isabel => ', res)
+        console.log("country res from isabel => ", res);
         setApiCountries(res.countries.country);
       })
       .catch((error) => {
@@ -1531,8 +1531,10 @@ export default function Country() {
       if (pregnant !== undefined) {
         newpregnant = pregnant;
       }
-      dispatch(updateSympthomCountry(newCountryObj.country_id));
-      dispatch(updateSympthomRegion(newCountryObj.region_id));
+      // dispatch(updateSympthomCountry(newCountryObj.country_id));
+      // dispatch(updateSympthomRegion(newCountryObj.region_id));
+      dispatch(updateSympthomCountry("97"));
+      dispatch(updateSympthomRegion("10"));
       navigate("/describe");
     } else {
       setSelectError("* Select a gender is Required");
@@ -1583,14 +1585,18 @@ export default function Country() {
             marginTop: 50,
           }}
         >
-          <div style={{ justifyContent: "center", alignItems: "center" }} >
+          <div style={{ justifyContent: "center", alignItems: "center" }}>
             <p className="age-title1">Select Country</p>
             <p className="age-title2">
               Please select the country of residance or recently visited
             </p>
           </div>
           <div className="country-flag-container">
-            <img src={icons[0].url} alt={icons[0].name} className="flag-style" />
+            <img
+              src={icons[0].url}
+              alt={icons[0].name}
+              className="flag-style"
+            />
           </div>
           {/* <p className="country-parag">Press on the flag to select a country</p> */}
           {countryState !== null && (

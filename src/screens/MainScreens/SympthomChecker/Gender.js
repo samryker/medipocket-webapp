@@ -31,20 +31,20 @@ export default function Gender() {
     setSelected("f");
   };
   const handleSubmit = () => {
-    console.log("age from gender => ", age, typeof age);
     if (selected.length !== 0) {
       if (
-        (age === "4" ||
-          age === "7" ||
-          age === "5" ||
-          age === "8" ||
-          age === "9") &&
-        selected === "f"
+        age === "4" ||
+        age === "7" ||
+        age === "5" ||
+        age === "8" ||
+        age === "9"
       ) {
         dispatch(updateSympthomGender(selected));
-        navigate("/pregnant");
-      } else {
-        navigate("/country");
+        if (selected === "f") {
+          navigate("/pregnant");
+        } else {
+          navigate("/country");
+        }
       }
     } else {
       setSelectError("* Select a gender is Required");

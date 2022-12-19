@@ -225,7 +225,7 @@
     align-items: center;
     border-radius: 50px;
     background-color: #ffffff;
-    padding:  8px 15px;
+    padding: 6px 8px;
     margin: 8px;
 }
 .descibe-wordStyle2 {
@@ -240,6 +240,12 @@
 .describe-word-style2{
     color: #B2D3F6;
     font-size: 10px;
+    margin: 2px 8px;
+}
+.describe-word-style{
+    color: #6E8FA3;
+    font-size: 12px;
+    margin: 2px 8px;
 }
 .describe-plus-icon{
     width: 15px;
@@ -261,7 +267,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 15px 20px;
+    padding: 8px 20px;
     border-radius: 8px;
     margin-bottom: 20px;
     width: 100%;
@@ -287,8 +293,8 @@
     margin-right: 10px;
 }
 .describe-add-btn-icon {
-    width: 25px;
-    height: 25px;
+    width: 18px;
+    height: 18px;
     object-fit: contain;
 }
 /* Result */
@@ -307,22 +313,22 @@
     margin: 20px 0;
 }
 .result-diagnose-container {
-    width: 80%;
+    width: 95%;
     padding-bottom: 0px;
 }
 .result-title3 {
     color: #384062;
-    font-size: 18px;
-    font-weight: 900;
+    font-size: 20px;
+    font-weight: 800;
     margin: 0;
     text-align: left;
-    margin-bottom: 0;
+    margin-bottom: 5px;
     margin-top: 15px;
 }
 .result-title4 {
     color: #6E8FA3;
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 500;
     margin: 0;
     text-align: left;
     margin-bottom: 20px;
@@ -337,10 +343,10 @@
     text-align: left;
 }
 .result-red-flag {
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
     object-fit: contain;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
 }
 .result-relevant {
     background-color: #40e0d0;
@@ -355,6 +361,7 @@
 .result-relevant-title {
     font-size: 20px;
     color: #ffffff;
+    margin: 5px 0;
 }
 .result-loader-container {
     display: flex;
@@ -391,6 +398,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 50px;
 }
 .result-red-flag-icon {
     width: 25px;

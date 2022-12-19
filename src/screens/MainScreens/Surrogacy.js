@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./styles.css";
 import { IoMdArrowBack } from "react-icons/io";
+import PrimaryButton from "../Components/PrimaryButton";
 
 const icons = [
   {
@@ -69,7 +70,7 @@ const icons = [
 export default function Surrogacy() {
   const navigate = useNavigate();
   return (
-    <div className="age-container" style={{ backgroundColor: "#ffffff" }}>
+    <div className="age-container">
       <div className="home-subContainer">
         {/* Header */}
         <div className="header-surrogacy">
@@ -80,7 +81,10 @@ export default function Surrogacy() {
           <div style={{ width: "20px" }} />
         </div>
         {/* section 1 */}
-        <div className="surrogacy-section1-container" style={{ marginTop: "40px" }}>
+        <div
+          className="surrogacy-section1-container"
+          style={{ marginTop: "40px" }}
+        >
           <div className="surrogacy-section1-container-content">
             <div className="surrogacy-section1-container-img-container shadowHome">
               <img
@@ -319,21 +323,10 @@ export default function Surrogacy() {
         </div>
 
         {/* Section 3 */}
-        <div>
-          <button className="greenBtn shadowHome">
-            <img
-              src={process.env.PUBLIC_URL + "/icons/bti1.png"}
-              alt=""
-              className="iconImg"
-            />
-            <p> Free USA Surrogacy Consultation </p>
-            <img
-              src={process.env.PUBLIC_URL + "/icons/rightarrow.png"}
-              alt=""
-              className="arraowImg"
-            />
-          </button>
-        </div>
+        <PrimaryButton
+          icon={process.env.PUBLIC_URL + "/icons/bti1.png"}
+          name="Free USA Surrogacy Consultation"
+        />
         {/* Section 4 */}
         <div
           className="surrogacy-section2-container"
@@ -380,21 +373,10 @@ export default function Surrogacy() {
           </div>
         </div>
         {/* Section 5 */}
-        <div>
-          <button className="greenBtn shadowHome">
-            <img
-              src={process.env.PUBLIC_URL + "/icons/bti2.png"}
-              alt=""
-              className="iconImg"
-            />
-            <p> Let Us Bring Your Baby Home </p>
-            <img
-              src={process.env.PUBLIC_URL + "/icons/rightarrow.png"}
-              alt=""
-              className="arraowImg"
-            />
-          </button>
-        </div>
+        <PrimaryButton
+          icon={process.env.PUBLIC_URL + "/icons/bti2.png"}
+          name="Let Us Bring Your Baby Home"
+        />
         {/* Section 6 */}
         <div
           className="surrogacy-section2-container"

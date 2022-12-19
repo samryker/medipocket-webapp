@@ -10,8 +10,8 @@ const mapState = ({ user }) => ({
   age: user.age,
   gender: user.gender,
   pregnant: user.pregnant,
-  country_id: user.country_id,
-  region_id: user.region_id,
+  country: user.country,
+  region: user.region,
   describe: user.describe,
 });
 
@@ -39,7 +39,7 @@ export default function Result() {
   const { data, loading } = useQuery(DOCTOR_QUERY);
   const [modalVisible, setModalVisible] = useState(true);
 
-  const { doctorD, age, gender, pregnant, country_id, region_id, describe } =
+  const { doctorD, age, gender, pregnant, country, region, describe } =
     useSelector(mapState);
   const [result, setResult] = useState(null);
   const [showNote, setShowNote] = useState(true);
@@ -92,22 +92,45 @@ export default function Result() {
   const [customDoctor2, setCustomDoctor2] = useState(null);
   const getResult = async () => {
     setTimeout(() => {
-      if (!loadDone) {
-        console.log("here lien 114 ", loadDone);
+      if (!loadDone && !result) {
         setLoadCanceled(true);
       }
     }, 10000);
+    // await fetch(
+    //   `https://apisc.isabelhealthcare.com/v2/ranked_differential_diagnoses?specialties=28&dob=${age}&sex=${gender}&pregnant=${
+    //     pregnant === "_" ? "" : pregnant
+    //   }&region=${region_id}&country_id=${country_id}&querytext=${describe}&suggest=Suggest+Differe
+    // ntial+Diagnosis&flag=sortbyRW_advanced&searchType=0&web_service=json`,
+    //   {
+    //     method: "GET",
+    //     headers: {
+    //       Accept: "application/json",
+    //       "Content-Type": "application/json",
+    //       Authorization: `nIWd9Dad9cJ9PJnrML1B92N4jWu3C76n`,
+    //       // Authorization: `nIWd9Dad9cJ9PJnrML1B92N4jWu3C76n`,
+    //       // Authorization: `${ISABELL_API_KEY}`,
+    //     },
+    //   }
+    // )
+    console.log("age => ", age);
+    console.log("gender => ", gender);
+    console.log("pregnant => ", pregnant);
+    console.log("region => ", region);
+    console.log("country => ", country);
+    console.log("describe => ", describe);
+    console.log("==================");
+
     await fetch(
-      `https://apisc.isabelhealthcare.com/v2/ranked_differential_diagnoses?specialties=28&dob=${age}&sex=${gender}&pregnant=${
-        pregnant === "_" ? "" : pregnant
-      }&region=${region_id}&country_id=${country_id}&querytext=${describe}&suggest=Suggest+Differe
+      `https://apiscsandbox.isabelhealthcare.com/v2/ranked_differential_diagnoses?specialties=28&dob=${age}&sex=${gender}&pregnant=${
+        pregnant === "_" || pregnant === null ? "" : pregnant
+      }&region=${region}&country_id=${country}&querytext=${describe}&suggest=Suggest+Differe
     ntial+Diagnosis&flag=sortbyRW_advanced&searchType=0&web_service=json`,
       {
         method: "GET",
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
-          Authorization: `U7IdoNJWWzV75NZGxVGJ8KE7p0W5A1m2`,
+          Authorization: `nIWd9Dad9cJ9PJnrML1B92N4jWu3C76n`,
           // Authorization: `nIWd9Dad9cJ9PJnrML1B92N4jWu3C76n`,
           // Authorization: `${ISABELL_API_KEY}`,
         },
@@ -115,9 +138,10 @@ export default function Result() {
     )
       .then((response) => response.json())
       .then((res) => {
+        console.log("res from result => ", res);
         setLoadDone(true);
         setResult(
-          res.diagnoses_checklist.query_result_details.total_results_returned
+          res.diagnoses_checklist.query_result_details?.total_results_returned
         );
         if (res?.diagnoses_checklist?.diagnoses?.length > 9) {
           setDiagnose1(res.diagnoses_checklist.diagnoses[0].diagnosis_name);
@@ -284,9 +308,11 @@ export default function Result() {
     getResult();
   }, []);
   const handleMoreDoctors1 = () => {
-    // navigation.navigate("doctorList", { filter: "*" });
-    navigate("doctorList");
+    navigate("/doctorList");
   };
+  useEffect(() => {
+    console.log("diagnose1 && data => ", diagnose1, data);
+  }, [diagnose1, data]);
   return (
     <div className="age-container" style={{ height: "100vh" }}>
       {/* subContainer */}
@@ -317,7 +343,11 @@ export default function Result() {
           }}
         >
           <div className="result-header-container">
-            <p className="age-cardTitle2">Possible Causes in just 2 minutes</p>
+            {!diagnose1 && (
+              <p className="age-cardTitle2">
+                Possible Causes in just 2 minutes
+              </p>
+            )}
             <img
               className="result-light-icon"
               src={process.env.PUBLIC_URL + "/icons/light.png"}
@@ -346,7 +376,7 @@ export default function Result() {
               </p>
             </div>
           )}
-          {diagnose1 && data ? (
+          {diagnose1 ? (
             <>
               <div className="result-diagnose-container">
                 <div className="result-diagnose-container">

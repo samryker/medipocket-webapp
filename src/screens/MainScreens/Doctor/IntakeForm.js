@@ -365,43 +365,46 @@ export default function IntakeForm() {
     if (appointment2) appointment += "4-7 Days";
     if (appointment3) appointment += "Morning India time: 5.30am - 10am";
     if (appointment4) appointment += "Evening India time: 5.30pm - 12am";
-    if (phone.length === 0 || f3.length === 0) {
+    if (phone.length === 0 || verifiedIsGood !== 1 || f3.length === 0) {
       setErrorsOfUser(
-        "Phone Number and Reason for consultation are required! PLease try again!"
+        "Phone Number verification and Reason for consultation are required! PLease try again!"
       );
       // setHelp2(true);
     } else {
+      let user = {
+        type_form: "intake_form",
+        doc_name: doctorName ? doctorName : "_blank",
+        name: name ? name : "_blank",
+        birth: birth ? birth : "_blank",
+        gender: gender ? gender : "_blank",
+        phone_number: phone,
+        patient_medical_history: f4 ? f4: "_blank",
+        father: father ? father : "_blank",
+        mother: mother ? mother : "_blank",
+        brother: brother ? brother : "_blank",
+        sister: sister ? sister : "_blank",
+        comments: "_blank",
+        current_medication: medication ? medication : "_blank",
+        list_allergies: allergies ? allergies : "_blank",
+        healthy_unhealthy: `Exercices: ${exercices}, Alcohol ${alcohol}, Smoke: ${smoke}.`,
+        reason_for_consultation: f3 ? f3 : "_blank",
+        question1: q1 ? q1 : "_blank",
+        question2: q2 ? q2 : "_blank",
+        question3: q3 ? q3 : "_blank",
+        appointment: appointment ? appointment : "_blank",
+      };
+      console.log("user ::: ", user);
       await fetch("https://app.medipocket.world/intake_form/", {
         method: "POST",
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          type_form: "intake_form",
-          doc_name: doctorName,
-          name: name,
-          birth: birth,
-          gender: gender,
-          phone_number: phone,
-          patient_medical_history: f4,
-          father: father,
-          mother: mother,
-          brother: brother,
-          sister: sister,
-          comments: "",
-          current_medication: medication,
-          list_allergies: allergies,
-          healthy_unhealthy: `Exercices: ${exercices}, Alcohol ${alcohol}, Smoke: ${smoke}.`,
-          reason_for_consultation: f3,
-          question1: q1,
-          question2: q2,
-          question3: q3,
-          appointment: appointment,
-        }),
+        body: JSON.stringify(user),
       })
         .then((response) => response.text())
         .then((res) => {
+          console.log("res from intakeForm => ", res);
           setIndicatorLoad(false);
           setHelp(true);
           // navigation.navigate("homePage");
