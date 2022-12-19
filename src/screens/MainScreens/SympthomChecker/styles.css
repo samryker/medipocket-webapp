@@ -111,7 +111,7 @@
     margin-bottom: 10px;
 }
 .submit-container {
-    position: absolute;
+    /* position: absolute; */
     bottom: 0px;
     width: 30%;
     margin: 20px 0;

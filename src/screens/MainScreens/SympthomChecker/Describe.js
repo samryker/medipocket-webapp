@@ -40,7 +40,7 @@ export default function Describe() {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
-        Authorization: `U7IdoNJWWzV75NZGxVGJ8KE7p0W5A1m2`,
+        Authorization: `nIWd9Dad9cJ9PJnrML1B92N4jWu3C76n`,
         // Authorization: `${ISABELL_API_KEY}`,
       },
     })
@@ -205,7 +205,7 @@ export default function Describe() {
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search"
               styles={style}
-              disabled={predictive.length > 0 ? false : true}
+              // disabled={predictive.length > 0 ? false : true}
             />
             <div
               className="describe-add-btn-container"
