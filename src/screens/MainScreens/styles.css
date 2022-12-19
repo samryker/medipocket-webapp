@@ -178,10 +178,11 @@
     display: flex;
     flex: 1;
     flex-direction: column;
-    background-color: #f0f4f7;
     padding: 0 30%;
-    height: 100%;
+    /* height: 100%; */
+    height: 100vh !important;
     position: relative;
+    padding-bottom: 100px !important;
 }
 .intake-card {
     width: 80%;
@@ -583,5 +584,138 @@ color: #ffffff;
         margin-left: 10px;
     }
 }
-
+@media only screen and (max-width: 480px) {
+    .age-container {
+        padding: 0 20px !important;
+    }
+    .header-surrogacy {
+        height: 40px;
+        margin-bottom: 15px;
+        padding: 10px;
+    }
+    .home-logo-logo-container {
+        padding: 15px 0;
+    }
+    .homeTitle {
+        text-align: left;
+        font-size: 24px;
+        padding-bottom: 25px;
+        margin-bottom: 20px;
+    }
+    .homeComponent {
+        width: 45% !important;
+        height: 160px !important;
+        margin-bottom: 25px;
+    }
+    .greenBtn p {
+        font-size: 14px;
+    }
+    .surrogacy-section1-container-img-container {
+        width: 160px;
+    }
+    .surrogacy-section1-container-img {
+        width: 160px;
+    }
+    .surrogacy-section1-container-desc {
+        width: 160px;
+    }
+    .surrogacy-section1-container-desc-title1 {
+        font-size: 18px;
+        line-height: 14px;
+        margin-bottom: 20px;
+    }
+    .surrogacy-section1-container-desc-content {
+        padding: 25px 0;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .surrogacy-section1-container-desc-title4 {
+        font-size: 12px;
+        line-height: 16px;
+        margin-bottom: 5px;
+    }
+    .thirdBlocElement {
+        width: 100px;
+        margin: 10px;
+        height: 100px;
+    }
+    .thirdBlocElement .content h4{
+        font-size: 12px;
+    }
+    .thirdImg{
+        width: 30px;
+        height: 30px;
+    }
+    .fourthBlocElement {
+        width: 140px;
+        padding: 15px 0;
+    }
+    .fourthBlocElement .content h4{
+        font-size: 12px;
+    }
+    .fourthBlocElement .content p{   
+        font-size: 12px;
+    }
+    /* doctors */
+    .header-header {
+        height: 40px;
+        padding: 5px 10px;
+    }
+    .intake-card {
+        width: 95% !important;
+        padding: 15px !important;
+        margin: 15px;
+    }
+    .doctors-card-title {
+        font-size: 28px;
+    }
+    .doctors-list-icons {
+        margin: 15px 0;
+    }
+    .doctors-list-icon-container {
+        width: 50px !important;
+        height: 50px !important;
+    }
+    .doctors-list-icon {
+        width: 20px;
+        height: 20px;
+    }
+    /* doctor list */
+    .usa-specialist {
+        font-size: 18px;
+    }
+    .searchMain {
+        padding: 10px !important;
+    }
+    .searchContainer {
+        padding: 0 10px;
+    }
+    .saerch {
+        width: 15px;
+        height: 15px;
+    }
+    .searchInput {
+        font-size: 14px !important;
+        margin-right: 10px;
+    }
+    .searchInput1 {
+        font-size: 14px !important;
+    }
+    .noChatText1{
+    font-size: 18px !important;
+    }
+    .noChatText2 {
+        font-size: 12px !important;
+    }
+    /* surrogacy */
+    .surrogacy-section2-container-title1 {
+        font-size: 18px;
+    }
+    .green-underline {
+        width: 60px;
+    }
+    .surrogacy-section2-container-title2{
+        font-size: 12px;
+    }
+}
 

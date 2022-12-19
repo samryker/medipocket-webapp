@@ -73,7 +73,7 @@ export default function Drawer() {
       >
         <img
           className="drawer-imgStyle"
-          src="https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/assets%2Flogo.png?alt=media&token=fc05e438-598e-47ea-8858-9bc564f5f989"
+          src={process.env.PUBLIC_URL + "/icons/drawer/logoMedi.png"}
           alt="logo"
         />
       </div>

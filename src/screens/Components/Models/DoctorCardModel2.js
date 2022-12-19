@@ -58,7 +58,7 @@ export default function DoctorCardModel2(props) {
                   <img src={img} alt="img" className="doctor-avatar2" />
                 ) : (
                   <img
-                    src="https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/assets%2Ficons%2Fplaceholder.png?alt=media&token=50c889a1-fb4c-4e92-af36-034f6a9f6cdf"
+                    src={process.env.PUBLIC_URL + "/icons/placeholder.png"}
                     alt="img"
                     className="doctor-avatar2"
                   />
@@ -77,7 +77,7 @@ export default function DoctorCardModel2(props) {
               <div>
                 <p
                   className="doctor-card-content-title1"
-                  style={{ marginBottom: 20, fontSize: 20 }}
+                  style={{ marginBottom: 20, fontSize: "14px !important" }}
                 >
                   {name}
                 </p>
@@ -89,7 +89,7 @@ export default function DoctorCardModel2(props) {
                     display: "flex",
                     flexDirection: "row",
                     alignItems: "center",
-                    marginBottom: 10,
+                    marginTop: "20px",
                   }}
                 >
                   <p
@@ -101,10 +101,10 @@ export default function DoctorCardModel2(props) {
                   <p
                     style={{
                       textAlign: "left",
-                      fontSize: 18,
+                      fontSize: 14,
                       fontWeight: "700",
                       color: "#f9b664",
-                      lineHeight: "10px",
+                      marginTop: "5px",
                     }}
                   >
                     {fees !== "--" ? `$${fees}` : fees}
@@ -126,10 +126,10 @@ export default function DoctorCardModel2(props) {
                   <p
                     style={{
                       textAlign: "left",
-                      fontSize: 18,
+                      fontSize: 14,
                       fontWeight: "700",
                       color: "#f660be",
-                      lineHeight: "10px",
+                      marginTop: "0px",
                     }}
                   >
                     {experience !== "--" ? `${experience}yrs+` : experience}

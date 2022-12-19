@@ -40,15 +40,15 @@ export default function Header(props) {
                 >
                   <img
                     className="header-imgStyle"
-                    src="https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/assets%2Flogo.png?alt=media&token=fc05e438-598e-47ea-8858-9bc564f5f989"
+                    src={process.env.PUBLIC_URL + "/icons/drawer/logoMedi.png"}
                     alt="logo"
                   />
                 </div>
               )}
             </>
           )}
-          {isProfile ? (
-            <div style={{ width: 20 }}></div>
+          <div style={{ width: 20 }}></div>
+          {/* {isProfile ? (
           ) : (
             <div
               className="header-headerSub"
@@ -56,7 +56,7 @@ export default function Header(props) {
             >
               <IoMdMenu className="header-iconStyle" />
             </div>
-          )}
+          )} */}
         </>
       )}
     </div>

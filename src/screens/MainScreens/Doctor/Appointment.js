@@ -17,7 +17,10 @@ export default function Appointment() {
     navigate("/intakeForm");
   };
   return (
-    <div className="age-container">
+    <div
+      className="age-container"
+      style={{ paddingBottom: "150px !important" }}
+    >
       <div className="home-subContainer">
         <Header
           navigate={navigate}
@@ -40,12 +43,17 @@ export default function Appointment() {
         navigate={navigate}
       />
       <DoctorAboutCard name="About Doctor" desc={appointment.info} />
-      <div
-        onClick={handleIntake}
-        className="doctors-relevant"
-        style={{ backgroundColor: "#2758E4", cursor: "pointer" }}
-      >
-        <p className="doctors-relevant-text">Book Appointment</p>
+      <div style={{ paddingBottom: "100px" }}>
+        <div
+          onClick={handleIntake}
+          className="doctors-relevant"
+          style={{
+            backgroundColor: "#2758E4",
+            cursor: "pointer",
+          }}
+        >
+          <p className="doctors-relevant-text">Book Appointment</p>
+        </div>
       </div>
     </div>
   );

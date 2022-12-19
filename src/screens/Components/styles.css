@@ -4,9 +4,8 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    height: 10%;
-    min-height: 60px;
-    padding: 20px 50px;
+    height: 50px;
+    padding: 10px;
 }
 .header-headerSub {
     display: flex;
@@ -126,7 +125,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 80%;
+    /* width: 80%; */
     border-radius: 25px;
     background-color: #f0f4f7;
     padding: 30px 20px;
@@ -223,20 +222,20 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 80px;
+    width: 50px;
     background-color: #ffffff;
 }
 .boxNb {
-    font-weight: 800;
-    font-size: 26px;
-    line-height: 18px;
-    margin-top: 5px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 16px;
+    margin-top: 2px;
 }
 /* DoctorCrdModel2 */
 .doctorCard2 {
     position: relative;
     margin-top: 50px;
-    width: 95%;
+    width: 90%;
     margin-bottom: 20px;
 }
 .imgContainer {
@@ -288,3 +287,19 @@
     margin-top: 1px;
 }
 /* BottomTab */
+@media only screen and (max-width: 480px) {
+    .doctor-avatar2 {
+        width: 75px;
+        height: 75px;
+    }
+    .doctor-card-content-title1{
+        font-size: 18px !important;
+        margin-top: 20px !important;
+    }
+    .doctor-card-content-title2{
+        font-size: 12px !important;
+        margin-top: 0px !important;
+    }
+}
+
+

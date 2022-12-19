@@ -69,7 +69,7 @@ export default function Gender() {
       <div className="age-scrollContainer">
         <p className="age-cardTitle2">Welcome to the DR. AI</p>
         <img
-          src="https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/assets%2Ficons%2Fsympthom%2Fequality.png?alt=media&token=47681ef1-3f78-499e-a60c-0a0bd41773db"
+          src={process.env.PUBLIC_URL + "/icons/sympthoms/equality.png"}
           alt="gender"
           className="gender-img"
         />
@@ -85,7 +85,7 @@ export default function Gender() {
             onClick={handleMale}
           >
             <img
-              src="https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/assets%2Ficons%2Fsympthom%2Fmale.png?alt=media&token=33003d87-4a93-4d0b-a26c-0222cef18505"
+              src={process.env.PUBLIC_URL + "/icons/sympthoms/male.png"}
               alt="male"
               className="gender-icon-style"
             />
@@ -96,7 +96,7 @@ export default function Gender() {
             onClick={handleFemale}
           >
             <img
-              src="https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/assets%2Ficons%2Fsympthom%2Ffemale.png?alt=media&token=83529e04-433a-4b5c-b9a9-f7156aea7b0d"
+              src={process.env.PUBLIC_URL + "/icons/sympthoms/female.png"}
               alt="female"
               className="gender-icon-style"
             />

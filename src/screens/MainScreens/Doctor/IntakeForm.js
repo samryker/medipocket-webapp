@@ -21,8 +21,6 @@ export default function IntakeForm() {
   const [indicatorLoad, setIndicatorLoad] = useState(false);
   const [help, setHelp] = useState(false);
   const [help2, setHelp2] = useState(false);
-  const [modalHome, setModalHome] = useState(false);
-  const [modalBack, setModalBack] = useState(false);
 
   const [codeFromUser, setCodeFromUser] = useState("");
   const [phoneVerified, setPhoneVerified] = useState(false);
@@ -429,7 +427,7 @@ export default function IntakeForm() {
           </div>
           <div className="age-titleContainer">
             <img
-              src="https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/assets%2Flogo.png?alt=media&token=fc05e438-598e-47ea-8858-9bc564f5f989"
+              src={process.env.PUBLIC_URL + "/icons/drawer/logoMedi.png"}
               className="intake-imgStyle"
               alt="logo"
             />
@@ -1158,6 +1156,49 @@ export default function IntakeForm() {
           <p className="submit-text">Submit</p>
         </div>
       </div>
+      {/* Success Model */}
+      {help && (
+        <div className="success-model-intakeform shadow1">
+          <p
+            className="intake-card-title3"
+            style={{
+              textAlign: "center",
+              marginTop: "20px",
+              marginBottom: "100px",
+              fontSize: "20px",
+            }}
+          >
+            Your details have been submitted Successfully
+          </p>
+          <div className="backhomeBtn" onClick={() => navigate("/home")}>
+            <p className="backhomeText">Back home</p>
+          </div>
+        </div>
+      )}
+      {/* close Model */}
+      {help2 && (
+        <div className="success-model-intakeform shadow1">
+          <p
+            className="intake-card-title3"
+            style={{
+              textAlign: "center",
+              marginTop: "20px",
+              marginBottom: "100px",
+              fontSize: "20px",
+            }}
+          >
+            You can only back to the home page
+          </p>
+          <div className="intakeForm-concon">
+            <div className="backhomeBtn" onClick={() => navigate(-1)}>
+              <p className="backhomeText">Back Home</p>
+            </div>
+            <div className="backhomeBtn" onClick={() => setHelp2(false)}>
+              <p className="backhomeText">Cancel</p>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

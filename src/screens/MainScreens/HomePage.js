@@ -1,71 +1,73 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import Header from "../Components/Header";
 import "./styles.css";
-import Surrogacy from "./Surrogacy";
-import { IoMdArrowBack } from "react-icons/io";
 import PrimaryButton from "../Components/PrimaryButton";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  resetFilterSuccess,
+  updateDoctorFilter,
+} from "../../redux/User/user.actions";
 
 const icons = [
   {
     name: "surrogacy 1",
-    img: "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fsurrogacy1.png?alt=media&token=40042125-f551-47c6-82b2-77c35ec33921",
+    img: process.env.PUBLIC_URL + "/icons/surrogacy/surrogacy3.png",
   },
   {
     name: "surrogacy 2",
-    img: "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fsurrogacy2.png?alt=media&token=c1f08820-3800-471d-9478-f6a704dafcd6",
+    img: process.env.PUBLIC_URL + "/icons/surrogacy/surrogacy4.png",
   },
   {
     name: "surrogacy 3",
-    img: "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fsurrogacy3.png?alt=media&token=ebc733e4-e5ea-4f70-94bf-ad2a51485de2",
+    img: process.env.PUBLIC_URL + "/icons/surrogacy/surrogacy5.png",
   },
   {
     name: "surrogacy 4",
-    img: "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fsurrogacy4.PNG?alt=media&token=17cbec1f-19f9-4cc5-b939-6112c0529969",
+    img: process.env.PUBLIC_URL + "/icons/surrogacy/surrogacy6.png",
   },
   {
     name: "surrogacy 5",
-    img: "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fsurrogacy5.PNG?alt=media&token=8c125d34-6ab1-4515-ade6-07222d0c1891",
+    img: process.env.PUBLIC_URL + "/icons/surrogacy/surrogacy7.png",
   },
   {
     name: "surrogacy 6",
-    img: "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fsurrogacy6.PNG?alt=media&token=3ce6ffdf-52c3-411c-bcc7-89041863ff1f",
+    img: process.env.PUBLIC_URL + "/icons/surrogacy/surrogacy8.png",
   },
   {
     name: "surrogacy 7",
-    img: "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fsurrogacy7.png?alt=media&token=d985f7bc-545e-411a-bdeb-09c4e421bd16",
+    img: process.env.PUBLIC_URL + "/icons/surrogacy/surrogacy9.png",
   },
   {
     name: "surrogacy 8",
-    img: "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fsurrogacy8.PNG?alt=media&token=9e197333-eb39-40ad-a15a-2710a238daef",
+    img: process.env.PUBLIC_URL + "/icons/surrogacy/surrogacy10.png",
   },
   {
     name: "surrogacy 9",
-    img: "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fsurrogacy9.PNG?alt=media&token=a953a080-36c9-47cb-817c-f1dfb5928f9b",
+    img: process.env.PUBLIC_URL + "/icons/surrogacy/surrogacy11.png",
   },
   {
     name: "surrogacy 10",
-    img: "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fsurrogacy10.PNG?alt=media&token=d302633a-8dab-4033-b0a1-2f802b128cdc",
+    img: process.env.PUBLIC_URL + "/icons/surrogacy/surrogacy12.png",
   },
   {
     name: "surrogacy 11",
-    img: "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fsurrogacy11.PNG?alt=media&token=7ac419de-c3c8-429f-9c05-1a4343566928",
+    img: process.env.PUBLIC_URL + "/icons/surrogacy/surrogacy13.png",
   },
   {
     name: "surrogacy 12",
-    img: "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fsurrogacy12.PNG?alt=media&token=6104155a-d12e-49a2-8524-e1b0f5c1b40c",
+    img: process.env.PUBLIC_URL + "/icons/surrogacy/surrogacy14.png",
   },
   {
     name: "surrogacy 13",
-    img: "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fsurrogacy13.PNG?alt=media&token=67c9981e-d228-428e-8e46-87743119fbfa",
+    img: process.env.PUBLIC_URL + "/icons/surrogacy/surrogacy15.png",
   },
   {
     name: "surrogacy 14",
-    img: "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fsurrogacy14.PNG?alt=media&token=6a2a9bb6-0ba2-4747-9300-a45258eea58c",
+    img: process.env.PUBLIC_URL + "/icons/surrogacy/surrogacy16.png",
   },
   {
     name: "surrogacy 15",
-    img: "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fsurrogacy15.PNG?alt=media&token=f80062a1-27ea-47d5-abdf-6e6b83c4bc58",
+    img: process.env.PUBLIC_URL + "/icons/surrogacy/surrogacy17.png",
   },
 ];
 const surrogacy = [
@@ -114,29 +116,29 @@ const surrogacy = [
 ];
 const hospitals1 = [
   {
-    img: "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fhospitals%2Fh1.png?alt=media&token=aad33af5-a0d1-4d9a-b304-1153e6f7d284",
+    img: process.env.PUBLIC_URL + "/icons/hospitals/h1.png",
     name: "h1",
   },
   {
-    img: "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fhospitals%2Fh2.png?alt=media&token=425ea13a-deb7-406d-ba00-d8b7c7371fa3",
+    img: process.env.PUBLIC_URL + "/icons/hospitals/h2.png",
     name: "h2",
   },
   {
-    img: "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fhospitals%2Fh3.png?alt=media&token=6e552803-ea2f-4ea1-874a-829283a6f585",
+    img: process.env.PUBLIC_URL + "/icons/hospitals/h3.png",
     name: "h3",
   },
 ];
 const hospitals2 = [
   {
-    img: "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fhospitals%2Fh4.png?alt=media&token=67f98059-0d40-4598-ac5e-ddf6d33c9d96",
+    img: process.env.PUBLIC_URL + "/icons/hospitals/h4.png",
     name: "h1",
   },
   {
-    img: "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fhospitals%2Fh5.png?alt=media&token=a1fcb186-f2bd-487c-b6c6-874315683248",
+    img: process.env.PUBLIC_URL + "/icons/hospitals/h5.png",
     name: "h2",
   },
   {
-    img: "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fhospitals%2Fh6.png?alt=media&token=ec9a3863-67fe-4499-b961-d832a0a489b6",
+    img: process.env.PUBLIC_URL + "/icons/hospitals/h6.png",
     name: "h3",
   },
 ];
@@ -192,10 +194,41 @@ const doctors = [
     place: "Los Angeles, USA",
   },
 ];
+const mapState = ({ user }) => ({
+  filterUpdateSuccess: user.filterUpdateSuccess,
+});
+
 export default function HomePage() {
   const navigate = useNavigate();
+  const { filterUpdateSuccess } = useSelector(mapState);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    if (filterUpdateSuccess) navigate("/doctorList");
+    return () => {
+      dispatch(resetFilterSuccess());
+    };
+  }, [filterUpdateSuccess]);
+
+  const handleSpec1 = () => {
+    dispatch(updateDoctorFilter("Oncology"));
+  };
+  const handleSpec2 = () => {
+    dispatch(updateDoctorFilter("cardiology"));
+  };
+  const handleSpec3 = () => {
+    dispatch(updateDoctorFilter("Neurology"));
+  };
+  const handleSpec4 = () => {
+    dispatch(updateDoctorFilter("Diseases"));
+  };
+  const handleSpec5 = () => {
+    dispatch(updateDoctorFilter("Mental"));
+  };
+  const handleSpec6 = () => {
+    dispatch(updateDoctorFilter("Fertility"));
+  };
   return (
-    <div className="age-container" style={{ backgroundColor: "#ffffff" }}>
+    <div className="age-container" style={{ padding: "15px !important" }}>
       {/* Header */}
       <div className="header-surrogacy">
         <div className="home-logo-logo-container">
@@ -320,7 +353,7 @@ export default function HomePage() {
         </div>
       </div>
       <div className="secondBlocWrapper">
-        <h2>Top USA Hospitals</h2>
+        <h2 className="homeTitle">Top USA Hospitals</h2>
         <div className="secondBlocSubWrapper">
           {hospitals1.map((item, index) => (
             <div key={index} className="secBlocElement shadowHome">
@@ -335,26 +368,86 @@ export default function HomePage() {
             </div>
           ))}
         </div>
+        <div style={{ width: "100%", height: "50px" }} />
         <PrimaryButton
-          icon="https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fhome_page%2FplusIcon.png?alt=media&token=c711231f-3471-42f3-9fa8-9b5b0f1a78ee"
+          icon={process.env.PUBLIC_URL + "/icons/plusIcon.png"}
           name="View USA Hospitals"
         />
       </div>
       <div className="thirdBlocWrapper">
-        <h2>Specialities</h2>
+        <h2 className="homeTitle">Specialities</h2>
         <div className="thirdBlocSubWrapper">
-          {specialities.map((item, index) => (
-            <div key={index} className="thirdBlocElement shadowHome">
-              <div className="content">
-                <img alt={item.name} src={item.img} className="thirdImg" />
-                <h4>{item.name}</h4>
-              </div>
+          {/* oncology */}
+          <div className="thirdBlocElement shadowHome" onClick={handleSpec1}>
+            <div className="content">
+              <img
+                alt="Oncology"
+                src={process.env.PUBLIC_URL + "/icons/i1.png"}
+                className="thirdImg"
+              />
+              <h4>Oncology</h4>
             </div>
-          ))}
+          </div>
+          {/* Cardiology */}
+          <div className="thirdBlocElement shadowHome" onClick={handleSpec2}>
+            <div className="content">
+              <img
+                alt="Cardiology"
+                src={process.env.PUBLIC_URL + "/icons/i2.png"}
+                className="thirdImg"
+              />
+              <h4>Cardiology</h4>
+            </div>
+          </div>
+          {/* Neurology */}
+          <div className="thirdBlocElement shadowHome" onClick={handleSpec3}>
+            <div className="content">
+              <img
+                alt="Neurology"
+                src={process.env.PUBLIC_URL + "/icons/i3.png"}
+                className="thirdImg"
+              />
+              <h4>Neurology</h4>
+            </div>
+          </div>
+          {/* Rare Diseases */}
+          <div className="thirdBlocElement shadowHome" onClick={handleSpec4}>
+            <div className="content">
+              <img
+                alt="Rare Diseases"
+                src={process.env.PUBLIC_URL + "/icons/i4.png"}
+                className="thirdImg"
+              />
+              <h4>Rare Diseases</h4>
+            </div>
+          </div>
+          {/* Mental Health */}
+          <div className="thirdBlocElement shadowHome" onClick={handleSpec5}>
+            <div className="content">
+              <img
+                alt="Mental Health"
+                src={process.env.PUBLIC_URL + "/icons/i5.png"}
+                className="thirdImg"
+              />
+              <h4>Mental Health</h4>
+            </div>
+          </div>
+          {/* Infertility */}
+          <div className="thirdBlocElement shadowHome" onClick={handleSpec6}>
+            <div className="content">
+              <img
+                alt="Infertility"
+                src={process.env.PUBLIC_URL + "/icons/i6.png"}
+                className="thirdImg"
+              />
+              <h4>Infertility</h4>
+            </div>
+          </div>
         </div>
+        <div style={{ width: "100%", height: "20px" }} />
       </div>
       <div className="fourthBlocWrapper">
-        <h2>Top USA Specialities</h2>
+        <h2 className="homeTitle">Top USA Specialities</h2>
         <div className="fourthBlocSubWrapper">
           {doctors.map((item, index) => (
             <div key={index} className="fourthBlocElement shadowHome">
@@ -367,15 +460,21 @@ export default function HomePage() {
             </div>
           ))}
         </div>
-        <PrimaryButton
-          icon="https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fhome_page%2FheartAnalIcon.png?alt=media&token=5e75f4b0-f093-4e7a-a9d1-12d6b6240232"
-          name="More USA Doctors"
-        />
+        <div style={{ width: "100%", height: "20px" }} />
       </div>
+      <PrimaryButton
+        icon={process.env.PUBLIC_URL + "/icons/heartAnalIcon.png"}
+        name="More USA Doctors"
+      />
       {/* section 1 */}
       <div>
-        <h2>Bring Your Baby Home</h2>
-        <div className="surrogacy-section1-container" style={{ marginTop: "40px", marginBottom: "40px" }}>
+        <h2 className="homeTitle" style={{ paddingTop: "10px" }}>
+          Bring Your Baby Home
+        </h2>
+        <div
+          className="surrogacy-section1-container"
+          style={{ marginTop: "40px", marginBottom: "40px" }}
+        >
           <div className="surrogacy-section1-container-content">
             <div className="surrogacy-section1-container-img-container shadowHome">
               <img
@@ -526,12 +625,12 @@ export default function HomePage() {
           </div>
         </div>
         <PrimaryButton
-          icon="https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/pwa_assets%2Fhome_page%2FphoneIcon.png?alt=media&token=b7504a18-c636-4458-a13c-57959a105560"
+          icon={process.env.PUBLIC_URL + "/icons/phoneIcon.png"}
           name="Book Free Call Surrogacy USA"
         />
       </div>
-      <div className="lastBloc ">
-        <h2>MediPocket World</h2>
+      <div className="lastBloc " style={{ paddingBottom: "120px" }}>
+        <h2 className="homeTitle">MediPocket World</h2>
         <div className="content shadowHome">
           <p>
             When facing life-changing illness, getting access to premium
@@ -541,6 +640,7 @@ export default function HomePage() {
           </p>
         </div>
       </div>
+      <div style={{ height: "150px !important" }} />
     </div>
   );
 }

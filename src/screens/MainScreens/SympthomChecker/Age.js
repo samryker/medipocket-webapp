@@ -118,9 +118,9 @@ export default function Age() {
         </div>
       </div>
       {/* scroll */}
-      <div className="age-scrollContainer">
+      <div className="age-scrollContainer" style={{ paddingBottom: "50px" }}>
         <p className="age-cardTitle2">Welcome to the DR. AI</p>
-        <div style={{ alignItems: "center", width: "100%", marginBottom: 50 }}>
+        <div style={{ alignItems: "center", width: "100%", marginBottom: 30 }}>
           <div>
             <p className="age-title1">Select Age Range</p>
             <p className="age-title2">Please select your age range</p>
@@ -135,7 +135,7 @@ export default function Age() {
             >
               <img
                 className="age-icon2Style"
-                src="https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/assets%2Ficons%2Fsympthom%2Fmale.png?alt=media&token=33003d87-4a93-4d0b-a26c-0222cef18505"
+                src={process.env.PUBLIC_URL + "/icons/sympthoms/male.png"}
                 alt="img"
               />
               <p className={option1 ? "age-title22" : "age-title2"}>
@@ -153,7 +153,7 @@ export default function Age() {
             >
               <img
                 className="age-icon2Style"
-                src="https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/assets%2Ficons%2Fsympthom%2Fmale.png?alt=media&token=33003d87-4a93-4d0b-a26c-0222cef18505"
+                src={process.env.PUBLIC_URL + "/icons/sympthoms/male.png"}
                 alt="img"
               />
               <p className={option2 ? "age-title22" : "age-title2"}>
@@ -171,7 +171,7 @@ export default function Age() {
             >
               <img
                 className="age-icon2Style"
-                src="https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/assets%2Ficons%2Fsympthom%2Fmale.png?alt=media&token=33003d87-4a93-4d0b-a26c-0222cef18505"
+                src={process.env.PUBLIC_URL + "/icons/sympthoms/male.png"}
                 alt="img"
               />
               <p className={option3 ? "age-title22" : "age-title2"}>
@@ -189,7 +189,7 @@ export default function Age() {
             >
               <img
                 className="age-icon2Style"
-                src="https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/assets%2Ficons%2Fsympthom%2Fmale.png?alt=media&token=33003d87-4a93-4d0b-a26c-0222cef18505"
+                src={process.env.PUBLIC_URL + "/icons/sympthoms/male.png"}
                 alt="img"
               />
               <p className={option4 ? "age-title22" : "age-title2"}>
@@ -207,7 +207,7 @@ export default function Age() {
             >
               <img
                 className="age-icon2Style"
-                src="https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/assets%2Ficons%2Fsympthom%2Fmale.png?alt=media&token=33003d87-4a93-4d0b-a26c-0222cef18505"
+                src={process.env.PUBLIC_URL + "/icons/sympthoms/male.png"}
                 alt="img"
               />
               <p className={option5 ? "age-title22" : "age-title2"}>
@@ -225,7 +225,7 @@ export default function Age() {
             >
               <img
                 className="age-icon2Style"
-                src="https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/assets%2Ficons%2Fsympthom%2Fmale.png?alt=media&token=33003d87-4a93-4d0b-a26c-0222cef18505"
+                src={process.env.PUBLIC_URL + "/icons/sympthoms/male.png"}
                 alt="img"
               />
               <p className={option6 ? "age-title22" : "age-title2"}>
@@ -243,7 +243,7 @@ export default function Age() {
             >
               <img
                 className="age-icon2Style"
-                src="https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/assets%2Ficons%2Fsympthom%2Fmale.png?alt=media&token=33003d87-4a93-4d0b-a26c-0222cef18505"
+                src={process.env.PUBLIC_URL + "/icons/sympthoms/male.png"}
                 alt="img"
               />
               <p className={option7 ? "age-title22" : "age-title2"}>
@@ -261,7 +261,7 @@ export default function Age() {
             >
               <img
                 className="age-icon2Style"
-                src="https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/assets%2Ficons%2Fsympthom%2Fmale.png?alt=media&token=33003d87-4a93-4d0b-a26c-0222cef18505"
+                src={process.env.PUBLIC_URL + "/icons/sympthoms/male.png"}
                 alt="img"
               />
               <p className={option8 ? "age-title22" : "age-title2"}>
@@ -279,11 +279,11 @@ export default function Age() {
             >
               <img
                 className="age-icon2Style"
-                src="https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/assets%2Ficons%2Fsympthom%2Fmale.png?alt=media&token=33003d87-4a93-4d0b-a26c-0222cef18505"
+                src={process.env.PUBLIC_URL + "/icons/sympthoms/male.png"}
                 alt="img"
               />
               <p className={option9 ? "age-title22" : "age-title2"}>
-                Adult 40-49 yrs
+                Adult 50-64 yrs
               </p>
             </div>
           </div>
@@ -297,7 +297,7 @@ export default function Age() {
             >
               <img
                 className="age-icon2Style"
-                src="https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/assets%2Ficons%2Fsympthom%2Fmale.png?alt=media&token=33003d87-4a93-4d0b-a26c-0222cef18505"
+                src={process.env.PUBLIC_URL + "/icons/sympthoms/male.png"}
                 alt="img"
               />
               <p className={option10 ? "age-title22" : "age-title2"}>
@@ -306,17 +306,24 @@ export default function Age() {
             </div>
           </div>
         </div>
-        {selectError.length !== 0 ? (
-          <p className="error1">{selectError}</p>
-        ) : null}
-        {/* Submit */}
+        {/* submit */}
         <div
-          className={`submit-container ${check ? "submit1" : "submit2"}`}
+          className={`${check ? "submit1" : "submit2"}`} 
           onClick={handleSubmit}
         >
           <p className="submit-text">Submit</p>
         </div>
+        {selectError.length !== 0 ? (
+          <p className="error1">{selectError}</p>
+        ) : null}
       </div>
+        {/* Submit */}
+        {/* <div
+          className={`submit-container ${check ? "submit1" : "submit2"}`}
+          onClick={handleSubmit}
+        >
+          <p className="submit-text">Submit</p>
+        </div> */}
     </div>
   );
 }

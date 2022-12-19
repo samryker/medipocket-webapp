@@ -5,6 +5,7 @@ import Header from "../../Components/Header";
 import { useNavigate } from "react-router-dom";
 import DoctorCardModel2 from "../../Components/Models/DoctorCardModel2";
 import "./styles.css";
+import ModelComp from "../../Components/ModelComp";
 
 const mapState = ({ user }) => ({
   filter: user.filter,
@@ -192,7 +193,7 @@ export default function DoctorList() {
           >
             <div className="searchContainer1">
               <img
-                src="https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/assets%2Ficons%2Ffilter.png?alt=media&token=a6a047ab-6ee2-4597-9675-c38608e3ef62"
+                src={process.env.PUBLIC_URL + "/icons/filter.png"}
                 alt="search"
                 className="saerch"
               />
@@ -262,36 +263,15 @@ export default function DoctorList() {
             <p className="noChatText1">No Doctors with this filter yet.</p>
           </div>
         ) : null} */}
+      </div>
         {/* filter Modal */}
         {filterModal && (
-          <div className="filter-model">
-            <div className="model-content shadow1">
-              <div
-                onClick={() => setFilterModal(false)}
-                className="close-model"
-              >
-                <p className="close-text">X</p>
-              </div>
-              <div className="ModelTitleView">
-                <p className="model-title-text">Specializations</p>
-              </div>
-              {specList &&
-                specList.map((item, index) => (
-                  <div className="optionContent" key={index}>
-                    <div className="optionContainer">
-                      <div
-                        className="doctor-model-card-by-model shadow1"
-                        onPress={() => handleSlected(item)}
-                      >
-                        <p className="sumpthom-model">{item}</p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-            </div>
-          </div>
+          <ModelComp
+            specList={specList}
+            setFilterModal={setFilterModal}
+            handleSlected={handleSlected}
+          />
         )}
-      </div>
     </div>
   );
 }

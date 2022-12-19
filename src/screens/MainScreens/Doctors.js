@@ -149,7 +149,9 @@ export default function Doctors() {
                   onClick={handleLungs}
                 >
                   <img
-                    src="https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/assets%2Ficons%2Fbody%2Flungs.png?alt=media&token=51b706ef-dafc-484f-954b-ab8ceba22a67"
+                    src={
+                      process.env.PUBLIC_URL + "/icons/specialities/lungs.png"
+                    }
                     alt="lung"
                     className="doctors-list-icon"
                   />
@@ -160,7 +162,9 @@ export default function Doctors() {
                   onClick={handleTooth}
                 >
                   <img
-                    src="https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/assets%2Ficons%2Fbody%2Fthyroid.png?alt=media&token=5ea0ce92-b936-4797-8f5c-e388bf252419"
+                    src={
+                      process.env.PUBLIC_URL + "/icons/specialities/thyroid.png"
+                    }
                     alt="lung"
                     className="doctors-list-icon"
                   />
@@ -171,7 +175,9 @@ export default function Doctors() {
                   onClick={handleDermatologist}
                 >
                   <img
-                    src="https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/assets%2Ficons%2Fbody%2Fheart.png?alt=media&token=8d5d1ab2-5ec6-480d-b09b-105a54dd0eb1"
+                    src={
+                      process.env.PUBLIC_URL + "/icons/specialities/heart.png"
+                    }
                     alt="lung"
                     className="doctors-list-icon"
                   />
@@ -182,7 +188,9 @@ export default function Doctors() {
                   onClick={handleHeart}
                 >
                   <img
-                    src="https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/assets%2Ficons%2Fbody%2Fjoints.png?alt=media&token=0a758366-8ee0-4b67-99c0-ea8ec030c0f6"
+                    src={
+                      process.env.PUBLIC_URL + "/icons/specialities/joints.png"
+                    }
                     alt="lung"
                     className="doctors-list-icon"
                   />
@@ -193,7 +201,10 @@ export default function Doctors() {
                   onClick={handleBrain}
                 >
                   <img
-                    src="https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/assets%2Ficons%2Fbody%2Freproductive.png?alt=media&token=c142449d-0f72-470b-9c36-a164f0133e99"
+                    src={
+                      process.env.PUBLIC_URL +
+                      "/icons/specialities/reproductive.png"
+                    }
                     alt="lung"
                     className="doctors-list-icon"
                   />
@@ -204,7 +215,9 @@ export default function Doctors() {
                   onClick={handlePsychology}
                 >
                   <img
-                    src="https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/assets%2Ficons%2Fbody%2Fanatomy.png?alt=media&token=ddd77593-c445-4112-b7e6-f87ab1ad1258"
+                    src={
+                      process.env.PUBLIC_URL + "/icons/specialities/anatomy.png"
+                    }
                     alt="lung"
                     className="doctors-list-icon"
                   />
@@ -215,7 +228,10 @@ export default function Doctors() {
                   onClick={handleUrology}
                 >
                   <img
-                    src="https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/assets%2Ficons%2Fbody%2Fpsychology.png?alt=media&token=002d3ca4-dcf2-4180-92e0-34485613e844"
+                    src={
+                      process.env.PUBLIC_URL +
+                      "/icons/specialities/psychology.png"
+                    }
                     alt="lung"
                     className="doctors-list-icon"
                   />
@@ -226,7 +242,9 @@ export default function Doctors() {
                   onClick={handleOthers}
                 >
                   <img
-                    src="https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/assets%2Ficons%2Fbody%2Fdermis.png?alt=media&token=e7169f17-ca33-49bc-a361-9bc2019de915"
+                    src={
+                      process.env.PUBLIC_URL + "/icons/specialities/dermis.png"
+                    }
                     alt="lung"
                     className="doctors-list-icon"
                   />

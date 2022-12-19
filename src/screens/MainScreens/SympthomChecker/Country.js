@@ -1451,6 +1451,13 @@ const isabelCountries = [
   },
 ];
 
+const icons = [
+  {
+    url: process.env.PUBLIC_URL + "/icons/india_flag.png",
+    name: "india"
+  }
+] 
+
 const mapState = ({ user }) => ({
   pregnant: user.pregnant,
   country: user.country,
@@ -1497,6 +1504,7 @@ export default function Country() {
     )
       .then((response) => response.json())
       .then((res) => {
+        console.log('country res from isabel => ', res)
         setApiCountries(res.countries.country);
       })
       .catch((error) => {
@@ -1563,7 +1571,7 @@ export default function Country() {
       <div className="age-scrollContainer">
         <p className="age-cardTitle2">Welcome to the DR. AI</p>
         <img
-          src="https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/assets%2Ficons%2Fsympthom%2Fcountries.png?alt=media&token=8c1804f5-c46c-4591-9455-ca0f06818a7d"
+          src={process.env.PUBLIC_URL + "/icons/sympthoms/countries.png"}
           alt="gender"
           className="gender-img"
         />
@@ -1575,14 +1583,16 @@ export default function Country() {
             marginTop: 50,
           }}
         >
-          <div>
+          <div style={{ justifyContent: "center", alignItems: "center" }} >
             <p className="age-title1">Select Country</p>
             <p className="age-title2">
               Please select the country of residance or recently visited
             </p>
           </div>
-          <div className="country-flag-container"></div>
-          <p className="country-parag">Press on the flag to select a country</p>
+          <div className="country-flag-container">
+            <img src={icons[0].url} alt={icons[0].name} className="flag-style" />
+          </div>
+          {/* <p className="country-parag">Press on the flag to select a country</p> */}
           {countryState !== null && (
             <p className="country-title1">{countryState.name}</p>
           )}

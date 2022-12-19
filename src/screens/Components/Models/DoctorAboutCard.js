@@ -6,7 +6,7 @@ export default function DoctorAboutCard(props) {
     <div className="card-container">
       <div className="doctor-model-card shadow1">
         <div className="doctor-card-content">
-          <div className="doctor-card-left" style={{ padding: "20px" }}>
+          <div className="doctor-card-left" style={{ padding: "8px" }}>
             <p className="doctor-card-content-title1">{name}</p>
             <p
               className="doctor-card-content-title2"
