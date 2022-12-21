@@ -26,7 +26,6 @@ export default function Bottomtab() {
   let location = useLocation();
   const [show, setShow] = useState(false);
   useEffect(() => {
-    console.log("location => ", location);
     if (
       location.pathname === "/onBoarding1" ||
       location.pathname === "/onBoarding2" ||
