@@ -30,7 +30,12 @@ import BeforeCall from "./screens/MainScreens/Profile/BeforeCall";
 import Call from "./screens/MainScreens/Profile/Call";
 import Drawer from "./screens/Components/Drawer";
 import { useSelector } from "react-redux";
-import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  HttpLink,
+} from "@apollo/client";
 import Bottomtab from "./screens/Components/Bottomtab";
 import TopUsaHospitals from "./screens/MainScreens/TopUsaHospitals";
 import PaytmLogin from "./screens/MainScreens/PaytmLogin";
@@ -40,7 +45,13 @@ const cache = new InMemoryCache();
 const client = new ApolloClient({
   uri: "https://app.medipocket.world/graphql/",
   cache,
-  defaultOptions: { watchQuery: { fetchPolicy: "cache-and-network" } },
+  defaultOptions: {
+    watchQuery: {
+      fetchPolicy: "cache-and-network",
+      mode: "no-cors",
+        "Access-Control-Allow-Origin": "*",
+    },
+  },
 });
 
 function App() {

@@ -6,19 +6,19 @@ import "./styles.css";
 const icons = [
   {
     img: process.env.PUBLIC_URL + "/icons/bottomTab/bottomTab1.png",
-    name: "bottom icon 1",
+    name: "bottom_icon_1",
   },
   {
     img: process.env.PUBLIC_URL + "/icons/bottomTab/bottomTab2.png",
-    name: "bottom icon 2",
+    name: "bottom_icon_2",
   },
   {
     img: process.env.PUBLIC_URL + "/icons/bottomTab/bottomTab3.png",
-    name: "bottom icon 3",
+    name: "bottom_icon_3",
   },
   {
     img: process.env.PUBLIC_URL + "/icons/bottomTab/bottomTab4.png",
-    name: "bottom icon 4",
+    name: "bottom_icon_4",
   },
 ];
 export default function Bottomtab() {
