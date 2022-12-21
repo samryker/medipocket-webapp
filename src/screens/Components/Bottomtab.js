@@ -5,19 +5,19 @@ import "./styles.css";
 
 const icons = [
   {
-    img: process.env.PUBLIC_URL + "/icons/bottomTab/bottomTab1.png",
+    img: process.env.PUBLIC_URL + "/icons/bottomTab/b1.png",
     name: "bottom_icon_1",
   },
   {
-    img: process.env.PUBLIC_URL + "/icons/bottomTab/bottomTab2.png",
+    img: process.env.PUBLIC_URL + "/icons/bottomTab/b2.png",
     name: "bottom_icon_2",
   },
   {
-    img: process.env.PUBLIC_URL + "/icons/bottomTab/bottomTab3.png",
+    img: process.env.PUBLIC_URL + "/icons/bottomTab/b3.png",
     name: "bottom_icon_3",
   },
   {
-    img: process.env.PUBLIC_URL + "/icons/bottomTab/bottomTab4.png",
+    img: process.env.PUBLIC_URL + "/icons/bottomTab/b4.png",
     name: "bottom_icon_4",
   },
 ];
