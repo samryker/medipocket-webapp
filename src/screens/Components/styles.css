@@ -125,19 +125,18 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* width: 80%; */
+    width: 90%;
     border-radius: 25px;
     background-color: #f0f4f7;
-    padding: 30px 20px;
+    padding:20px;
     margin-bottom: 25px;
-    
 }
 .doctor-model-card1 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 80%;
+    width: 90% !important;
     border-radius: 25px;
     background-color: #ffffff;
     padding: 30px 20px;
@@ -161,14 +160,14 @@
 }
 .doctor-card-content-title1{
     color: #384062;
-    font-size: 26px;
+    font-size: 18px;
     font-weight: 700;       
     margin: 0;
-    margin-bottom: 10px;
+    margin-bottom: 10px !important;
 }
 .doctor-card-content-title2{
     color: #6E8FA3;
-    font-size: 12px;
+    font-size: 14px;
     margin: 0;
     margin-bottom: 10px;
 }
@@ -234,19 +233,20 @@
 /* DoctorCrdModel2 */
 .doctorCard2 {
     position: relative;
+    display: flex;
     margin-top: 50px;
-    width: 90%;
-    margin-bottom: 20px;
+    width: 100%;
 }
 .imgContainer {
     position: absolute;
-    top: -30px;
+    top: -40px;
 }
 .doctor-avatar2 {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     border-radius: 50px;
     z-index: 1;
+    object-fit: cover;
 }
 /* DoctorCrdModel2 */
 /* BottomTab */
@@ -288,17 +288,36 @@
 }
 /* BottomTab */
 @media only screen and (max-width: 480px) {
+    .doctor-avatar {
+        width: 75px;
+        height: 75px;
+    }
     .doctor-avatar2 {
         width: 75px;
         height: 75px;
     }
     .doctor-card-content-title1{
         font-size: 18px !important;
-        margin-top: 20px !important;
     }
     .doctor-card-content-title2{
         font-size: 12px !important;
         margin-top: 0px !important;
+    }
+    .doctor-bottom-card-left {
+        font-size: 20px;
+        margin: 0;
+    }
+    .doctor-bottom-card-right {
+        padding: 0px 15px;
+        margin: 5px;
+    }
+    .doctor-btn-style-text {
+        font-size: 12px;
+        font-weight: 600;
+    }
+    .doctor-model-card1 {
+        padding: 20px;
+        margin-bottom: 15px;
     }
 }
 

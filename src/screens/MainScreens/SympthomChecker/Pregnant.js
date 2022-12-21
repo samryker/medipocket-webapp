@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaArrowLeft } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -43,6 +43,11 @@ export default function Pregnant() {
       setSelectError("* Select a gender is Required");
     }
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   return (
     <div className="age-container" style={{ height: "100vh" }}>
       {/* subContainer */}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./styles.css";
 import { IoMdArrowBack } from "react-icons/io";
@@ -108,6 +108,9 @@ const icons = [
 ];
 export default function TopUsaHospitals() {
   const navigate = useNavigate();
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   return (
     <div
       className="age-container"

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "../Components/Header";
 import "./styles.css";
@@ -38,6 +38,9 @@ export default function Home() {
   const handleOthers = () => {
     navigate("/doctorList", { filter: "*" });
   };
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   return (
     <div className="home-container">
       <div className="home-subContainer">

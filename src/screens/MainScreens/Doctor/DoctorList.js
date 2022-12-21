@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import DoctorCardModel2 from "../../Components/Models/DoctorCardModel2";
 import "./styles.css";
 import ModelComp from "../../Components/ModelComp";
+import { FaArrowLeft } from "react-icons/fa";
 
 const mapState = ({ user }) => ({
   filter: user.filter,
@@ -174,17 +175,24 @@ export default function DoctorList() {
       filterList(search);
     }
   }, [search]);
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   return (
     <div className="age-container">
       <div className="home-subContainer">
-        <Header
-          navigate={navigate}
-          bg="#f0f4f7"
-          isHome={false}
-          isDoctorList={true}
-          isProfile={false}
-          isSurrogacy={false}
-        />
+        {/* subContainer */}
+        <div className="age-subContainer">
+          <div className="age-header">
+            <div className="age-headerSub" onClick={() => navigate("/doctors")}>
+              <FaArrowLeft className="age-backIcon" />
+            </div>
+            <div className="age-titleContainer">
+              <p className="usa-specialist">USA Specialists List</p>
+            </div>
+            <div className="age_emptySpace"></div>
+          </div>
+        </div>
         {/* filter */}
         <div className="searchMain">
           <div
@@ -202,25 +210,8 @@ export default function DoctorList() {
             <p className="searchInput1">{search}</p>
           </div>
         </div>
-        <DoctorCardModel2
-          name={"Dr. Jordon Geller"}
-          desc={"California ,USA"}
-          img={
-            "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/doctor%2FDr_%20Jordan%20Geller.png?alt=media&token=d3925c63-7403-496a-922c-58461b95a45d"
-          }
-          patients={"--"}
-          experience={"17"}
-          speciality={"Endocrinology, Diabetes & Metabolism"}
-          info={
-            "Dr. Geller earned his medical degree from the Keck School of Medicine at the University of Southern California in Los Angeles. He completed a fellowship in endocrinology and metabolism at Cedars-Sinai Medical Center in Los Angeles. He has been in private practice in Beverly Hills, CA and a clinical instructor at Cedars-Sinai Medical Center and the David Geffen UCLA School of Medicine. Dr. Geller is dual board-certified in Endocrinology, Diabetes and Metabolism, and Internal Medicine.He has authored numerous publications in the field of endocrinology and metabolism and has been appointed as an expert for the Medical Board of California. Various Publications: Liu NA, Sacks W and Geller JL, Geller Epocrates Osteoporosis Curriculum 2010;Epocrates, Inc. Geller JL, Adams JS. Vitamin D Therapy. Current Osteoporosis Reports 2008 Cooper OB, Geller JL and Melmed S. Ovarian Hyperstimulation Syndrome caused by an FSH-Secreting Pituitary Adenoma. Nat Clin Pract Endocrinol Metab. Feb 12, 2008 Geller JL, Hu B, Reed S, Mirocha J and Adams JS. Repair of Vitamin D Insufficiency Increases Bone Mass in Bisphosphonate-Treated Patients. Endo Prac. 2008; 14:3 Geller JL Vitamin D: The Sunshine Hormone. Food Technology, June 2007"
-          }
-          fees={"250"}
-          duration={"20"}
-          navigate={navigate}
-          type="2"
-        />
         {/* Flatlist */}
-        {showNoDoctor ? (
+        {showNoDoctor && newDoctors?.length === 0 ? (
           <div className="noChat">
             <p className="noChatText1">No Doctors with this filter yet.</p>
           </div>
@@ -235,6 +226,7 @@ export default function DoctorList() {
                     </div>
                     {item.data.map((j, index2) => (
                       <DoctorCardModel2
+                        key={index2}
                         name={j.name}
                         desc={j.desc}
                         country={j.country}
@@ -264,14 +256,14 @@ export default function DoctorList() {
           </div>
         ) : null} */}
       </div>
-        {/* filter Modal */}
-        {filterModal && (
-          <ModelComp
-            specList={specList}
-            setFilterModal={setFilterModal}
-            handleSlected={handleSlected}
-          />
-        )}
+      {/* filter Modal */}
+      {filterModal && (
+        <ModelComp
+          specList={specList}
+          setFilterModal={setFilterModal}
+          handleSlected={handleSlected}
+        />
+      )}
     </div>
   );
 }

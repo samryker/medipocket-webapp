@@ -88,13 +88,13 @@ export default function DoctorCardModel2(props) {
                   style={{
                     display: "flex",
                     flexDirection: "row",
-                    alignItems: "center",
-                    marginTop: "20px",
+                    margin: 0,
+                    marginBottom: "10px",
                   }}
                 >
                   <p
                     className="doctor-card-content-title2"
-                    style={{ fontSize: 16, marginRight: 10 }}
+                    style={{marginRight: 10, marginBottom: 0 }}
                   >
                     Fee:{" "}
                   </p>
@@ -104,7 +104,8 @@ export default function DoctorCardModel2(props) {
                       fontSize: 14,
                       fontWeight: "700",
                       color: "#f9b664",
-                      marginTop: "5px",
+                      margin: 0,
+                      marginTop: "2px",
                     }}
                   >
                     {fees !== "--" ? `$${fees}` : fees}
@@ -114,12 +115,13 @@ export default function DoctorCardModel2(props) {
                   style={{
                     display: "flex",
                     flexDirection: "row",
-                    alignItems: "center",
+                    margin: 0,
+                    marginBottom: "10px",
                   }}
                 >
                   <p
                     className="doctor-card-content-title2"
-                    style={{ fontSize: 16, marginRight: 10 }}
+                    style={{ marginRight: 10, marginBottom: 0 }}
                   >
                     Experience:{" "}
                   </p>
@@ -129,7 +131,8 @@ export default function DoctorCardModel2(props) {
                       fontSize: 14,
                       fontWeight: "700",
                       color: "#f660be",
-                      marginTop: "0px",
+                      margin: 0,
+                      marginTop: "2px",
                     }}
                   >
                     {experience !== "--" ? `${experience}yrs+` : experience}

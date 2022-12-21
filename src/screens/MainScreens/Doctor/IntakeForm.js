@@ -419,13 +419,16 @@ export default function IntakeForm() {
 
     setIndicatorLoad(false);
   };
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   return (
     <div className="age-container">
       {/* subContainer */}
       <div className="age-subContainer">
         <div className="age-header">
-          <div className="age-headerSub" onClick={() => navigate(-1)}>
+          <div className="age-headerSub" onClick={() => navigate("/home")}>
             <FaArrowLeft className="age-backIcon" />
           </div>
           <div className="age-titleContainer">

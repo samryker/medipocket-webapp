@@ -19,7 +19,7 @@ export default function ModelComp(props) {
                 <div className="optionContainer">
                   <div
                     className="doctor-model-card-by-model shadow1"
-                    onPress={() => handleSlected(item)}
+                    onClick={() => handleSlected(item)}
                   >
                     <p className="sumpthom-model">{item}</p>
                   </div>

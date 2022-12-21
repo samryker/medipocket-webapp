@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { FaArrowLeft } from "react-icons/fa";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Header from "../../Components/Header";
@@ -16,20 +17,28 @@ export default function Appointment() {
   const handleIntake = () => {
     navigate("/intakeForm");
   };
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   return (
     <div
       className="age-container"
       style={{ paddingBottom: "150px !important" }}
     >
-      <div className="home-subContainer">
-        <Header
-          navigate={navigate}
-          bg="#f0f4f7"
-          isHome={false}
-          isDoctorList={false}
-          isProfile={true}
-          isSurrogacy={false}
-        />
+      {/* subContainer */}
+      <div className="age-subContainer">
+        <div className="age-header">
+          <div
+            className="age-headerSub"
+            onClick={() => navigate("/doctorList")}
+          >
+            <FaArrowLeft className="age-backIcon" />
+          </div>
+          <div className="age-titleContainer">
+            <p className="usa-specialist">Doctor's Profile</p>
+          </div>
+          <div className="age_emptySpace"></div>
+        </div>
       </div>
       <DoctorCardModel
         name={appointment.name}

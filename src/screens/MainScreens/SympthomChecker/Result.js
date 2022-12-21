@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { gql, useQuery } from "@apollo/client";
 import "./styles.css";
+import DoctorCardModel from "../../Components/Models/DoctorCardModel";
 
 const mapState = ({ user }) => ({
   doctorD: user.doctorD,
@@ -313,6 +314,9 @@ export default function Result() {
   useEffect(() => {
     console.log("diagnose1 && data => ", diagnose1, data);
   }, [diagnose1, data]);
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   return (
     <div className="age-container" style={{ height: "100vh" }}>
       {/* subContainer */}
@@ -553,7 +557,7 @@ export default function Result() {
                     </p>
                   </div>
                   <p className="result-title3">Cardiologist</p>
-                  {/* {customDoctor1 && (
+                  {customDoctor1 && (
                     <DoctorCardModel
                       name={customDoctor1.name}
                       desc={customDoctor1.desc}
@@ -565,11 +569,11 @@ export default function Result() {
                       fees={customDoctor1.fees}
                       duration={customDoctor1.duration}
                       bg="0"
-                      navigation={navigation}
+                      navigation={navigate}
                     />
-                  )} */}
+                  )}
                   <p className="result-title3">Oncologist</p>
-                  {/* {customDoctor2 && (
+                  {customDoctor2 && (
                     <DoctorCardModel
                       name={customDoctor2.name}
                       desc={customDoctor2.desc}
@@ -581,9 +585,9 @@ export default function Result() {
                       fees={customDoctor2.fees}
                       duration={customDoctor2.duration}
                       bg="0"
-                      navigation={navigation}
+                      navigation={navigate}
                     />
-                  )} */}
+                  )}
                   <div onClick={handleMoreDoctors1} className="result-relevant">
                     <p className="result-relevant-title">See more doctors</p>
                   </div>

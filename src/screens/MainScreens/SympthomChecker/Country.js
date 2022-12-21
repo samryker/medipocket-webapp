@@ -1555,6 +1555,9 @@ export default function Country() {
       setIsabelErrorVar(true);
     }
   }, [countryState]);
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   return (
     <div className="age-container" style={{ height: "100vh" }}>
       {/* subContainer */}

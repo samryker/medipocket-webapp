@@ -53,7 +53,7 @@
     object-fit: contain;
 }
 .intake-card {
-    width: 92%;
+    width: 90%;
     border-radius: 25px;
     background-color: #f5f6f8;
     padding: 30px 15px;
@@ -178,8 +178,8 @@
 }
 /* doctor List */
 .searchMain {
-    padding: 10px 20px;
-    width: 95%;
+    /* padding: 10px 20px; */
+    width: 100%;
 }
 .searchContainer {
     /* width: 100%; */
@@ -246,7 +246,7 @@ font-weight: 700;
     justify-content: center;
     align-items: center;
     width: 100%;
-    border-radius: 25px;
+    border-radius: 15px;
     background-color: #ffffff;
     
 }
@@ -254,6 +254,7 @@ font-weight: 700;
     font-size: 14px;
     line-height: 10px;
     color: #6E8FA3;
+    padding: 8px 0;
 }
 .model-content {
     margin: 0px;
@@ -273,7 +274,8 @@ font-weight: 700;
 }
 .optionContainer {
     width: 100%;
-    padding: 5px 10px;
+    /* padding: 5px 10px; */
+    margin-bottom: 12px;
 }
 .close-model {
     display: flex;
@@ -297,6 +299,7 @@ font-weight: 700;
     line-height: 20px;
     width: 100%;
     text-align: center;
+    margin-top: 10px;
 }
 /* doctor List */
 /* appointment */

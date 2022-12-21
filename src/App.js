@@ -6,7 +6,6 @@ import OnBoarding1 from "./screens/OnBoarding1";
 import OnBoarding2 from "./screens/OnBoarding2";
 import OnBoarding3 from "./screens/OnBoarding3";
 import OnBoarding4 from "./screens/OnBoarding4";
-import Home from "./screens/MainScreens/Home";
 import HomePage from "./screens/MainScreens/HomePage";
 import Doctors from "./screens/MainScreens/Doctors";
 import Surrogacy from "./screens/MainScreens/Surrogacy";
@@ -33,37 +32,10 @@ import {
   ApolloClient,
   InMemoryCache,
   ApolloProvider,
-  HttpLink,
-  concat,
-  ApolloLink,
 } from "@apollo/client";
-import { setContext } from "@apollo/client/link/context";
 import Bottomtab from "./screens/Components/Bottomtab";
 import TopUsaHospitals from "./screens/MainScreens/TopUsaHospitals";
 import PaytmLogin from "./screens/MainScreens/PaytmLogin";
-
-// const cache = new InMemoryCache();
-// const httpLink = new HttpLink({
-//   uri: "https://app.medipocket.world/graphql/",
-// });
-// const authMiddleware = new ApolloLink((operation, forward) => {
-//   operation.setContext(({ headers = {} }) => ({
-//     headers: {
-//       ...headers,
-//       mode: "no-cors",
-//       "Access-Control-Allow-Origin": "*",
-//       "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
-//       "Access-Control-Allow-Credentials": false,
-//     },
-//   }));
-
-//   return forward(operation);
-// });
-
-// const client = new ApolloClient({
-//   cache,
-//   link: concat(authMiddleware, httpLink),
-// });
 
 const client = new ApolloClient({
   uri: "https://app.medipocket.world/graphql/",

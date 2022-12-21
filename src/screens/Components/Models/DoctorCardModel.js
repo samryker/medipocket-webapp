@@ -29,7 +29,7 @@ export default function DoctorCardModel(props) {
   const dispatch = useDispatch();
   const { appointmentUpdateSuccess } = useSelector(mapState);
   useEffect(() => {
-    if (appointmentUpdateSuccess) navigate("appointment");
+    if (appointmentUpdateSuccess) navigate("/appointment");
 
     return () => {
       dispatch(resetAppointmentSuccess());

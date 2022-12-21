@@ -201,6 +201,9 @@ export default function HomePage() {
   const handleSpec6 = () => {
     dispatch(updateDoctorFilter("Fertility"));
   };
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   return (
     <div className="age-container" style={{ padding: "15px !important" }}>
       {/* Header */}

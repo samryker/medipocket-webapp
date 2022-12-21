@@ -9,6 +9,7 @@ import {
   updateDoctorFilter,
 } from "../../redux/User/user.actions";
 import DoctorCardModel from "../Components/Models/DoctorCardModel";
+import { FaArrowLeft } from "react-icons/fa";
 
 const mapState = ({ user }) => ({
   filterUpdateSuccess: user.filterUpdateSuccess,
@@ -43,15 +44,11 @@ export default function Doctors() {
   const navigate = useNavigate();
   const { filterUpdateSuccess } = useSelector(mapState);
   const dispatch = useDispatch();
-  useEffect(() => {
-    console.log('data =>>>>',data)
-    console.log('loading =>>>>',loading)
-  }, [data, loading])
-  
+
   useEffect(() => {
     var timeleft = 10;
     var downloadTimer = setInterval(function () {
-      if (timeleft <= 0 ) {
+      if (timeleft <= 0) {
         setShowNoDoctor(true);
         clearInterval(downloadTimer);
       }
@@ -130,17 +127,28 @@ export default function Doctors() {
   const handleMoreDoctors = () => {
     dispatch(updateDoctorFilter("8"));
   };
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   return (
     <div className="age-container">
       <div className="home-subContainer">
-        <Header
-          navigate={navigate}
-          bg="#f0f4f7"
-          isHome={false}
-          isDoctorList={false}
-          isProfile={false}
-          isSurrogacy={false}
-        />
+        {/* subContainer */}
+        <div className="age-subContainer">
+          <div className="age-header">
+            <div className="age-headerSub" onClick={() => navigate("/home")}>
+              <FaArrowLeft className="age-backIcon" />
+            </div>
+            <div className="age-titleContainer">
+              <img
+                src={process.env.PUBLIC_URL + "/icons/drawer/logoMedi.png"}
+                className="intake-imgStyle"
+                alt="logo"
+              />
+            </div>
+            <div className="age_emptySpace"></div>
+          </div>
+        </div>
         {/* scroll */}
         <div className="age-scrollContainer">
           <div className="intake-card shadow1">
@@ -259,7 +267,7 @@ export default function Doctors() {
           </div>
         </div>
         {/* Card3 */}
-        {showNoDoctor ? (
+        {showNoDoctor && tab?.length === 0 ? (
           <div className="noChat">
             <p className="noChatText1">No Doctors yet.</p>
             <p className="noChatText2">
@@ -292,8 +300,10 @@ export default function Doctors() {
           </>
         )}
         {tab.length > 0 && (
-          <div onClick={handleMoreDoctors} className="doctors-relevant">
-            <p className="doctors-relevant-text">See more doctors</p>
+          <div className="doctors-relevant-div">
+            <div onClick={handleMoreDoctors} className="doctors-relevant">
+              <p className="doctors-relevant-text">See more doctors</p>
+            </div>
           </div>
         )}
       </div>
