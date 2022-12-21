@@ -44,6 +44,11 @@ export default function Doctors() {
   const dispatch = useDispatch();
   const { data, loading } = useQuery(DOCTOR_QUERY);
   useEffect(() => {
+    console.log('data =>>>>',data)
+  }, [data])
+  
+  useEffect(() => {
+ 
     var timeleft = 10;
     var downloadTimer = setInterval(function () {
       if (timeleft <= 0) {
