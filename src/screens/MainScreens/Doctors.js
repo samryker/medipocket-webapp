@@ -36,22 +36,22 @@ const DOCTOR_QUERY = gql`
 var tab = [];
 
 export default function Doctors() {
+  const { data, loading } = useQuery(DOCTOR_QUERY);
   const [doctors, setDoctors] = useState(null);
   const [search, setSearch] = useState("");
   const [showNoDoctor, setShowNoDoctor] = useState(false);
   const navigate = useNavigate();
   const { filterUpdateSuccess } = useSelector(mapState);
   const dispatch = useDispatch();
-  const { data, loading } = useQuery(DOCTOR_QUERY);
   useEffect(() => {
     console.log('data =>>>>',data)
-  }, [data])
+    console.log('loading =>>>>',loading)
+  }, [data, loading])
   
   useEffect(() => {
- 
     var timeleft = 10;
     var downloadTimer = setInterval(function () {
-      if (timeleft <= 0) {
+      if (timeleft <= 0 ) {
         setShowNoDoctor(true);
         clearInterval(downloadTimer);
       }

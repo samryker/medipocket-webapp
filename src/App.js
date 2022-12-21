@@ -29,56 +29,48 @@ import DoctorPayment from "./screens/MainScreens/Profile/DoctorPayment";
 import BeforeCall from "./screens/MainScreens/Profile/BeforeCall";
 import Call from "./screens/MainScreens/Profile/Call";
 import Drawer from "./screens/Components/Drawer";
-import { useSelector } from "react-redux";
 import {
   ApolloClient,
   InMemoryCache,
   ApolloProvider,
   HttpLink,
   concat,
+  ApolloLink,
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 import Bottomtab from "./screens/Components/Bottomtab";
 import TopUsaHospitals from "./screens/MainScreens/TopUsaHospitals";
 import PaytmLogin from "./screens/MainScreens/PaytmLogin";
 
-const cache = new InMemoryCache();
-// Initialize Apollo Client
-const httpLink = new HttpLink({
-  uri: "https://app.medipocket.world/graphql/",
-  fetchOptions: {
-    mode: "no-cors"
-  },
-  // useGETForQueries: true,
-});
-const authLink = setContext(async (_, { headers }) => {
-  return {
-    headers: {
-      ...headers,
-      mode: "no-cors",
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
-      "Access-Control-Allow-Credentials": false,
-    },
-  };
-});
+// const cache = new InMemoryCache();
+// const httpLink = new HttpLink({
+//   uri: "https://app.medipocket.world/graphql/",
+// });
+// const authMiddleware = new ApolloLink((operation, forward) => {
+//   operation.setContext(({ headers = {} }) => ({
+//     headers: {
+//       ...headers,
+//       mode: "no-cors",
+//       "Access-Control-Allow-Origin": "*",
+//       "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+//       "Access-Control-Allow-Credentials": false,
+//     },
+//   }));
+
+//   return forward(operation);
+// });
+
 // const client = new ApolloClient({
-//   link: concat(authLink, httpLink)
-//   fetchOptions: {
-//     mode: "no-cors",
-//   },
 //   cache,
-//   // defaultOptions: { watchQuery: { fetchPolicy: "cache-and-network" } },
+//   link: concat(authMiddleware, httpLink),
 // });
 
 const client = new ApolloClient({
-  cache,
-  defaultOptions: {
-    watchQuery: {
-      fetchPolicy: "cache-first",
-    },
+  uri: "https://app.medipocket.world/graphql/",
+  cache: new InMemoryCache(),
+  headers: {
+    "content-type": "application/json",
   },
-  link: concat(httpLink),
 });
 
 function App() {
