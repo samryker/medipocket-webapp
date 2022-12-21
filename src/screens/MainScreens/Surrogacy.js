@@ -7,63 +7,63 @@ import PrimaryButton from "../Components/PrimaryButton";
 const icons = [
   {
     name: "surrogacy 1",
-    img: process.env.PUBLIC_URL + "/icons/surrogacy/surrogacy3.png",
+    img: process.env.PUBLIC_URL + "/icons/surrogacy/s3.png",
   },
   {
     name: "surrogacy 2",
-    img: process.env.PUBLIC_URL + "/icons/surrogacy/surrogacy4.png",
+    img: process.env.PUBLIC_URL + "/icons/surrogacy/s4.png",
   },
   {
     name: "surrogacy 3",
-    img: process.env.PUBLIC_URL + "/icons/surrogacy/surrogacy5.png",
+    img: process.env.PUBLIC_URL + "/icons/surrogacy/s5.png",
   },
   {
     name: "surrogacy 4",
-    img: process.env.PUBLIC_URL + "/icons/surrogacy/surrogacy6.png",
+    img: process.env.PUBLIC_URL + "/icons/surrogacy/s6.png",
   },
   {
     name: "surrogacy 5",
-    img: process.env.PUBLIC_URL + "/icons/surrogacy/surrogacy7.png",
+    img: process.env.PUBLIC_URL + "/icons/surrogacy/s7.png",
   },
   {
     name: "surrogacy 6",
-    img: process.env.PUBLIC_URL + "/icons/surrogacy/surrogacy8.png",
+    img: process.env.PUBLIC_URL + "/icons/surrogacy/s8.png",
   },
   {
     name: "surrogacy 7",
-    img: process.env.PUBLIC_URL + "/icons/surrogacy/surrogacy9.png",
+    img: process.env.PUBLIC_URL + "/icons/surrogacy/s9.png",
   },
   {
     name: "surrogacy 8",
-    img: process.env.PUBLIC_URL + "/icons/surrogacy/surrogacy10.png",
+    img: process.env.PUBLIC_URL + "/icons/surrogacy/s10.png",
   },
   {
     name: "surrogacy 9",
-    img: process.env.PUBLIC_URL + "/icons/surrogacy/surrogacy11.png",
+    img: process.env.PUBLIC_URL + "/icons/surrogacy/s11.png",
   },
   {
     name: "surrogacy 10",
-    img: process.env.PUBLIC_URL + "/icons/surrogacy/surrogacy12.png",
+    img: process.env.PUBLIC_URL + "/icons/surrogacy/s12.png",
   },
   {
     name: "surrogacy 11",
-    img: process.env.PUBLIC_URL + "/icons/surrogacy/surrogacy13.png",
+    img: process.env.PUBLIC_URL + "/icons/surrogacy/s13.png",
   },
   {
     name: "surrogacy 12",
-    img: process.env.PUBLIC_URL + "/icons/surrogacy/surrogacy14.png",
+    img: process.env.PUBLIC_URL + "/icons/surrogacy/s14.png",
   },
   {
     name: "surrogacy 13",
-    img: process.env.PUBLIC_URL + "/icons/surrogacy/surrogacy15.png",
+    img: process.env.PUBLIC_URL + "/icons/surrogacy/s15.png",
   },
   {
     name: "surrogacy 14",
-    img: process.env.PUBLIC_URL + "/icons/surrogacy/surrogacy16.png",
+    img: process.env.PUBLIC_URL + "/icons/surrogacy/s16.png",
   },
   {
     name: "surrogacy 15",
-    img: process.env.PUBLIC_URL + "/icons/surrogacy/surrogacy17.png",
+    img: process.env.PUBLIC_URL + "/icons/surrogacy/s17.png",
   },
 ];
 
