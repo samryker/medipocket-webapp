@@ -1,0 +1,4 @@
+First we need to trigger JS code from Webapp 
+Get ClientID from Paytm 
+create express server to communicate with paytm user profile
+
