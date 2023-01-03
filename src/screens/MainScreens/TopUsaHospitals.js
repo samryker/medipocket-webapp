@@ -125,9 +125,9 @@ export default function TopUsaHospitals() {
         <div style={{ width: "20px" }} />
       </div>
       <div className="blocsWrapper">
-        {icons.map((item) => {
+        {icons.map((item,index) => {
           return (
-            <div className="topHosBlocElement shadowHome">
+            <div key={index} className="topHosBlocElement shadowHome">
               <div className="content">
                 <img alt="" src={item.img} />
                 <h4>{item.title}</h4>

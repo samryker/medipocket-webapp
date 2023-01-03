@@ -271,6 +271,9 @@ text-decoration-color: #29ddc6;
     flex-wrap: wrap;
 
 }
+/* .firstBlocWrapper a{
+    width: inherit;
+} */
 .homeComponent{
     width:48%;
     height: 200px;
@@ -281,6 +284,7 @@ text-decoration-color: #29ddc6;
     display: flex;
     align-items: flex-end;
     cursor: pointer;
+    text-decoration: none;
 }
 /* img */
 .bgImgHome1 {
@@ -490,6 +494,7 @@ text-decoration-color: #29ddc6;
     align-items: center;
     width: 100%;
     cursor: pointer;
+    text-decoration: none;
 }
 .lastBloc .content{
     background: #fff;
