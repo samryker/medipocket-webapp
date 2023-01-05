@@ -4,9 +4,16 @@ export const getAuth = (e)=>{
         ready(function () {
             window.JSBridge.call('paytmFetchAuthCode', {
                 clientId: ""
-            }, function (result) {
+            }, async function (result) {
                 console.log(JSON.stringify(result))
-                
+                const url = 'http://localhost:4000/api/getUserInfo'
+                const body = {
+                    data : result.data,
+                    clientId : ''
+                }
+                const response  = await fetch(url,{
+                    body
+                })
             });
         });
     }

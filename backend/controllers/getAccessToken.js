@@ -1,3 +1,5 @@
+const { default: axios } = require("axios");
+
 function getAccessToken(authId,clientId){
     return new Promise(async (resolve,reject)=>{
         try{
@@ -8,6 +10,7 @@ function getAccessToken(authId,clientId){
                 "client_id": clientId,
                 "scope": "basic"
             };
+
             let formBody = [];
             for (let property in header) {
                 let encodedKey = encodeURIComponent(property);
@@ -15,18 +18,15 @@ function getAccessToken(authId,clientId){
                 formBody.push(encodedKey + "=" + encodedValue);
             }
             const requestBody = formBody.join("&");
-            const otherParams = {
+            const config = {
                 headers: {
                     "Content-Type": "application/x-www-form-urlencoded",
                     "Authorization": "Basic bWVyY2hhbnQtYWJjOm1lcmNoZW50LXNlY3JldA==",
-                },
-                body: requestBody,
-                method: "POST"
-            };
-            const response = await fetch(url, otherParams)
-            const result = await response.json()
+                }
+            }
+            const response = await axios.post(url,requestBody,config)
+            const result = await response.data
             resolve(result)
-            
         }catch(error){
             reject(error)
         }
