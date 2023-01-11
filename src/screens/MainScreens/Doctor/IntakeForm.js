@@ -408,7 +408,6 @@ export default function IntakeForm() {
         question1: q1 ? q1 : "_blank",
         question2: q2 ? q2 : "_blank",
         question3: q3 ? q3 : "_blank",
-        requestService: requestService ? requestService : "_blank",
         appointment: appointment ? appointment : "_blank",
       };
       console.log("user ::: ", user);
