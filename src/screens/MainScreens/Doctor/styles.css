@@ -224,21 +224,23 @@ font-weight: 700;
     max-width: 80%;
 }
 .filter-model-container {
-    position: absolute;
-    top: 100px;
-    left: 0 !important;
-    right: 0 !important;
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    max-width: 600px !important;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
-.filter-model {
-    z-index: 100000000000;
-    background-color: #f0f4f7;
-    width: 80%;
+.filter-model {    
+  background-color: #f0f4f7;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+  border-radius: 15px;
 }
 .doctor-model-card-by-model {
     display: flex;
@@ -282,7 +284,7 @@ font-weight: 700;
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
-    height: 50px;
+    height: 35px;
     cursor: pointer;
 }
 .close-text {
@@ -295,11 +297,10 @@ font-weight: 700;
 }
 .model-title-text {
     color: #000000;
-    font-size: 28px;
-    line-height: 20px;
+    font-size: 24px;
+    line-height: 18px;
     width: 100%;
-    text-align: center;
-    margin-top: 10px;
+    margin: 0;
 }
 /* doctor List */
 /* appointment */
@@ -311,17 +312,53 @@ font-weight: 700;
 }
 /* appointment */
 /* intakeform */
-.success-model-intakeform{
+
+/* .success-model-intakeform{
     position: absolute;
     top: 30%;
-    left: 5%;
+    left: 13%;
     right: 0;
-    width: 80%;
-    height:200px;
+    width: 60%;
+    height: 200px;
     background-color: #ffffff;
     border-radius: 20px;
     padding: 28px;
     cursor: pointer;
+} */
+
+.success-model-intakeform{
+    position: fixed;
+    z-index: 1;
+    left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.2); /* Black w/ opacity */
+}
+.success-model-content {
+    background-color: #fefefe;
+  margin: 35% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+  border-radius: 20px;
+}
+.success-model-intakeform2{
+    display: flex;
+    flex: 1;
+    position: absolute;
+    bottom: 30%;
+    left: 13%;
+    right: 0;
+    width: 60%;
+    height: 200px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 28px;
+    cursor: pointer;
+    display: block;
 }
 .backhomeBtn {
     background-color: #40e0d0;
@@ -330,10 +367,12 @@ font-weight: 700;
     margin: 0;
     padding: 0;
     padding: 10px ;
+    width: 80px;
+    cursor: pointer;
 }
 .backhomeText {
     color: #ffffff;
-    font-size: 18px;
+    font-size: 14px;
     margin: 0;
     text-align: center;
 }

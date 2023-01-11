@@ -109,8 +109,8 @@ const icons = [
 export default function TopUsaHospitals() {
   const navigate = useNavigate();
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div
       className="age-container"
@@ -125,9 +125,9 @@ export default function TopUsaHospitals() {
         <div style={{ width: "20px" }} />
       </div>
       <div className="blocsWrapper">
-        {icons.map((item) => {
+        {icons.map((item, index) => {
           return (
-            <div className="topHosBlocElement shadowHome">
+            <div key={index} className="topHosBlocElement shadowHome">
               <div className="content">
                 <img alt="" src={item.img} />
                 <h4>{item.title}</h4>

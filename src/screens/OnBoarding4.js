@@ -2,8 +2,8 @@ import React, { useLayoutEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./styles.css";
 
-const bg_url = process.env.PUBLIC_URL + "/icons/onBoarding/on4.png";
-const bg_url2 = process.env.PUBLIC_URL + "/icons/onBoarding/on4_2.png";
+const bg_url = process.env.PUBLIC_URL + "/icons/onBoarding/on3.png";
+const bg_url2 = process.env.PUBLIC_URL + "/icons/onBoarding/on3_2.png";
 
 export default function OnBoarding4() {
   const navigate = useNavigate();
@@ -29,10 +29,9 @@ export default function OnBoarding4() {
         alt="logo"
       />
       <div className="onBoarding-title-container">
-        <h1 className="onBoarding-title1">DR. AI</h1>
+        <h1 className="onBoarding-title1">Surrogacy In USA</h1>
         <p className="onBoarding-title2">
-          Check your symptoms 24x7 for FREE with personalized AI powered
-          medically designed symptom checker
+          Best Success rate, gender selection, genetic screening, USA passport
         </p>
       </div>
       <div className="onBoarding-next-btn" onClick={() => navigate("/home")}>

@@ -7,6 +7,7 @@ import {
   resetFilterSuccess,
   updateDoctorFilter,
 } from "../../redux/User/user.actions";
+import PrimaryButton2 from "../Components/PrimaryButton2";
 
 const icons = [
   {
@@ -144,27 +145,27 @@ const hospitals2 = [
 ];
 const doctors = [
   {
-    img: process.env.PUBLIC_URL + "/icons/doctors/doctor1.png",
+    img: "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/doctor%2FDr_%20A_%20Eli%20Gabayan.png?alt=media&token=ecfe7fa3-16fe-480e-8091-2516ee7cfcf2",
     name: "Dr. A. Eli Gabayan",
-    spec: "Surgeon",
-    place: "Boston, USA",
+    spec: "Hematology/ Oncology",
+    place: "Los Angeles, USA",
   },
   {
-    img: process.env.PUBLIC_URL + "/icons/doctors/doctor2.png",
+    img: "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/doctor%2FDr_%20Sam%20Najmabadi.png?alt=media&token=6a6d2d74-f2f1-4fb1-9751-00a564789b6c",
     name: "Dr. Sam Najmabadi",
-    spec: "Therapist",
-    place: "San Francisco, USA",
+    spec: "Fertility Expert",
+    place: "California, USA",
   },
   {
-    img: process.env.PUBLIC_URL + "/icons/doctors/doctor3.png",
+    img: "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/doctor%2FDr_%20Raj%20Kanodia.png?alt=media&token=8190e2f4-da2b-4008-a6bf-dd156cffa0b3",
     name: "Dr. Raj Kanodia",
-    spec: "Dentist",
-    place: "New York, USA",
+    spec: "Plastic Surgery, Rhinoplasty",
+    place: "Beverly Hills, USA",
   },
   {
-    img: process.env.PUBLIC_URL + "/icons/doctors/doctor4.png",
-    name: "Dr. John Doe",
-    spec: "Therapist",
+    img: "https://firebasestorage.googleapis.com/v0/b/medipocket2022.appspot.com/o/doctor%2FDr_%20David%20Berz.png?alt=media&token=51d3816c-cd55-4735-ae1e-85ce3435dd1e",
+    name: "Dr. David Berz",
+    spec: "Hematology/ Oncology",
     place: "Los Angeles, USA",
   },
 ];
@@ -202,8 +203,8 @@ export default function HomePage() {
     dispatch(updateDoctorFilter("Fertility"));
   };
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="age-container" style={{ padding: "15px !important" }}>
       {/* Header */}
@@ -424,7 +425,7 @@ export default function HomePage() {
         <div style={{ width: "100%", height: "20px" }} />
       </div>
       <div className="fourthBlocWrapper">
-        <h2 className="homeTitle">Top USA Specialities</h2>
+        <h2 className="homeTitle">Top USA Specialists</h2>
         <div className="fourthBlocSubWrapper">
           {doctors.map((item, index) => (
             <div key={index} className="fourthBlocElement shadowHome">
@@ -439,7 +440,7 @@ export default function HomePage() {
         </div>
         <div style={{ width: "100%", height: "20px" }} />
       </div>
-      <PrimaryButton
+      <PrimaryButton2
         icon={process.env.PUBLIC_URL + "/icons/heartAnalIcon.png"}
         name="More USA Doctors"
       />

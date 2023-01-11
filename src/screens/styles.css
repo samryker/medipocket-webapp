@@ -259,7 +259,7 @@
 .homeTitle
 {
     text-align: center;
-    margin-bottom: 70px;
+    margin-bottom: 20px;
 }
 .homeTitle span{
 text-decoration: underline;
@@ -269,7 +269,7 @@ text-decoration-color: #29ddc6;
     display: flex;
     flex-direction:row;
     flex-wrap: wrap;
-
+    margin-top: 20px;
 }
 .homeComponent{
     width:48%;
