@@ -1,7 +1,6 @@
 export const getAuth = (e)=>{
     if(e.target.alt !== "drAI"){
         console.log("clicked something other than dr ai")
-        e.preventDefault()
         ready(function () {
             window.JSBridge.call('paytmFetchAuthCode', {
                 clientId: ""
