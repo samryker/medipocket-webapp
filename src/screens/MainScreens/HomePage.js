@@ -38,11 +38,11 @@ export const getAuth = (e)=>{
 
 function ready(callback) {
   if (window.JSBridge) {
-      alert("JS bridge present")
+      // alert("JS bridge present")
       // console.log("js bridge present")
       callback && callback();
   } else {
-      alert("JS bridge not present")
+      // alert("JS bridge not present")
       // console.log("no js bridge")
       document.addEventListener('JSBridgeReady', callback, false);
   }
