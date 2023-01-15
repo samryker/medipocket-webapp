@@ -15,17 +15,19 @@ export const getAuth = (e)=>{
       console.log("clicked something other than dr ai")
       ready(function () {
           window.JSBridge.call('paytmFetchAuthCode', {
-              clientId: ""
+              clientId: "MEDIPO51859801000157"
           }, async function (result) {
               console.log(JSON.stringify(result))
+              alert(JSON.stringify(result))
               const url = 'http://localhost:4000/api/getUserInfo'
               const body = {
                   data : result.data,
-                  clientId : ''
               }
               const response  = await fetch(url,{
                   body
               })
+              const result = await response.json()
+              alert(result)
           });
       });
   }

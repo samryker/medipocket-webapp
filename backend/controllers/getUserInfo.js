@@ -1,6 +1,7 @@
 const { default: axios } = require("axios");
+const {clientId,clientSecret} = require("../config/client.json")
 
-function getUserInfo(accessToken,clientId){
+function getUserInfo(accessToken){
     return new Promise(async (resolve,reject)=>{
         try{
             const url = "https://accounts.paytm.com/v2/user?fetch_strategy=profile_info,phone_number,email"
@@ -8,7 +9,7 @@ function getUserInfo(accessToken,clientId){
                 headers: {
                     "verification_type": "oauth_token",
                     "data": accessToken,    
-                    "Authorization": `Basic ${clientId}` 
+                    "Authorization": `Basic ${Buffer.from(`${clientId}:${clientSecret}`).toString('base64')}` 
                 }
             };
 

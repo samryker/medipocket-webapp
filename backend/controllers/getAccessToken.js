@@ -1,6 +1,8 @@
 const { default: axios } = require("axios");
 
-function getAccessToken(authId,clientId){
+const {clientId,clientSecret} = require("../config/client.json")
+
+function getAccessToken(authId){
     return new Promise(async (resolve,reject)=>{
         try{
             const url = "https://accounts.paytm.com/oauth2/v2/token"
@@ -21,7 +23,7 @@ function getAccessToken(authId,clientId){
             const config = {
                 headers: {
                     "Content-Type": "application/x-www-form-urlencoded",
-                    "Authorization": "Basic bWVyY2hhbnQtYWJjOm1lcmNoZW50LXNlY3JldA==",
+                    "Authorization": `Basic ${Buffer.from(`${clientId}:${clientSecret}`).toString('base64')}`,
                 }
             }
             const response = await axios.post(url,requestBody,config)
