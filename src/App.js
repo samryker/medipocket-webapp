@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 import Splash from "./screens/Splash";
@@ -36,6 +36,7 @@ import {
 import Bottomtab from "./screens/Components/Bottomtab";
 import TopUsaHospitals from "./screens/MainScreens/TopUsaHospitals";
 import PaytmLogin from "./screens/MainScreens/PaytmLogin";
+import { useEffect } from "react";
 
 const client = new ApolloClient({
   uri: "https://app.medipocket.world/graphql/",
@@ -55,6 +56,7 @@ function App() {
       </div>
     );
   };
+  const [loggedIn,setLoggedIn] = useState(false);
 
   return (
     <ApolloProvider client={client}>
@@ -68,7 +70,7 @@ function App() {
             <Route path="onBoarding4" element={<OnBoarding4 />} />
             {/* Main */}
             {/* <Route path="home" element={<Home />} /> */}
-            <Route path="home" element={<HomePage />} />
+            <Route path="home" element={<HomePage loggedIn={loggedIn} setLoggedIn = {setLoggedIn} />} />
             <Route path="hospitals" element={<TopUsaHospitals />} />
             <Route path="doctors" element={<Doctors />} />
             <Route path="surrogacy" element={<Surrogacy />} />

@@ -185,15 +185,17 @@ const mapState = ({ user }) => ({
   filterUpdateSuccess: user.filterUpdateSuccess,
 });
 
-export default function HomePage() {
+export default function HomePage(props) {
+  const {loggedIn,setLoggedIn} = props
   const navigate = useNavigate();
   const { filterUpdateSuccess } = useSelector(mapState);
-  const [loggedIn,setLoggedIn] = useState(false);
   const dispatch = useDispatch();
 
   const getAuth = (e)=>{
   if(e.target.alt !== "drAI"){
     if(!loggedIn){
+        setLoggedIn(true)
+
         console.log("clicked something other than dr ai")
         ready(function () {
             window.JSBridge.call('paytmFetchAuthCode', {
