@@ -197,19 +197,19 @@ export default function HomePage() {
       ready(function () {
           window.JSBridge.call('paytmFetchAuthCode', {
               clientId: "merchant-medipocket-prod"
-          }, function (result) {
+          }, async function (result) {
               console.log(JSON.stringify(result))
               setLoggedIn(true)
               // alert(JSON.stringify(result))
-              // const url = 'http://localhost:4000/api/getUserInfo'
-              // const body = {
-              //     data : result.data,
-              // }
-              // const response  = await fetch(url,{
-              //     body
-              // })
-              // const userInfo = await response.json()
-              // alert(userInfo)
+              const url = 'http://34.100.216.220:4000/api/getUserInfo'
+              const body = {
+                  data : result.data,
+              }
+              const response  = await fetch(url,{
+                  body
+              })
+              const userInfo = await response.json()
+              alert(userInfo)
           });
       });
   }
