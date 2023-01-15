@@ -7,43 +7,14 @@ import {
   resetFilterSuccess,
   updateDoctorFilter,
 } from "../../redux/User/user.actions";
-// import { getAuth } from "../../util/paytmService";
 import { useState } from "react";
 
-export const getAuth = (e)=>{
-  if(e.target.alt !== "drAI"){
-      console.log("clicked something other than dr ai")
-      ready(function () {
-          window.JSBridge.call('paytmFetchAuthCode', {
-              clientId: "merchant-medipocket-prod"
-          }, async function (result) {
-              console.log(JSON.stringify(result))
-              // alert(JSON.stringify(result))
-              // const url = 'http://localhost:4000/api/getUserInfo'
-              // const body = {
-              //     data : result.data,
-              // }
-              // const response  = await fetch(url,{
-              //     body
-              // })
-              // const userInfo = await response.json()
-              // alert(userInfo)
-          });
-      });
-  }
-  else{
-      console.log("clicked on dr ai")
-  }
-}
+
 
 function ready(callback) {
   if (window.JSBridge) {
-      // alert("JS bridge present")
-      // console.log("js bridge present")
       callback && callback();
   } else {
-      // alert("JS bridge not present")
-      // console.log("no js bridge")
       document.addEventListener('JSBridgeReady', callback, false);
   }
 }
@@ -219,11 +190,33 @@ export default function HomePage() {
   const { filterUpdateSuccess } = useSelector(mapState);
   const [loggedIn,setLoggedIn] = useState(false);
   const dispatch = useDispatch();
-  // const mid = MEDIPO51859801000157;
-  // const url = `https://securegw.paytm.in/merchantpgpui/checkoutjs/merchants/MEDIPO51859801000157`
-  // const handleScreenClick = ()=>{
-  //   console.log("clicked")
-  // }
+
+  const getAuth = (e)=>{
+  if(e.target.alt !== "drAI"){
+      console.log("clicked something other than dr ai")
+      ready(function () {
+          window.JSBridge.call('paytmFetchAuthCode', {
+              clientId: "merchant-medipocket-prod"
+          }, function (result) {
+              console.log(JSON.stringify(result))
+              setLoggedIn(true)
+              // alert(JSON.stringify(result))
+              // const url = 'http://localhost:4000/api/getUserInfo'
+              // const body = {
+              //     data : result.data,
+              // }
+              // const response  = await fetch(url,{
+              //     body
+              // })
+              // const userInfo = await response.json()
+              // alert(userInfo)
+          });
+      });
+  }
+  else{
+      console.log("clicked on dr ai")
+  }
+}
 
   useEffect(() => {
     if (filterUpdateSuccess) navigate("/doctorList");
