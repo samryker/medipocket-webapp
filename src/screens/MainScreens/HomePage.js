@@ -15,7 +15,7 @@ export const getAuth = (e)=>{
       console.log("clicked something other than dr ai")
       ready(function () {
           window.JSBridge.call('paytmFetchAuthCode', {
-              clientId: "MEDIPO51859801000157"
+              clientId: "merchant-medipocket-prod"
           }, async function (result) {
               console.log(JSON.stringify(result))
               alert(JSON.stringify(result))
