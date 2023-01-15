@@ -193,25 +193,29 @@ export default function HomePage() {
 
   const getAuth = (e)=>{
   if(e.target.alt !== "drAI"){
-      console.log("clicked something other than dr ai")
-      ready(function () {
-          window.JSBridge.call('paytmFetchAuthCode', {
-              clientId: "merchant-medipocket-prod"
-          }, async function (result) {
-              console.log(JSON.stringify(result))
-              setLoggedIn(true)
-              // alert(JSON.stringify(result))
-              const url = 'http://34.100.216.220:4000/api/getUserInfo'
-              const body = {
-                  data : result.data,
+    if(!loggedIn){
+        console.log("clicked something other than dr ai")
+        ready(function () {
+            window.JSBridge.call('paytmFetchAuthCode', {
+                clientId: "merchant-medipocket-prod"
+            }, async function (result) {
+              if(result.data){
+                console.log(JSON.stringify(result))
+                setLoggedIn(true)
+                // alert(JSON.stringify(result))
+                const url = 'http://34.100.216.220:4000/api/getUserInfo'
+                const body = {
+                    data : result.data,
+                }
+                const response  = await fetch(url,{
+                    body
+                })
+                const userInfo = await response.json()
+                alert(userInfo)
               }
-              const response  = await fetch(url,{
-                  body
-              })
-              const userInfo = await response.json()
-              alert(userInfo)
-          });
-      });
+            });
+        });
+      }
   }
   else{
       console.log("clicked on dr ai")
