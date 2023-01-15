@@ -9,6 +9,7 @@ const port = 4000
 
 app.use(bodyParser.json());
 app.get("/",(req,res)=>{
+    console.log("someone connected to the url")
     res.json("you have reached the server")
 })
 app.use("/api",require("./api"))

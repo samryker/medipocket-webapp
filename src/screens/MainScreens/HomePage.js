@@ -26,8 +26,8 @@ export const getAuth = (e)=>{
               const response  = await fetch(url,{
                   body
               })
-              const result = await response.json()
-              alert(result)
+              const userInfo = await response.json()
+              alert(userInfo)
           });
       });
   }
