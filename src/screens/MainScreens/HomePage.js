@@ -18,16 +18,16 @@ export const getAuth = (e)=>{
               clientId: "merchant-medipocket-prod"
           }, async function (result) {
               console.log(JSON.stringify(result))
-              alert(JSON.stringify(result))
-              const url = 'http://localhost:4000/api/getUserInfo'
-              const body = {
-                  data : result.data,
-              }
-              const response  = await fetch(url,{
-                  body
-              })
-              const userInfo = await response.json()
-              alert(userInfo)
+              // alert(JSON.stringify(result))
+              // const url = 'http://localhost:4000/api/getUserInfo'
+              // const body = {
+              //     data : result.data,
+              // }
+              // const response  = await fetch(url,{
+              //     body
+              // })
+              // const userInfo = await response.json()
+              // alert(userInfo)
           });
       });
   }
