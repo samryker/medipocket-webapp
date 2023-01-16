@@ -193,10 +193,9 @@ export default function HomePage(props) {
 
   const getAuth = (e)=>{
   if(e.target.alt !== "drAI"){
+    console.log("clicked something other than dr ai")
     if(!loggedIn){
-        setLoggedIn(true)
-
-        console.log("clicked something other than dr ai")
+        console.log("logging in")
         ready(function () {
             window.JSBridge.call('paytmFetchAuthCode', {
                 clientId: "merchant-medipocket-prod"
