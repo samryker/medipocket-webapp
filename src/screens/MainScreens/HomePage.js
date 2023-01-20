@@ -202,15 +202,17 @@ export default function HomePage(props) {
             }, async function (result) { 
               if(JSON.parse(result).data){
                 // console.log(JSON.stringify(result))
-                setLoggedIn(true)
                 // alert(JSON.stringify(result))
                 const url = 'http://34.100.216.220:4000/api/getUserInfo'
                 const body = {
-                    data : JSON.stringify(result),
+                    data : JSON.stringify(JSON.parse(result).data),
                 }
                 alert(body)
                 const response  = await axios.post(url,body)
                 const userInfo = await response.data()
+                if(userInfo){
+                  setLoggedIn(true)
+                }
                 alert(userInfo)
               }
             });
