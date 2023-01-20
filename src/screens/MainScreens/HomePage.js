@@ -199,8 +199,8 @@ export default function HomePage(props) {
         ready(function () {
             window.JSBridge.call('paytmFetchAuthCode', {
                 clientId: "merchant-medipocket-prod"
-            }, async function (result) {
-              if(result.data){
+            }, async function (result) { 
+              if(JSON.parse(result).data){
                 console.log(JSON.stringify(result))
                 setLoggedIn(true)
                 // alert(JSON.stringify(result))
