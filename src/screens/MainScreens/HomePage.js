@@ -196,11 +196,29 @@ export default function HomePage(props) {
     console.log("clicked something other than dr ai")
     if(!loggedIn){
         console.log("logging in")        
+      //   const result = {
+      //     "data": {
+      //         "authId":"46b60e25-46fc-4ca0-8 0d2-774b12c90600",
+      //         "openId":"jJzAwDV00ZA6g6m5wvNVo/nvFZF7i1T6Snxpgl4jMtAs8G4g1ICUARSBrorSQdON"
+      //     }
+      // }
+      //   if(result.data){
+      //     const url = 'http://localhost:4000/api/getUserInfo'
+      //     const body = {
+      //       data : result.data, 
+      //   }
+      //   const response  = await axios.post(url,body)
+      //   const userInfo = await response.data
+      //   if(userInfo){
+      //     setLoggedIn(true)
+      //   }
+      //   alert(userInfo)
+      //   }
         ready(function () {
             window.JSBridge.call('paytmFetchAuthCode', {
                 clientId: "merchant-medipocket-prod"
             }, async function (result) { 
-              if(JSON.parse(result).data){
+              if(result.data){
                 const url = 'http://34.100.216.220:4000/api/getUserInfo'
                 const body = {
                   data : result.data, 
