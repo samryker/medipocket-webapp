@@ -8,7 +8,7 @@ import {
   updateDoctorFilter,
 } from "../../redux/User/user.actions";
 import { useState } from "react";
-
+import axios from "axios"
 
 
 function ready(callback) {
@@ -201,18 +201,16 @@ export default function HomePage(props) {
                 clientId: "merchant-medipocket-prod"
             }, async function (result) { 
               if(JSON.parse(result).data){
-                console.log(JSON.stringify(result))
+                // console.log(JSON.stringify(result))
                 setLoggedIn(true)
                 // alert(JSON.stringify(result))
                 const url = 'http://34.100.216.220:4000/api/getUserInfo'
                 const body = {
-                    data : result,
+                    data : JSON.stringify(result),
                 }
-                alert(body)
-                const response  = await fetch(url,{
-                    body
-                })
-                const userInfo = await response.json()
+                // alert(body)
+                const response  = await axios.post(url,body)
+                const userInfo = await response.data()
                 alert(userInfo)
               }
             });
