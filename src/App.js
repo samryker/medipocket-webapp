@@ -37,6 +37,7 @@ import Bottomtab from "./screens/Components/Bottomtab";
 import TopUsaHospitals from "./screens/MainScreens/TopUsaHospitals";
 import PaytmLogin from "./screens/MainScreens/PaytmLogin";
 import { useEffect } from "react";
+import { UserProfile } from "./screens/MainScreens/Profile/UserProfile";
 
 const client = new ApolloClient({
   uri: "https://app.medipocket.world/graphql/",
@@ -47,6 +48,8 @@ const client = new ApolloClient({
 });
 
 function App() {
+  const [loggedIn,setLoggedIn] = useState(false);
+  const [userInfo,setUserInfo] = useState(null);
   const Layout = () => {
     return (
       <div>
@@ -56,8 +59,7 @@ function App() {
       </div>
     );
   };
-  const [loggedIn,setLoggedIn] = useState(false);
-
+  
   return (
     <ApolloProvider client={client}>
       <BrowserRouter>
@@ -70,7 +72,7 @@ function App() {
             <Route path="onBoarding4" element={<OnBoarding4 />} />
             {/* Main */}
             {/* <Route path="home" element={<Home />} /> */}
-            <Route path="home" element={<HomePage loggedIn={loggedIn} setLoggedIn = {setLoggedIn} />} />
+            <Route path="home" element={<HomePage loggedIn={loggedIn} setUserInfo={setUserInfo} setLoggedIn = {setLoggedIn} />} />
             <Route path="hospitals" element={<TopUsaHospitals />} />
             <Route path="doctors" element={<Doctors />} />
             <Route path="surrogacy" element={<Surrogacy />} />
@@ -96,6 +98,8 @@ function App() {
             <Route path="beforecall" element={<BeforeCall />} />
             <Route path="call" element={<Call />} />
             <Route path="paytmTest" element={<PaytmLogin />} />
+            <Route path="userProfile" element={<UserProfile userInfo={userInfo} />} />
+
           </Route>
         </Routes>
       </BrowserRouter>

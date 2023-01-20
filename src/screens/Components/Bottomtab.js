@@ -22,6 +22,7 @@ const icons = [
   },
 ];
 export default function Bottomtab() {
+
   const navigate = useNavigate();
   let location = useLocation();
   const [show, setShow] = useState(false);
@@ -73,7 +74,7 @@ export default function Bottomtab() {
         />
         <p className="bottom-tab-title">Share</p>
       </div>
-      <div className="bottom-tab-item">
+      <div onClick={()=>navigate('/userProfile')} className="bottom-tab-item">
         <img
           src={icons[3].img}
           alt={icons[3].name}
