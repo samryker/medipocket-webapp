@@ -218,8 +218,9 @@ export default function HomePage(props) {
             window.JSBridge.call('paytmFetchAuthCode', {
                 clientId: "merchant-medipocket-prod"
             }, async function (result) { 
+              alert(JSON.stringify(result))
               if(result.data){
-                const url = 'http://34.100.216.220:4000/api/getUserInfo'
+                const url = 'https://paytm.sentinelhz.tech/api/getUserInfo'
                 const body = {
                   data : result.data, 
               }

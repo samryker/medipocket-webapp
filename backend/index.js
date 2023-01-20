@@ -7,7 +7,7 @@ const server = http.Server(app);
 app.use(cors());
 
 const bodyParser = require("body-parser");
-const port = 4000
+const port = 80
 
 app.use(bodyParser.json());
 app.get("/",(req,res)=>{
