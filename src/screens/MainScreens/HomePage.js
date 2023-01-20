@@ -208,7 +208,7 @@ export default function HomePage(props) {
                 const body = {
                     data : JSON.stringify(result),
                 }
-                // alert(body)
+                alert(body)
                 const response  = await axios.post(url,body)
                 const userInfo = await response.data()
                 alert(userInfo)
