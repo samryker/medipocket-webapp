@@ -208,6 +208,7 @@ export default function HomePage(props) {
                 const body = {
                     data : result.data,
                 }
+                alert(body)
                 const response  = await fetch(url,{
                     body
                 })
