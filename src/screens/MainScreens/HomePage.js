@@ -206,7 +206,7 @@ export default function HomePage(props) {
                 // alert(JSON.stringify(result))
                 const url = 'http://34.100.216.220:4000/api/getUserInfo'
                 const body = {
-                    data : result.data,
+                    data : result,
                 }
                 alert(body)
                 const response  = await fetch(url,{
