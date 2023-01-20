@@ -3,7 +3,6 @@ const Controller = require("../controllers")
 async function getAccessToken(req,res){
     try{
         const {data} = req.body
-        console.log(req.body)
         console.log(data)
         const accessTokenResponse = await Controller.getAccessToken(data.authId)
         console.log(accessTokenResponse)

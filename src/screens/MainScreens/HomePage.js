@@ -191,29 +191,26 @@ export default function HomePage(props) {
   const { filterUpdateSuccess } = useSelector(mapState);
   const dispatch = useDispatch();
 
-  const getAuth = (e)=>{
+  const getAuth = async(e)=>{
   if(e.target.alt !== "drAI"){
     console.log("clicked something other than dr ai")
     if(!loggedIn){
-        console.log("logging in")
+        console.log("logging in")        
         ready(function () {
             window.JSBridge.call('paytmFetchAuthCode', {
                 clientId: "merchant-medipocket-prod"
             }, async function (result) { 
               if(JSON.parse(result).data){
-                // console.log(JSON.stringify(result))
-                // alert(JSON.stringify(result))
                 const url = 'http://34.100.216.220:4000/api/getUserInfo'
                 const body = {
-                    data : JSON.stringify(JSON.parse(result).data),
-                }
-                alert(body)
-                const response  = await axios.post(url,body)
-                const userInfo = await response.data()
-                if(userInfo){
-                  setLoggedIn(true)
-                }
-                alert(userInfo)
+                  data : result.data, 
+              }
+              const response  = await axios.post(url,body)
+              const userInfo = await response.data
+              if(userInfo){
+                setLoggedIn(true)
+              }
+              alert(userInfo)
               }
             });
         });
