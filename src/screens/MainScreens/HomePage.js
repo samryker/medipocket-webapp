@@ -196,7 +196,6 @@ export default function HomePage(props) {
     console.log("clicked something other than dr ai")
     if(!loggedIn){
         console.log("logging in")     
-        setLoggedIn(true)
         ready(function () {
             window.JSBridge.call('paytmFetchAuthCode', {
                 clientId: "merchant-medipocket-prod"
