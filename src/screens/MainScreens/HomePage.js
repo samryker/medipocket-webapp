@@ -178,6 +178,7 @@ export default function HomePage({loggedIn}) {
   const { filterUpdateSuccess } = useSelector(mapState);
   const dispatch = useDispatch();
 
+ 
 
   useEffect(() => {
     if (filterUpdateSuccess) navigate("/doctorList");
@@ -208,7 +209,7 @@ export default function HomePage({loggedIn}) {
     window.scrollTo(0, 0)
   }, [])
   return (
-    <div  className="age-container" style={{ padding: "15px !important" }}>
+    <div className="age-container" style={{ padding: "15px !important" }}>
       {/* Header */}
       <div className="header-surrogacy">
         <div className="home-logo-logo-container">

@@ -43,20 +43,21 @@ const client = new ApolloClient({
   },
 });
 
-function ready(callback) {
-  if (window.JSBridge) {
-    callback && callback();
-  } else {
-    document.addEventListener("JSBridgeReady", callback, false);
-  }
-}
-
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [userInfo, setUserInfo] = useState(null);
 
   useEffect(() => {
+    function ready(callback) {
+      if (window.JSBridge) {
+        callback && callback();
+      } else {
+        document.addEventListener("JSBridgeReady", callback, false);
+      }
+    }
+
     function callback() {
+      console.log("logging in");
       window.JSBridge.call(
         "paytmFetchAuthCode",
         {
@@ -80,7 +81,7 @@ function App() {
         }
       );
     }
-    console.log("log in use effect");
+    console.log("login use effect");
     ready(callback);
   }, []);
 
