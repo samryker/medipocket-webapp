@@ -28,16 +28,12 @@ import DoctorPayment from "./screens/MainScreens/Profile/DoctorPayment";
 import BeforeCall from "./screens/MainScreens/Profile/BeforeCall";
 import Call from "./screens/MainScreens/Profile/Call";
 import Drawer from "./screens/Components/Drawer";
-import {
-  ApolloClient,
-  InMemoryCache,
-  ApolloProvider,
-} from "@apollo/client";
+import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import Bottomtab from "./screens/Components/Bottomtab";
 import TopUsaHospitals from "./screens/MainScreens/TopUsaHospitals";
-import PaytmLogin from "./screens/MainScreens/PaytmLogin";
 import { useEffect } from "react";
 import { UserProfile } from "./screens/MainScreens/Profile/UserProfile";
+import axios from "axios";
 
 const client = new ApolloClient({
   uri: "https://app.medipocket.world/graphql/",
@@ -47,9 +43,47 @@ const client = new ApolloClient({
   },
 });
 
+function ready(callback) {
+  if (window.JSBridge) {
+    callback && callback();
+  } else {
+    document.addEventListener("JSBridgeReady", callback, false);
+  }
+}
+
 function App() {
-  const [loggedIn,setLoggedIn] = useState(false);
-  const [userInfo,setUserInfo] = useState(null);
+  const [loggedIn, setLoggedIn] = useState(false);
+  const [userInfo, setUserInfo] = useState(null);
+
+  useEffect(() => {
+    function callback() {
+      window.JSBridge.call(
+        "paytmFetchAuthCode",
+        {
+          clientId: "merchant-medipocket-prod",
+        },
+        async function (result) {
+          if (result.data) {
+            const url = "https://paytm.sentinelhz.tech/api/getUserInfo";
+            const body = {
+              data: result.data,
+            };
+            const response = await axios.post(url, body);
+            const userInfo = await response.data;
+            if (userInfo) {
+              setLoggedIn(true);
+              setUserInfo(userInfo);
+            }
+          } else {
+            callback();
+          }
+        }
+      );
+    }
+    console.log("log in use effect");
+    ready(callback);
+  }, []);
+
   const Layout = () => {
     return (
       <div>
@@ -59,7 +93,7 @@ function App() {
       </div>
     );
   };
-  
+
   return (
     <ApolloProvider client={client}>
       <BrowserRouter>
@@ -72,7 +106,14 @@ function App() {
             <Route path="onBoarding4" element={<OnBoarding4 />} />
             {/* Main */}
             {/* <Route path="home" element={<Home />} /> */}
-            <Route path="home" element={<HomePage loggedIn={loggedIn} setUserInfo={setUserInfo} setLoggedIn = {setLoggedIn} />} />
+            <Route
+              path="home"
+              element={
+                <HomePage
+                  loggedIn={loggedIn}
+                />
+              }
+            />
             <Route path="hospitals" element={<TopUsaHospitals />} />
             <Route path="doctors" element={<Doctors />} />
             <Route path="surrogacy" element={<Surrogacy />} />
@@ -97,9 +138,10 @@ function App() {
             <Route path="doctorPayment" element={<DoctorPayment />} />
             <Route path="beforecall" element={<BeforeCall />} />
             <Route path="call" element={<Call />} />
-            <Route path="paytmTest" element={<PaytmLogin />} />
-            <Route path="userProfile" element={<UserProfile userInfo={userInfo} />} />
-
+            <Route
+              path="userProfile"
+              element={<UserProfile userInfo={userInfo} />}
+            />
           </Route>
         </Routes>
       </BrowserRouter>

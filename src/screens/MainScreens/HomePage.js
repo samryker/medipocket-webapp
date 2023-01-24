@@ -7,18 +7,6 @@ import {
   resetFilterSuccess,
   updateDoctorFilter,
 } from "../../redux/User/user.actions";
-import { useState } from "react";
-import axios from "axios"
-
-
-function ready(callback) {
-  if (window.JSBridge) {
-      callback && callback();
-  } else {
-      document.addEventListener('JSBridgeReady', callback, false);
-  }
-}
-
 
 
 const icons = [
@@ -185,42 +173,11 @@ const mapState = ({ user }) => ({
   filterUpdateSuccess: user.filterUpdateSuccess,
 });
 
-export default function HomePage(props) {
-  const {loggedIn,setLoggedIn} = props
+export default function HomePage({loggedIn}) {
   const navigate = useNavigate();
   const { filterUpdateSuccess } = useSelector(mapState);
   const dispatch = useDispatch();
 
-  const getAuth = async(e)=>{
-  if(e.target.alt !== "drAI"){
-    console.log("clicked something other than dr ai")
-    if(!loggedIn){
-        console.log("logging in")     
-        setLoggedIn(true)
-        ready(function () {
-            window.JSBridge.call('paytmFetchAuthCode', {
-                clientId: "merchant-medipocket-prod"
-            }, async function (result) { 
-              if(result.data){
-                const url = 'https://paytm.sentinelhz.tech/api/getUserInfo'
-                const body = {
-                  data : result.data, 
-              }
-              const response  = await axios.post(url,body)
-              const userInfo = await response.data
-              if(userInfo){
-                setLoggedIn(true)
-                props.setUserInfo(userInfo)
-              }
-              }
-            });
-        });
-      }
-  }
-  else{
-      console.log("clicked on dr ai")
-  }
-}
 
   useEffect(() => {
     if (filterUpdateSuccess) navigate("/doctorList");
@@ -251,7 +208,7 @@ export default function HomePage(props) {
     window.scrollTo(0, 0)
   }, [])
   return (
-    <div onClick={getAuth} className="age-container" style={{ padding: "15px !important" }}>
+    <div  className="age-container" style={{ padding: "15px !important" }}>
       {/* Header */}
       <div className="header-surrogacy">
         <div className="home-logo-logo-container">
