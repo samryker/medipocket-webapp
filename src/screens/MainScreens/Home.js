@@ -42,7 +42,7 @@ export default function Home() {
     window.scrollTo(0, 0)
   }, [])
   return (
-    <div className="home-container">
+    <div style={{backgroundColor:"red"}} className="home-container">
       <div className="home-subContainer">
         <Header
           navigate={navigate}

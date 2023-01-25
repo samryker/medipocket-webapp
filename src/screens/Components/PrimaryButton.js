@@ -2,12 +2,16 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function PrimaryButton(props) {
-  const { icon, name } = props;
-  const Navigate = useNavigate();
+  const { icon, name,loggedIn } = props;
+  const navigate = useNavigate();
   return (
     <button
       className="greenBtn shadowHome"
-      onClick={() => Navigate("/intakeForm")}
+      onClick={() => {
+        if(loggedIn){
+          navigate("/intakeForm")
+        }
+      }}
     >
       <img src={icon} alt="" className="iconImg" />
       <p>{name}</p>

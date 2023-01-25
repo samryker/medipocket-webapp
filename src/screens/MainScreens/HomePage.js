@@ -8,6 +8,7 @@ import {
   updateDoctorFilter,
 } from "../../redux/User/user.actions";
 
+
 const icons = [
   {
     name: "surrogacy 1",
@@ -172,10 +173,13 @@ const mapState = ({ user }) => ({
   filterUpdateSuccess: user.filterUpdateSuccess,
 });
 
-export default function HomePage() {
+export default function HomePage({loggedIn}) {
   const navigate = useNavigate();
   const { filterUpdateSuccess } = useSelector(mapState);
   const dispatch = useDispatch();
+
+ 
+
   useEffect(() => {
     if (filterUpdateSuccess) navigate("/doctorList");
     return () => {
@@ -245,7 +249,11 @@ export default function HomePage() {
       <div className="firstBlocWrapper">
         <div
           className="homeComponent shadowHome"
-          onClick={() => navigate("/doctors")}
+          onClick={() => {
+            if(loggedIn){
+              navigate("/doctors")
+            }
+          }}
         >
           <img
             src={process.env.PUBLIC_URL + "/icons/p1.jpg"}
@@ -265,7 +273,10 @@ export default function HomePage() {
         </div>
         <div
           className="homeComponent shadowHome"
-          onClick={() => navigate("/hospitals")}
+          onClick={() => {
+            if(loggedIn){
+              navigate("/hospitals")}}
+            }
         >
           <img
             src={process.env.PUBLIC_URL + "/icons/p2.png"}
@@ -290,7 +301,11 @@ export default function HomePage() {
         </div>
         <div
           className="homeComponent shadowHome"
-          onClick={() => navigate("/surrogacy")}
+          onClick={() => {
+            if(loggedIn){
+              navigate("/surrogacy")}
+            }
+          }
         >
           <img
             src={process.env.PUBLIC_URL + "/icons/p3.png"}
@@ -319,7 +334,7 @@ export default function HomePage() {
           />
           <img
             src={process.env.PUBLIC_URL + "/icons/m4.png"}
-            alt="img"
+            alt="drAI"
             className="bgImgHome2"
             style={{ width: "110%", height: "110%", objectFit: "contain" }}
           />
@@ -349,13 +364,18 @@ export default function HomePage() {
         <PrimaryButton
           icon={process.env.PUBLIC_URL + "/icons/plusIcon.png"}
           name="View USA Hospitals"
+          loggedIn = {loggedIn}
         />
       </div>
       <div className="thirdBlocWrapper">
         <h2 className="homeTitle">Specialities</h2>
         <div className="thirdBlocSubWrapper">
           {/* oncology */}
-          <div className="thirdBlocElement shadowHome" onClick={handleSpec1}>
+          <div className="thirdBlocElement shadowHome" onClick={()=>{
+            if(loggedIn){
+              handleSpec1()
+            }
+          } }>
             <div className="content">
               <img
                 alt="Oncology"
@@ -366,7 +386,11 @@ export default function HomePage() {
             </div>
           </div>
           {/* Cardiology */}
-          <div className="thirdBlocElement shadowHome" onClick={handleSpec2}>
+          <div className="thirdBlocElement shadowHome" onClick={()=>{
+            if(loggedIn){
+              handleSpec2()
+            }
+          } }>
             <div className="content">
               <img
                 alt="Cardiology"
@@ -377,7 +401,11 @@ export default function HomePage() {
             </div>
           </div>
           {/* Neurology */}
-          <div className="thirdBlocElement shadowHome" onClick={handleSpec3}>
+          <div className="thirdBlocElement shadowHome" onClick={()=>{
+            if(loggedIn){
+              handleSpec3()
+            }
+          } }>
             <div className="content">
               <img
                 alt="Neurology"
@@ -388,7 +416,11 @@ export default function HomePage() {
             </div>
           </div>
           {/* Rare Diseases */}
-          <div className="thirdBlocElement shadowHome" onClick={handleSpec4}>
+          <div className="thirdBlocElement shadowHome" onClick={()=>{
+            if(loggedIn){
+              handleSpec4()
+            }
+          } }>
             <div className="content">
               <img
                 alt="Rare Diseases"
@@ -399,7 +431,11 @@ export default function HomePage() {
             </div>
           </div>
           {/* Mental Health */}
-          <div className="thirdBlocElement shadowHome" onClick={handleSpec5}>
+          <div className="thirdBlocElement shadowHome" onClick={()=>{
+            if(loggedIn){
+              handleSpec5()
+            }
+          } }>
             <div className="content">
               <img
                 alt="Mental Health"
@@ -410,7 +446,11 @@ export default function HomePage() {
             </div>
           </div>
           {/* Infertility */}
-          <div className="thirdBlocElement shadowHome" onClick={handleSpec6}>
+          <div className="thirdBlocElement shadowHome" onClick={()=>{
+            if(loggedIn){
+              handleSpec6()
+            }
+          } }>
             <div className="content">
               <img
                 alt="Infertility"
@@ -516,7 +556,11 @@ export default function HomePage() {
               </div>
               <div
                 className="surrogacy-section1-container-desc-next"
-                onClick={() => navigate("/intakeForm")}
+                onClick={() => {
+                  if(loggedIn){
+                    navigate("/intakeForm")
+                  }
+                }}
               >
                 <img
                   src={icons[6].img}
@@ -590,7 +634,11 @@ export default function HomePage() {
               </div>
               <div
                 className="surrogacy-section1-container-desc-next"
-                onClick={() => navigate("/intakeForm")}
+                onClick={() => {
+                  if(loggedIn){
+                    navigate("/intakeForm")
+                  }
+                }}
               >
                 <img
                   src={icons[6].img}

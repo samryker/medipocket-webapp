@@ -48,6 +48,10 @@
     padding: 0 30%;
     height: 100%;
 }
+.home-container::before{
+    content: "container";
+    width: 400px;
+}
 .home-subContainer {
     display: flex;
     flex: 1;

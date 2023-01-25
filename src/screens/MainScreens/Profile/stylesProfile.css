@@ -1,0 +1,40 @@
+/* User Profile Css */
+.user-profile-container {
+    width: 100vw;
+    height: 100vh;
+    display:flex;
+    flex-direction: column;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-color:#f0f4f7;
+}
+.profile-title-container{
+    width: 100%;
+    padding: 2rem;
+}
+.profile-title {
+    font-size: 20px;
+    color: #000;
+    marign
+}
+.lable{
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 5px;
+}
+.value{
+    color: #384062;
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 10px;
+    margin: 0px;
+    line-height: 20px;
+}
+@media screen and (min-width: 400px) {
+    .user-profile-container {
+        padding-left: 30%;
+        padding-right: 30%;
+        width: auto; 
+    }
+}
