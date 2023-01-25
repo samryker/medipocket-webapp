@@ -65,14 +65,14 @@ export default function Bottomtab() {
         />
         <p className="bottom-tab-title">USA Experts</p>
       </div>
-      <div className="bottom-tab-item">
+      {/* <div className="bottom-tab-item">
         <img
           src={icons[2].img}
           alt={icons[2].name}
           className="bottom-tab-icon"
         />
         <p className="bottom-tab-title">Share</p>
-      </div>
+      </div> */}
       <div className="bottom-tab-item">
         <img
           src={icons[3].img}
