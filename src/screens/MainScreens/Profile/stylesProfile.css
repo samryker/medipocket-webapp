@@ -1,31 +1,44 @@
 /* User Profile Css */
 .user-profile-container {
-    width: 100vw;
-    height: 100vh;
+    width: fit-content;
+    height: fit-content;
     display:flex;
     flex-direction: column;
     padding-top: 50px;
     padding-bottom: 20px;
-    background-color:#f0f4f7;
+    background-color:white;
+    border-radius: 10px;
+    margin-top: 10%;
 }
-.profile-title-container{
-    width: 100%;
-    padding: 2rem;
-}
+
 .profile-title {
-    font-size: 20px;
+    font-size: 40px;
+    font-weight: 600;
     color: #000;
-    margin-bottom: 50px;
+    margin:0;
+    padding: 0;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+.user-info{
+    display: flex;
+    width: fit-content;
+    flex-direction: column;
+    justify-content: flex-start;
+    row-gap: 15px;
+    padding-left: 15%;
 }
 .lable{
     display: inline-flex;
-    flex-direction: row;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     column-gap: 5px;
+    font-size: 14px;
+    width: fit-content;
 }
 .value{
     color: #384062;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: bold;
     margin-left: 10px;
     margin: 0px;
@@ -33,8 +46,8 @@
 }
 @media screen and (min-width: 400px) {
     .user-profile-container {
-        padding-left: 30%;
-        padding-right: 30%;
+        margin-left: 30%;
+        margin-right: 30%;
         width: auto; 
     }
 }

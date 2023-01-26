@@ -33,26 +33,25 @@ export default function Gender() {
   const handleSubmit = () => {
     if (selected.length !== 0) {
       if (
-        age === "4" ||
-        age === "7" ||
-        age === "5" ||
-        age === "8" ||
-        age === "9"
+        (age === "4" ||
+          age === "7" ||
+          age === "5" ||
+          age === "8" ||
+          age === "9") &&
+        selected === "f"
       ) {
-        dispatch(updateSympthomGender(selected));
-        if (selected === "f") {
-          navigate("/pregnant");
-        } else {
-          navigate("/country");
-        }
+        navigate("/pregnant");
+      } else {
+        navigate("/country");
       }
+      dispatch(updateSympthomGender(selected));
     } else {
       setSelectError("* Select a gender is Required");
     }
   };
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="age-container" style={{ height: "100vh" }}>
