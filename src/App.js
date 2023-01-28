@@ -91,7 +91,7 @@ function App() {
   const Layout = () => {
     return (
       <div>
-        {displayPopup?<SkipPopup loginFlow = {callback} />:null}
+        {displayPopup?<SkipPopup setDisplayPopup = {setDisplayPopup} loginFlow = {callback} />:null}
         <Drawer />
         <Outlet />
         <Bottomtab />
