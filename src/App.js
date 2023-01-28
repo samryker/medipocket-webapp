@@ -85,6 +85,8 @@ function App() {
 
   useEffect(() => {
     console.log("login use effect");
+    setDisplayPopup(true)
+
     ready(callback);
   }, []);
 

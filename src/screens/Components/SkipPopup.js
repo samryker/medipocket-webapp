@@ -3,7 +3,10 @@ import React from "react";
 export const SkipPopup = ({loginFlow}) => {
   const message = "Granting consent is necessary for proceeding with the flow.";
   function handleExit(){
-    window.JSBridge.call('popWindow');
+    if (window.JSBridge) {
+        window.JSBridge.call('popWindow');
+    }
+    
   }
   function handleRetry(){
     loginFlow()
