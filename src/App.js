@@ -33,6 +33,7 @@ import Bottomtab from "./screens/Components/Bottomtab";
 import TopUsaHospitals from "./screens/MainScreens/TopUsaHospitals";
 import { UserProfile } from "./screens/MainScreens/Profile/UserProfile";
 import axios from "axios";
+import { SkipPopup } from "./screens/Components/SkipPopup";
 
 const client = new ApolloClient({
   uri: "https://app.medipocket.world/graphql/",
@@ -45,41 +46,43 @@ const client = new ApolloClient({
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [userInfo, setUserInfo] = useState(null);
+  const [displayPopup,setDisplayPopup] = useState(false);
+
+  function ready(callback) {
+    if (window.JSBridge) {
+      callback && callback();
+    } else {
+      document.addEventListener("JSBridgeReady", callback, false);
+    }
+  }
+
+  function callback() {
+    console.log("logging in");
+    window.JSBridge.call(
+      "paytmFetchAuthCode",
+      {
+        clientId: "merchant-medipocket-prod",
+      },
+      async function (result) {
+        if (result.data) {
+          const url = "https://paytm.sentinelhz.tech/api/getUserInfo";
+          const body = {
+            data: result.data,
+          };
+          const response = await axios.post(url, body);
+          const userInfo = await response.data;
+          if (userInfo) {
+            setLoggedIn(true);
+            setUserInfo(userInfo);
+          }
+        } else {
+          setDisplayPopup(true)
+        }
+      }
+    );
+  }
 
   useEffect(() => {
-    function ready(callback) {
-      if (window.JSBridge) {
-        callback && callback();
-      } else {
-        document.addEventListener("JSBridgeReady", callback, false);
-      }
-    }
-
-    function callback() {
-      console.log("logging in");
-      window.JSBridge.call(
-        "paytmFetchAuthCode",
-        {
-          clientId: "merchant-medipocket-prod",
-        },
-        async function (result) {
-          if (result.data) {
-            const url = "https://paytm.sentinelhz.tech/api/getUserInfo";
-            const body = {
-              data: result.data,
-            };
-            const response = await axios.post(url, body);
-            const userInfo = await response.data;
-            if (userInfo) {
-              setLoggedIn(true);
-              setUserInfo(userInfo);
-            }
-          } else {
-            callback();
-          }
-        }
-      );
-    }
     console.log("login use effect");
     ready(callback);
   }, []);
@@ -87,6 +90,7 @@ function App() {
   const Layout = () => {
     return (
       <div>
+        {displayPopup?<SkipPopup setDisplayPopup = {setDisplayPopup} loginFlow = {callback} />:null}
         <Drawer />
         <Outlet />
         <Bottomtab />
