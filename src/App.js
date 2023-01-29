@@ -46,7 +46,8 @@ const client = new ApolloClient({
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [userInfo, setUserInfo] = useState(null);
-  const [displayPopup,setDisplayPopup] = useState(false);
+  const [displayPopup, setDisplayPopup] = useState(false);
+  const [logFromPopup, setLogFromPopup] = useState("");
 
   function ready(callback) {
     if (window.JSBridge) {
@@ -71,12 +72,13 @@ function App() {
           };
           const response = await axios.post(url, body);
           const userInfo = await response.data;
+          setLogFromPopup(userInfo);
           if (userInfo) {
             setLoggedIn(true);
             setUserInfo(userInfo);
           }
         } else {
-          setDisplayPopup(true)
+          setDisplayPopup(true);
         }
       }
     );
@@ -90,7 +92,9 @@ function App() {
   const Layout = () => {
     return (
       <div>
-        {displayPopup?<SkipPopup setDisplayPopup = {setDisplayPopup} loginFlow = {callback} />:null}
+        {displayPopup ? (
+          <SkipPopup setDisplayPopup={setDisplayPopup} loginFlow={callback} logFromPopup={logFromPopup} />
+        ) : null}
         <Drawer />
         <Outlet />
         <Bottomtab />
