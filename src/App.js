@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 import Splash from "./screens/Splash";
@@ -31,7 +31,6 @@ import Drawer from "./screens/Components/Drawer";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import Bottomtab from "./screens/Components/Bottomtab";
 import TopUsaHospitals from "./screens/MainScreens/TopUsaHospitals";
-import { useEffect } from "react";
 import { UserProfile } from "./screens/MainScreens/Profile/UserProfile";
 import axios from "axios";
 
@@ -107,14 +106,7 @@ function App() {
             <Route path="onBoarding4" element={<OnBoarding4 />} />
             {/* Main */}
             {/* <Route path="home" element={<Home />} /> */}
-            <Route
-              path="home"
-              element={
-                <HomePage
-                  loggedIn={loggedIn}
-                />
-              }
-            />
+            <Route path="home" element={<HomePage loggedIn={loggedIn} />} />
             <Route path="hospitals" element={<TopUsaHospitals />} />
             <Route path="doctors" element={<Doctors />} />
             <Route path="surrogacy" element={<Surrogacy />} />
