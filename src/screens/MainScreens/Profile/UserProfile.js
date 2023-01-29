@@ -2,6 +2,7 @@ import React from "react";
 import "./stylesProfile.css";
 
 export const UserProfile = ({ userInfo }) => {
+  
   console.log(userInfo);
   const username = userInfo?.profileInfo?.displayName ?? "name";
   const email = userInfo?.email ?? "email";
