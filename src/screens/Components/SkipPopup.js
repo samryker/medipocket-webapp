@@ -1,6 +1,6 @@
 import React from "react";
 
-export const SkipPopup = ({ setDisplayPopup, loginFlow, logFromPopup }) => {
+export const SkipPopup = ({ setDisplayPopup, loginFlow }) => {
   const message = "Granting consent is necessary for proceeding with the flow.";
   function handleExit() {
     if (window.JSBridge) {
@@ -18,9 +18,6 @@ export const SkipPopup = ({ setDisplayPopup, loginFlow, logFromPopup }) => {
       <div className="popup">
         <div className="popupMessage">
           <p>{message}</p>
-          <div>
-            <p>{logFromPopup}</p>
-          </div>
           <div className="actions">
             <button onClick={handleExit} className="exit">
               EXIT

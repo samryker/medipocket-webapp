@@ -47,7 +47,6 @@ function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [userInfo, setUserInfo] = useState(null);
   const [displayPopup, setDisplayPopup] = useState(false);
-  const [logFromPopup, setLogFromPopup] = useState("");
 
   function ready(callback) {
     if (window.JSBridge) {
@@ -72,7 +71,6 @@ function App() {
           };
           const response = await axios.post(url, body);
           const userInfo = await response.data;
-          setLogFromPopup(userInfo);
           if (userInfo) {
             setLoggedIn(true);
             setUserInfo(userInfo);
@@ -93,7 +91,7 @@ function App() {
     return (
       <div>
         {displayPopup ? (
-          <SkipPopup setDisplayPopup={setDisplayPopup} loginFlow={callback} logFromPopup={logFromPopup} />
+          <SkipPopup setDisplayPopup={setDisplayPopup} loginFlow={callback}  />
         ) : null}
         <Drawer />
         <Outlet />
