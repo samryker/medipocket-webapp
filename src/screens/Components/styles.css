@@ -341,16 +341,15 @@
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
-    /* align-items: center; */
 }
 .popup::before{
     content: "Oops!";
-    background-color: rgb(52, 109, 216);
+    background-color: #29ddc6;
     width: 40%;
     font-size: 18px;
+    font-weight: bold;
     color: white;
-    padding: 8px 20px;
+    padding: 10px 20px;
     border-radius: 10px 0;
 }
 .popupMessage{
@@ -361,7 +360,6 @@
     display: flex;
     justify-content: flex-end;
     padding-right: 10px;
-    /* align-items: center; */
     column-gap: 20px;
 }
 .actions button{
@@ -375,6 +373,7 @@
 }
 
 .retry{
-    background-color: rgb(52, 109, 216) !important;
-    color: white;
+    background-color: #29ddc6 !important;
+    color: #fff;
+    font-weight: bold;
 }
