@@ -127,7 +127,7 @@
     align-items: center;
     width: 90%;
     border-radius: 25px;
-    background-color: #f0f4f7;
+    background-color: #fff;
     padding:20px;
     margin-bottom: 25px;
 }
@@ -234,12 +234,12 @@
 .doctorCard2 {
     position: relative;
     display: flex;
-    margin-top: 50px;
+    margin-top: 70px;
     width: 100%;
 }
 .imgContainer {
     position: absolute;
-    top: -40px;
+    top: -60px;
 }
 .doctor-avatar2 {
     width: 80px;
