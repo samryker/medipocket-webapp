@@ -29,6 +29,7 @@ export default function IntakeForm() {
   // verifiedIsGood = 2 means clicked and false invalid code
   const [verifiedIsGood, setVerifiedIsGood] = useState(0);
   const [errorsOfUser, setErrorsOfUser] = useState("");
+  const [errorsOfUser2, setErrorsOfUser2] = useState("");
 
   // Inputs
   const [mynumber, setnumber] = useState("");
@@ -365,12 +366,19 @@ export default function IntakeForm() {
     if (appointment2) appointment += "4-7 Days";
     if (appointment3) appointment += "Morning India time: 5.30am - 10am";
     if (appointment4) appointment += "Evening India time: 5.30pm - 12am";
-    if (phone.length === 0 || verifiedIsGood !== 1 || f3.length === 0) {
+    if (phone.length === 0 || verifiedIsGood !== 1) {
       setErrorsOfUser(
-        "Phone Number verification and Reason for consultation are required! PLease try again!"
+        "Phone Number verification is required! PLease try again!"
       );
-      // setHelp2(true);
     } else {
+      setErrorsOfUser('')
+    }
+     if (f3.length === 0){
+      setErrorsOfUser2('Reason for Consultation is required! PLease try again!')
+    } else {
+      setErrorsOfUser2('')
+    }
+    if(f3.length > 0 && verifiedIsGood === 1) {
       let user = {
         type_form: "intake_form",
         doc_name: doctorName ? doctorName : "_blank",
@@ -407,7 +415,6 @@ export default function IntakeForm() {
           console.log("res from intakeForm => ", res);
           setIndicatorLoad(false);
           setHelp(true);
-          // navigation.navigate("homePage");
           console.log("DONE");
         })
         .catch((err) => {
@@ -1012,7 +1019,7 @@ export default function IntakeForm() {
         <div className="intake-card shadow1">
           <p className="intake-card-title">Reason For Consulting The Doctor</p>
           <div className="intake-inputs-container">
-            {errorsOfUser.length > 0 ? (
+            {errorsOfUser2.length > 0 ? (
               <>
                 <input
                   className="intake-input intake-error-field"
@@ -1146,6 +1153,21 @@ export default function IntakeForm() {
           >
             <p style={{ color: "red", fontSize: "14px", margin: "20px" }}>
               {errorsOfUser}{" "}
+            </p>
+          </div>
+        )}
+        {errorsOfUser2.length > 0 && (
+          <div
+            style={{
+              width: "100%",
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <p style={{ color: "red", fontSize: "14px", margin: "20px" }}>
+              {errorsOfUser2}{" "}
             </p>
           </div>
         )}
