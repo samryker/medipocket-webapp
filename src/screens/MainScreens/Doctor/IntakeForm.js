@@ -40,7 +40,7 @@ export default function IntakeForm() {
   const signin = () => {
     try {
       const appVerifier = window.recaptchaVerifier;
-      signInWithPhoneNumber(auth, phone, appVerifier)
+      signInWithPhoneNumber(auth, '+91'+phone, appVerifier)
         .then((confirmationResult) => {
           checkCode(confirmationResult);
           setshow(true);
@@ -150,7 +150,7 @@ export default function IntakeForm() {
     try {
       generateRecaptcha();
       let appVerifier = window.recaptchaVerifier;
-      signInWithPhoneNumber(auth, phone, appVerifier)
+      signInWithPhoneNumber(auth, '+91'+phone, appVerifier)
         .then((confirmationResult) => {
           window.confirmationResult = confirmationResult;
           setPhoneVerified(true);
@@ -408,13 +408,13 @@ export default function IntakeForm() {
           setIndicatorLoad(false);
           setHelp(true);
           // navigation.navigate("homePage");
+          console.log("DONE");
         })
         .catch((err) => {
           setIndicatorLoad(false);
           console.log("==============================================");
           console.log("Error =>", err);
         });
-      console.log("DONE");
     }
 
     setIndicatorLoad(false);
@@ -488,37 +488,32 @@ export default function IntakeForm() {
               style={{ position: "relative" }}
             >
               <form action="" onSubmit={handleVerifyPhone}>
-                {errorsOfUser.length > 0 ? (
-                  <>
-                    <input
-                      className="intake-input intake-error-field"
+                <div className="prefix-container">
+                <span class="prefix">+91</span>
+              <input
+                      className={`intake-input ${errorsOfUser.length > 0 ? "intake-error-field": null}`}
+                      type={"tel"}
+                      pattern={'[0-9]{10}'}
                       value={phone}
-                      onChange={(e) => setPhone(e.target.value)}
+                      onChange={(e) => setPhone(e.target.value.substring(0,10))}
                       placeholder="PhoneNumber"
                     />
-                    <div style={{ width: "100%" }}>
-                      <p
-                        style={{
-                          color: "red",
-                          fontSize: "10px",
-                          margin: "5px 0",
-                        }}
-                      >
-                        * Phone Number and verification Required !
-                      </p>
-                    </div>
-                  </>
-                ) : (
-                  <input
-                    disabled={verifiedIsGood !== 0}
-                    className="intake-input"
-                    value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
-                    placeholder="PhoneNumber"
-                  />
-                )}
+                </div>
+                {errorsOfUser.length > 0 ? (
+                  <div style={{ width: "100%" }}>
+                  <p
+                    style={{
+                      color: "red",
+                      fontSize: "10px",
+                      margin: "5px 0",
+                    }}
+                  >
+                    * Phone Number and verification Required !
+                  </p>
+                </div>
+                ) : null}
 
-                {phone.length > 10 && (
+                {phone.length === 10 && (
                   <button
                     disabled={verifiedIsGood !== 0}
                     style={{
