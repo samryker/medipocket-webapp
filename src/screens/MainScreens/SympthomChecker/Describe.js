@@ -93,6 +93,7 @@ export default function Describe() {
     setSearch("");
     setSearchArray([]);
   };
+  console.log("Item Selected =>", selected)
   const handleRemoveItem = (e, item) => {
     console.log("Item Removed => ", item);
     let array = [];
@@ -121,7 +122,7 @@ export default function Describe() {
     if (testSelected.length !== 0) {
       // if (selected.length !== 0) {
       // let ch = selected.join(",");
-      let ch = testSelected.join(",");
+      let ch = selected.join(",");
       console.log("Success !!!");
       dispatch(updateSympthomDescribe(ch));
       navigate("/result");

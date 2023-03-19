@@ -306,6 +306,10 @@ export default function HomePage({loggedIn}) {
               navigate("/surrogacy")}
             }
           }
+          // onClick={() => {
+          //   navigate("/surrogacy")}
+           
+          // }
         >
           <img
             src={process.env.PUBLIC_URL + "/icons/p3.png"}
