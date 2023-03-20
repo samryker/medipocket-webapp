@@ -301,15 +301,15 @@ export default function HomePage({loggedIn}) {
         </div>
         <div
           className="homeComponent shadowHome"
-          onClick={() => {
-            if(loggedIn){
-              navigate("/surrogacy")}
-            }
-          }
           // onClick={() => {
-          //   navigate("/surrogacy")}
-           
+          //   if(loggedIn){
+          //     navigate("/surrogacy")}
+          //   }
           // }
+          onClick={() => {
+            navigate("/surrogacy")}
+           
+          }
         >
           <img
             src={process.env.PUBLIC_URL + "/icons/p3.png"}
