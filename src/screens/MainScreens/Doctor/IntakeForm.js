@@ -29,7 +29,6 @@ export default function IntakeForm() {
   // verifiedIsGood = 2 means clicked and false invalid code
   const [verifiedIsGood, setVerifiedIsGood] = useState(0);
   const [errorsOfUser, setErrorsOfUser] = useState("");
-  const [errorsOfUser2, setErrorsOfUser2] = useState("");
 
   // Inputs
   const [mynumber, setnumber] = useState("");
@@ -41,7 +40,7 @@ export default function IntakeForm() {
   const signin = () => {
     try {
       const appVerifier = window.recaptchaVerifier;
-      signInWithPhoneNumber(auth, '+91'+phone, appVerifier)
+      signInWithPhoneNumber(auth, phone, appVerifier)
         .then((confirmationResult) => {
           checkCode(confirmationResult);
           setshow(true);
@@ -151,7 +150,7 @@ export default function IntakeForm() {
     try {
       generateRecaptcha();
       let appVerifier = window.recaptchaVerifier;
-      signInWithPhoneNumber(auth, '+91'+phone, appVerifier)
+      signInWithPhoneNumber(auth, phone, appVerifier)
         .then((confirmationResult) => {
           window.confirmationResult = confirmationResult;
           setPhoneVerified(true);
@@ -162,19 +161,6 @@ export default function IntakeForm() {
     } catch (error) {
       console.log("error from recapther", error);
     }
-    // --- Rami Code ----
-    // console.log("inside trycatch 1 ");
-    // window.recaptchaVerifier = new RecaptchaVerifier(
-    //   "sign-in-button",
-    //   {
-    //     callback: (response) => {
-    //       console.log("response line 297 => ", response);
-    //       // onSignInSubmit(response);
-    //     },
-    //   },
-    //   auth
-    // );
-    // console.log("inside trycatch 2 ");
   };
 
   // f2
@@ -244,6 +230,13 @@ export default function IntakeForm() {
   const [q1, setQ1] = useState("");
   const [q2, setQ2] = useState("");
   const [q3, setQ3] = useState("");
+  // Request
+  const [request1, setRequest1] = useState(false);
+  const [request2, setRequest2] = useState(false);
+  const [request3, setRequest3] = useState(false);
+  const [request4, setRequest4] = useState(false);
+  const [request5, setRequest5] = useState(false);
+  const [request_other, setRequest_other] = useState("");
   // Appointment
   const [appointment1, setAppointment1] = useState(false);
   const [appointment2, setAppointment2] = useState(false);
@@ -310,6 +303,22 @@ export default function IntakeForm() {
     setF5_5_3(true);
     setF5_5_4(false);
   };
+  // Request
+  const handleRequest1 = () => {
+    setRequest1(!request1);
+  };
+  const handleRequest2 = () => {
+    setRequest2(!request2);
+  };
+  const handleRequest3 = () => {
+    setRequest3(!request3);
+  };
+  const handleRequest4 = () => {
+    setRequest4(!request4);
+  };
+  const handleRequest5 = () => {
+    setRequest5(!request5);
+  };
   // Appoitment
   const handleAppointment1 = () => {
     setAppointment1(!appointment1);
@@ -361,24 +370,24 @@ export default function IntakeForm() {
     if (f5_5_1) smoke = "Never";
     if (f5_5_2) smoke = "Stopped";
     if (f5_5_3) smoke = "Daily";
+    // request
+    let requestService = "";
+    if (request1) requestService += "Expert Consultation";
+    if (request2) requestService += "Second Opinion";
+    if (request3) requestService += "Treatment In USA";
+    if (request4) requestService += "Surrogate USA";
+    if (request5) requestService += request_other;
+    // appointment
     let appointment = "";
     if (appointment1) appointment += "ASAP";
     if (appointment2) appointment += "4-7 Days";
     if (appointment3) appointment += "Morning India time: 5.30am - 10am";
     if (appointment4) appointment += "Evening India time: 5.30pm - 12am";
-    if (phone.length === 0 || verifiedIsGood !== 1) {
+    if (phone.length === 0 || verifiedIsGood !== 1 || f3.length === 0) {
       setErrorsOfUser(
-        "Phone Number verification is required! PLease try again!"
+        "Phone Number verification and Reason for consultation are required! PLease try again!"
       );
     } else {
-      setErrorsOfUser('')
-    }
-     if (f3.length === 0){
-      setErrorsOfUser2('Reason for Consultation is required! PLease try again!')
-    } else {
-      setErrorsOfUser2('')
-    }
-    if(f3.length > 0 && verifiedIsGood === 1) {
       let user = {
         type_form: "intake_form",
         doc_name: doctorName ? doctorName : "_blank",
@@ -386,15 +395,15 @@ export default function IntakeForm() {
         birth: birth ? birth : "_blank",
         gender: gender ? gender : "_blank",
         phone_number: phone,
-        patient_medical_history: f4 ? f4: "_blank",
-        father: father ? father : "_blank",
-        mother: mother ? mother : "_blank",
-        brother: brother ? brother : "_blank",
-        sister: sister ? sister : "_blank",
+        patient_medical_history: f4 ? f4 : "_blank",
+        father: "_blank",
+        mother: "_blank",
+        brother: "_blank",
+        sister: "_blank",
         comments: "_blank",
         current_medication: medication ? medication : "_blank",
-        list_allergies: allergies ? allergies : "_blank",
-        healthy_unhealthy: `Exercices: ${exercices}, Alcohol ${alcohol}, Smoke: ${smoke}.`,
+        list_allergies: "_blank",
+        healthy_unhealthy: "_blank",
         reason_for_consultation: f3 ? f3 : "_blank",
         question1: q1 ? q1 : "_blank",
         question2: q2 ? q2 : "_blank",
@@ -415,27 +424,27 @@ export default function IntakeForm() {
           console.log("res from intakeForm => ", res);
           setIndicatorLoad(false);
           setHelp(true);
-          console.log("DONE");
         })
         .catch((err) => {
           setIndicatorLoad(false);
           console.log("==============================================");
           console.log("Error =>", err);
         });
+      console.log("DONE");
     }
 
     setIndicatorLoad(false);
   };
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="age-container">
       {/* subContainer */}
       <div className="age-subContainer">
         <div className="age-header">
-          <div className="age-headerSub" onClick={() => navigate("/home")}>
+          <div className="age-headerSub" onClick={() => setHelp2(!help2)}>
             <FaArrowLeft className="age-backIcon" />
           </div>
           <div className="age-titleContainer">
@@ -451,8 +460,7 @@ export default function IntakeForm() {
       {/* scroll */}
       <div className="age-scrollContainer">
         <div className="intake-card shadow1">
-          <p className="intake-card-title">Telemedicine Patient</p>
-          <p className="intake-card-title">Intake Form</p>
+          <p className="intake-card-title">Medical Intake Form</p>
         </div>
         <div className="intake-card shadow1">
           <p className="intake-card-title">Consultation for</p>
@@ -495,32 +503,37 @@ export default function IntakeForm() {
               style={{ position: "relative" }}
             >
               <form action="" onSubmit={handleVerifyPhone}>
-                <div className="prefix-container">
-                <span class="prefix">+91</span>
-              <input
-                      className={`intake-input ${errorsOfUser.length > 0 ? "intake-error-field": null}`}
-                      type={"tel"}
-                      pattern={'[0-9]{10}'}
+                {errorsOfUser.length > 0 ? (
+                  <>
+                    <input
+                      className="intake-input intake-error-field"
                       value={phone}
-                      onChange={(e) => setPhone(e.target.value.substring(0,10))}
+                      onChange={(e) => setPhone(e.target.value)}
                       placeholder="PhoneNumber"
                     />
-                </div>
-                {errorsOfUser.length > 0 ? (
-                  <div style={{ width: "100%" }}>
-                  <p
-                    style={{
-                      color: "red",
-                      fontSize: "10px",
-                      margin: "5px 0",
-                    }}
-                  >
-                    * Phone Number and verification Required !
-                  </p>
-                </div>
-                ) : null}
+                    <div style={{ width: "100%" }}>
+                      <p
+                        style={{
+                          color: "red",
+                          fontSize: "10px",
+                          margin: "5px 0",
+                        }}
+                      >
+                        * Phone Number and verification Required !
+                      </p>
+                    </div>
+                  </>
+                ) : (
+                  <input
+                    disabled={verifiedIsGood !== 0}
+                    className="intake-input"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    placeholder="PhoneNumber"
+                  />
+                )}
 
-                {phone.length === 10 && (
+                {phone.length > 10 && (
                   <button
                     disabled={verifiedIsGood !== 0}
                     style={{
@@ -604,6 +617,76 @@ export default function IntakeForm() {
 
               {phoneError.length === 0 ? null : (
                 <p className="intake-error">{phoneError}</p>
+              )}
+            </div>
+          </div>
+        </div>
+        {/* Requesting USA medical services for: */}
+        <div className="intake-card shadow1">
+          <p className="intake-card-title">
+            Requesting USA medical services for:
+          </p>
+          <div className="intake-inputs-container">
+            <div className="intake-input-container">
+              <div className="intake-checkbox-container intake-checkbox-container-margin">
+                <input
+                  type={"checkbox"}
+                  color={"#40e0d0"}
+                  className="intake-checkbox"
+                  value={request1}
+                  onChange={handleRequest1}
+                />
+                <p className="intake-checkbox-title">Expert Consultation</p>
+              </div>
+              <div className="intake-checkbox-container intake-checkbox-container-margin">
+                <input
+                  type={"checkbox"}
+                  color={"#40e0d0"}
+                  className="intake-checkbox"
+                  value={request2}
+                  onChange={handleRequest2}
+                />
+                <p className="intake-checkbox-title">Second Opinion</p>
+              </div>
+              <div className="intake-checkbox-container intake-checkbox-container-margin">
+                <input
+                  type={"checkbox"}
+                  color={"#40e0d0"}
+                  className="intake-checkbox"
+                  value={request3}
+                  onChange={handleRequest3}
+                />
+                <p className="intake-checkbox-title">Treatment In USA</p>
+              </div>
+              <div className="intake-checkbox-container intake-checkbox-container-margin">
+                <input
+                  type={"checkbox"}
+                  color={"#40e0d0"}
+                  className="intake-checkbox"
+                  value={request4}
+                  onChange={handleRequest4}
+                />
+                <p className="intake-checkbox-title">Surrogate USA</p>
+              </div>
+              <div className="intake-checkbox-container intake-checkbox-container-margin">
+                <input
+                  type={"checkbox"}
+                  color={"#40e0d0"}
+                  className="intake-checkbox"
+                  value={request5}
+                  onChange={handleRequest5}
+                />
+                <p className="intake-checkbox-title">Other</p>
+              </div>
+              {request5 && (
+                <>
+                  <input
+                    className="intake-input"
+                    value={request_other}
+                    onChange={(e) => setRequest_other(e.target.value)}
+                    placeholder="Please type your requested service here"
+                  />
+                </>
               )}
             </div>
           </div>
@@ -846,60 +929,6 @@ export default function IntakeForm() {
             )}
           </div>
         </div>
-        {/* Patient Family History */}
-        <div className="intake-card shadow1">
-          <p className="intake-card-title">Patient Family History</p>
-          <div className="intake-inputs-container">
-            <p className="intake-card-title4">
-              Please tell if your family member suffer(ed) from any health
-              conditions
-            </p>
-            <div className="intake-input-container">
-              <p className="intake-card-title4 intake-input-with-label-title">
-                Father
-              </p>
-              <input
-                className="intake-input intake-input-with-label"
-                value={father}
-                onChange={(e) => setFather(e.target.value)}
-                placeholder="Father"
-              />
-            </div>
-            <div className="intake-input-container">
-              <p className="intake-card-title4 intake-input-with-label-title">
-                Mother
-              </p>
-              <input
-                className="intake-input intake-input-with-label"
-                value={mother}
-                onChange={(e) => setMother(e.target.value)}
-                placeholder="Mother"
-              />
-            </div>
-            <div className="intake-input-container">
-              <p className="intake-card-title4 intake-input-with-label-title">
-                Brother (s)
-              </p>
-              <input
-                className="intake-input intake-input-with-label"
-                value={brother}
-                onChange={(e) => setBrother(e.target.value)}
-                placeholder="Brother (s)"
-              />
-            </div>
-            <div className="intake-input-container">
-              <p className="intake-card-title4 intake-input-with-label-title">
-                Sister (s)
-              </p>
-              <input
-                className="intake-input intake-input-with-label"
-                value={sister}
-                onChange={(e) => setSister(e.target.value)}
-                placeholder="Sister (s)"
-              />
-            </div>
-          </div>
-        </div>
         {/* Current Medications */}
         <div className="intake-card shadow1">
           <p className="intake-card-title">Current Medications</p>
@@ -912,114 +941,11 @@ export default function IntakeForm() {
             />
           </div>
         </div>
-        {/* Allergies */}
-        <div className="intake-card shadow1">
-          <p className="intake-card-title">Allergies</p>
-          <div className="intake-inputs-container">
-            <input
-              className="intake-input"
-              value={allergies}
-              onChange={(e) => setAllergies(e.target.value)}
-              placeholder="Any Food, Medicine, Seasonal allergies"
-            />
-          </div>
-        </div>
-        {/* Healthy & Unhealthy Habits */}
-        <div className="intake-card shadow1">
-          <p className="intake-card-title">Healthy & Unhealthy Habits</p>
-          <div className="intake-inputs-container">
-            <div className="intake-input-container">
-              <p className="intake-card-title4">Exercise</p>
-              <div className="intake-checkbox-container intake-checkbox-container-margin">
-                <input
-                  type={"checkbox"}
-                  color={"#40e0d0"}
-                  className="intake-checkbox"
-                  value={f5_1_2}
-                  onChange={handlef5_1_2}
-                />
-                <p className="intake-checkbox-title">Regularly</p>
-              </div>
-              <div className="intake-checkbox-container intake-checkbox-container-margin">
-                <input
-                  type={"checkbox"}
-                  color={"#40e0d0"}
-                  className="intake-checkbox"
-                  value={f5_1_1}
-                  onChange={handlef5_1_1}
-                />
-                <p className="intake-checkbox-title">Never</p>
-              </div>
-              <p className="intake-card-title4">Alcohol Consumption</p>
-              <div className="intake-checkbox-container intake-checkbox-container-margin">
-                <input
-                  type={"checkbox"}
-                  color={"#40e0d0"}
-                  className="intake-checkbox"
-                  value={f5_3_1}
-                  onChange={handlef5_3_1}
-                />
-                <p className="intake-checkbox-title">Don’t drink</p>
-              </div>
-              <div className="intake-checkbox-container intake-checkbox-container-margin">
-                <input
-                  type={"checkbox"}
-                  color={"#40e0d0"}
-                  className="intake-checkbox"
-                  value={f5_3_2}
-                  onChange={handlef5_3_2}
-                />
-                <p className="intake-checkbox-title">Occasional</p>
-              </div>
-              <div className="intake-checkbox-container intake-checkbox-container-margin">
-                <input
-                  type={"checkbox"}
-                  color={"#40e0d0"}
-                  className="intake-checkbox"
-                  value={f5_3_3}
-                  onChange={handlef5_3_3}
-                />
-                <p className="intake-checkbox-title">Daily</p>
-              </div>
-              <p className="intake-card-title4">Smoke</p>
-              <div className="intake-checkbox-container intake-checkbox-container-margin">
-                <input
-                  type={"checkbox"}
-                  color={"#40e0d0"}
-                  className="intake-checkbox"
-                  value={f5_5_1}
-                  onChange={handlef5_5_1}
-                />
-                <p className="intake-checkbox-title">Daily</p>
-              </div>
-              <div className="intake-checkbox-container intake-checkbox-container-margin">
-                <input
-                  type={"checkbox"}
-                  color={"#40e0d0"}
-                  className="intake-checkbox"
-                  value={f5_5_2}
-                  onChange={handlef5_5_2}
-                />
-                <p className="intake-checkbox-title">Stopped</p>
-              </div>
-              <div className="intake-checkbox-container intake-checkbox-container-margin">
-                <input
-                  type={"checkbox"}
-                  color={"#40e0d0"}
-                  className="intake-checkbox"
-                  value={f5_5_3}
-                  onChange={handlef5_5_3}
-                />
-                <p className="intake-checkbox-title">Daily</p>
-              </div>
-            </div>
-          </div>
-        </div>
         {/* Reason for Consultation */}
         <div className="intake-card shadow1">
           <p className="intake-card-title">Reason For Consulting The Doctor</p>
           <div className="intake-inputs-container">
-            {errorsOfUser2.length > 0 ? (
+            {errorsOfUser.length > 0 ? (
               <>
                 <input
                   className="intake-input intake-error-field"
@@ -1156,21 +1082,6 @@ export default function IntakeForm() {
             </p>
           </div>
         )}
-        {errorsOfUser2.length > 0 && (
-          <div
-            style={{
-              width: "100%",
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <p style={{ color: "red", fontSize: "14px", margin: "20px" }}>
-              {errorsOfUser2}{" "}
-            </p>
-          </div>
-        )}
         <div
           className={"submit-container2 submit1"}
           style={{ cursor: "pointer" }}
@@ -1182,42 +1093,51 @@ export default function IntakeForm() {
       {/* Success Model */}
       {help && (
         <div className="success-model-intakeform shadow1">
-          <p
-            className="intake-card-title3"
-            style={{
-              textAlign: "center",
-              marginTop: "20px",
-              marginBottom: "100px",
-              fontSize: "20px",
-            }}
-          >
-            Your details have been submitted Successfully
-          </p>
-          <div className="backhomeBtn" onClick={() => navigate("/home")}>
-            <p className="backhomeText">Back home</p>
+          <div className="success-model-content">
+            <p
+              className="intake-card-title3"
+              style={{
+                textAlign: "center",
+                marginTop: "20px",
+                marginBottom: "100px",
+                fontSize: "20px",
+              }}
+            >
+              Your details have been submitted Successfully
+            </p>
+            <div className="intakeForm-concon">
+              <div className="backhomeBtn" onClick={() => navigate("/home")}>
+                <p className="backhomeText">Back home</p>
+              </div>
+              <div className="backhomeBtn" onClick={() => setHelp(false)}>
+                <p className="backhomeText">Cancel</p>
+              </div>
+            </div>
           </div>
         </div>
       )}
       {/* close Model */}
       {help2 && (
         <div className="success-model-intakeform shadow1">
-          <p
-            className="intake-card-title3"
-            style={{
-              textAlign: "center",
-              marginTop: "20px",
-              marginBottom: "100px",
-              fontSize: "20px",
-            }}
-          >
-            You can only back to the home page
-          </p>
-          <div className="intakeForm-concon">
-            <div className="backhomeBtn" onClick={() => navigate(-1)}>
-              <p className="backhomeText">Back Home</p>
-            </div>
-            <div className="backhomeBtn" onClick={() => setHelp2(false)}>
-              <p className="backhomeText">Cancel</p>
+          <div className="success-model-content">
+            <p
+              className="intake-card-title3"
+              style={{
+                textAlign: "center",
+                marginTop: "20px",
+                marginBottom: "100px",
+                fontSize: "20px",
+              }}
+            >
+              You can only back to the home page
+            </p>
+            <div className="intakeForm-concon">
+              <div className="backhomeBtn" onClick={() => navigate("/home")}>
+                <p className="backhomeText">Back Home</p>
+              </div>
+              <div className="backhomeBtn" onClick={() => setHelp2(false)}>
+                <p className="backhomeText">Cancel</p>
+              </div>
             </div>
           </div>
         </div>
