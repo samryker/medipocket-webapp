@@ -154,7 +154,7 @@ export default function IntakeForm() {
       generateRecaptcha();
       console.log("Phone Number =>", phone)
       let appVerifier = window.recaptchaVerifier;
-      signInWithPhoneNumber(auth, phone, appVerifier)
+      signInWithPhoneNumber(auth, `+91${phone}`, appVerifier)
         .then((confirmationResult) => {
           window.confirmationResult = confirmationResult;
           setPhoneVerified(true);
@@ -405,7 +405,7 @@ export default function IntakeForm() {
         name: name ? name : "_blank",
         birth: birth ? birth : "_blank",
         gender: gender ? gender : "_blank",
-        phone_number: phone,
+        phone_number: `+91${phone}`,
         patient_medical_history: f4 ? f4 : "_blank",
         father: "_blank",
         mother: "_blank",
@@ -521,6 +521,7 @@ export default function IntakeForm() {
                       type={"tel"}
                       pattern={'[0-9]{10}'}
                       value={phone}
+                      disabled={verifiedIsGood}
                       onChange={(e) => setPhone(e.target.value.substring(0,10))}
                       placeholder="PhoneNumber"
                     />
