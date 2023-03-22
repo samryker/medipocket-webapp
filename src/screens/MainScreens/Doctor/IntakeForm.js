@@ -28,6 +28,7 @@ export default function IntakeForm() {
   // verifiedIsGood = 1 means clicked and true
   // verifiedIsGood = 2 means clicked and false invalid code
   const [verifiedIsGood, setVerifiedIsGood] = useState(0);
+  const [errorsOfUserPhone, setErrorsOfUserPhone] = useState("");
   const [errorsOfUser, setErrorsOfUser] = useState("");
 
   // Inputs
@@ -135,10 +136,12 @@ export default function IntakeForm() {
             console.log("response", response);
             // reCAPTCHA solved, allow signInWithPhoneNumber.
             // onSignInSubmit();
+            
           },
         },
         auth
       );
+     
     } catch (error) {
       console.log("error from generateRecaptcha", error);
     }
@@ -149,11 +152,13 @@ export default function IntakeForm() {
     console.log("here handleVerifyPhone");
     try {
       generateRecaptcha();
+      console.log("Phone Number =>", phone)
       let appVerifier = window.recaptchaVerifier;
       signInWithPhoneNumber(auth, phone, appVerifier)
         .then((confirmationResult) => {
           window.confirmationResult = confirmationResult;
           setPhoneVerified(true);
+          console.log("sucsessfull OTP =>")
         })
         .catch((e) => {
           console.log("error =>", e);
@@ -383,9 +388,15 @@ export default function IntakeForm() {
     if (appointment2) appointment += "4-7 Days";
     if (appointment3) appointment += "Morning India time: 5.30am - 10am";
     if (appointment4) appointment += "Evening India time: 5.30pm - 12am";
-    if (phone.length === 0 || verifiedIsGood !== 1 || f3.length === 0) {
+    if(verifiedIsGood !== 1||phone.length === 0)
+    {
+      setErrorsOfUserPhone(
+        "Phone Number verification is required! PLease try again!"
+      );
+    }
+    else if (f3.length === 0) {
       setErrorsOfUser(
-        "Phone Number verification and Reason for consultation are required! PLease try again!"
+        " Reason for consultation is required! PLease try again!"
       );
     } else {
       let user = {
@@ -502,38 +513,33 @@ export default function IntakeForm() {
               className="intake-input-container"
               style={{ position: "relative" }}
             >
-              <form action="" onSubmit={handleVerifyPhone}>
-                {errorsOfUser.length > 0 ? (
-                  <>
-                    <input
-                      className="intake-input intake-error-field"
+            <form action="" onSubmit={handleVerifyPhone}>
+                <div className="prefix-container">
+                <span class="prefix">+91</span>
+              <input
+                      className={`intake-input ${errorsOfUserPhone.length > 0 ? "intake-error-field": null}`}
+                      type={"tel"}
+                      pattern={'[0-9]{10}'}
                       value={phone}
-                      onChange={(e) => setPhone(e.target.value)}
+                      onChange={(e) => setPhone(e.target.value.substring(0,10))}
                       placeholder="PhoneNumber"
                     />
-                    <div style={{ width: "100%" }}>
-                      <p
-                        style={{
-                          color: "red",
-                          fontSize: "10px",
-                          margin: "5px 0",
-                        }}
-                      >
-                        * Phone Number and verification Required !
-                      </p>
-                    </div>
-                  </>
-                ) : (
-                  <input
-                    disabled={verifiedIsGood !== 0}
-                    className="intake-input"
-                    value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
-                    placeholder="PhoneNumber"
-                  />
-                )}
+                </div>
+                {errorsOfUserPhone.length > 0 ? (
+                  <div style={{ width: "100%" }}>
+                  <p
+                    style={{
+                      color: "red",
+                      fontSize: "10px",
+                      margin: "5px 0",
+                    }}
+                  >
+                    * Phone Number and verification Required !
+                  </p>
+                </div>
+                ) : null}
 
-                {phone.length > 10 && (
+                {phone.length === 10 && (
                   <button
                     disabled={verifiedIsGood !== 0}
                     style={{
@@ -1067,7 +1073,7 @@ export default function IntakeForm() {
             </div>
           </div>
         </div>
-        {errorsOfUser.length > 0 && (
+        {errorsOfUser.length > 0 ||errorsOfUserPhone.length>0 && (
           <div
             style={{
               width: "100%",
@@ -1078,7 +1084,7 @@ export default function IntakeForm() {
             }}
           >
             <p style={{ color: "red", fontSize: "14px", margin: "20px" }}>
-              {errorsOfUser}{" "}
+              {errorsOfUser}{" "} {errorsOfUserPhone}
             </p>
           </div>
         )}
