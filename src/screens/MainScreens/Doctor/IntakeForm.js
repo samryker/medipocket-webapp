@@ -143,7 +143,8 @@ export default function IntakeForm() {
     }
     else
     {
-
+      setErrorsOfUserPhone("")
+      setErrorsOfUser("")
       setShowCaptcha(true)
     }
       console.log("generateRecaptcha");
