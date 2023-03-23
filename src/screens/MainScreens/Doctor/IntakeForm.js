@@ -129,7 +129,7 @@ export default function IntakeForm() {
     }
   };
   const generateRecaptcha = () => {
-    if ( phone.length === 0) {
+    if (phone.length === 0) {
       setErrorsOfUser("")
       setErrorsOfUserPhone(
         "Phone Number verification is required! PLease try again!"
@@ -141,357 +141,357 @@ export default function IntakeForm() {
         " Reason for consultation is required! PLease try again!"
       );
     }
-    else
-    {
+    else {
       setErrorsOfUserPhone("")
       setErrorsOfUser("")
       setShowCaptcha(true)
     }
-      console.log("generateRecaptcha");
-      // try {
-      //   window.recaptchaVerifier = new RecaptchaVerifier(
-      //     "recaptcha-container",
-      //     {
-      //       size: "invisible",
-      //       callback: (response) => {
-      //         console.log("response", response);
-      //         // reCAPTCHA solved, allow signInWithPhoneNumber.
-      //         // onSignInSubmit();
+    console.log("generateRecaptcha");
+    // try {
+    //   window.recaptchaVerifier = new RecaptchaVerifier(
+    //     "recaptcha-container",
+    //     {
+    //       size: "invisible",
+    //       callback: (response) => {
+    //         console.log("response", response);
+    //         // reCAPTCHA solved, allow signInWithPhoneNumber.
+    //         // onSignInSubmit();
 
-      //       },
-      //     },
-      //     auth
-      //   );
+    //       },
+    //     },
+    //     auth
+    //   );
 
-      // } catch (error) {
-      //   console.log("error from generateRecaptcha", error);
-      // }
+    // } catch (error) {
+    //   console.log("error from generateRecaptcha", error);
+    // }
 
-    };
+  };
 
-    const handleVerifyPhone = (e) => {
-      e.preventDefault();
-      console.log("here handleVerifyPhone");
-      try {
-        // generateRecaptcha();
-        console.log("Phone Number =>", phone)
-        let appVerifier = window.recaptchaVerifier;
-        signInWithPhoneNumber(auth, `+91${phone}`, appVerifier)
-          .then((confirmationResult) => {
-            window.confirmationResult = confirmationResult;
-            setPhoneVerified(true);
-            console.log("sucsessfull OTP =>")
-          })
-          .catch((e) => {
-            console.log("error =>", e);
-          });
-      } catch (error) {
-        console.log("error from recapther", error);
-      }
-    };
-
-    // f2
-    const [name, setName] = useState("");
-    const [birth, setBirth] = useState("");
-    const [gender, setGender] = useState("");
-    const [phone, setPhone] = useState("");
-    // f3
-    const [f3, setF3] = useState("");
-    // f4
-    // const [f4, setF4] = useState([]);
-    const [f4_1, setF4_1] = useState(false);
-    const [f4_2, setF4_2] = useState(false);
-    const [f4_3, setF4_3] = useState(false);
-    const [f4_4, setF4_4] = useState(false);
-    const [f4_5, setF4_5] = useState(false);
-    const [f4_6, setF4_6] = useState(false);
-    const [f4_7, setF4_7] = useState(false);
-    const [f4_8, setF4_8] = useState(false);
-    const [f4_9, setF4_9] = useState(false);
-    const [f4_10, setF4_10] = useState(false);
-    const [f4_11, setF4_11] = useState(false);
-    const [f4_12, setF4_12] = useState(false);
-    // Not Used
-    const [f4_13, setF4_13] = useState(false);
-    const [f4_14, setF4_14] = useState(false);
-    const [f4_15, setF4_15] = useState(false);
-    const [f4_16, setF4_16] = useState(false);
-    // Not Used
-    const [f4_17, setF4_17] = useState(false);
-    const [f4_18, setF4_18] = useState(false);
-    const [f4_19, setF4_19] = useState(false);
-    const [f4_20, setF4_20] = useState(false);
-    const [f4_21, setF4_21] = useState(false);
-    const [f4_22, setF4_22] = useState(false);
-    const [f4_23, setF4_23] = useState(false);
-    const [f4_24, setF4_24] = useState(false);
-    const [f4_other, setF4_other] = useState("");
-    // Medication
-    const [medication, setMedication] = useState("");
-    // Allergies
-    const [allergies, setAllergies] = useState("");
-
-    // f5
-    // f5_1
-    const [f5_1_1, setF5_1_1] = useState(false);
-    const [f5_1_2, setF5_1_2] = useState(false);
-    const [f5_1_3, setF5_1_3] = useState(false);
-    const [f5_1_4, setF5_1_4] = useState(false);
-    // f5_3
-    const [f5_3_1, setF5_3_1] = useState(false);
-    const [f5_3_2, setF5_3_2] = useState(false);
-    const [f5_3_3, setF5_3_3] = useState(false);
-    const [f5_3_4, setF5_3_4] = useState(false);
-
-    // f5_5
-    const [f5_5_1, setF5_5_1] = useState(false);
-    const [f5_5_2, setF5_5_2] = useState(false);
-    const [f5_5_3, setF5_5_3] = useState(false);
-    const [f5_5_4, setF5_5_4] = useState(false);
-    // f6
-    const [father, setFather] = useState("");
-    const [mother, setMother] = useState("");
-    const [brother, setBrother] = useState("");
-    const [sister, setSister] = useState("");
-    // Top 5 Questions
-    const [q1, setQ1] = useState("");
-    const [q2, setQ2] = useState("");
-    const [q3, setQ3] = useState("");
-    // Request
-    const [request1, setRequest1] = useState(false);
-    const [request2, setRequest2] = useState(false);
-    const [request3, setRequest3] = useState(false);
-    const [request4, setRequest4] = useState(false);
-    const [request5, setRequest5] = useState(false);
-    const [request_other, setRequest_other] = useState("");
-    // Appointment
-    const [appointment1, setAppointment1] = useState(false);
-    const [appointment2, setAppointment2] = useState(false);
-    const [appointment3, setAppointment3] = useState(false);
-    const [appointment4, setAppointment4] = useState(false);
-    //   Error
-    const [nameError, setNameError] = useState("");
-    const [birthError, setBirthError] = useState("");
-    const [genderError, setGenderError] = useState("");
-    const [phoneError, setPhoneError] = useState("");
-    // f4
-    const handleOtherf4 = () => {
-      setF4_24(!f4_24);
-    };
-    // f5
-    // f5_1
-    const handlef5_1_1 = () => {
-      setF5_1_1(true);
-      setF5_1_2(false);
-      setF5_1_3(false);
-      setF5_1_4(false);
-    };
-    const handlef5_1_2 = () => {
-      setF5_1_1(false);
-      setF5_1_2(true);
-      setF5_1_3(false);
-      setF5_1_4(false);
-    };
-    // f5_3
-    const handlef5_3_1 = () => {
-      setF5_3_1(true);
-      setF5_3_2(false);
-      setF5_3_3(false);
-      setF5_3_4(false);
-    };
-    const handlef5_3_2 = () => {
-      setF5_3_1(false);
-      setF5_3_2(true);
-      setF5_3_3(false);
-      setF5_3_4(false);
-    };
-    const handlef5_3_3 = () => {
-      setF5_3_1(false);
-      setF5_3_2(false);
-      setF5_3_3(true);
-      setF5_3_4(false);
-    };
-    // f5_5
-    const handlef5_5_1 = () => {
-      setF5_5_1(true);
-      setF5_5_2(false);
-      setF5_5_3(false);
-      setF5_5_4(false);
-    };
-    const handlef5_5_2 = () => {
-      setF5_5_1(false);
-      setF5_5_2(true);
-      setF5_5_3(false);
-      setF5_5_4(false);
-    };
-    const handlef5_5_3 = () => {
-      setF5_5_1(false);
-      setF5_5_2(false);
-      setF5_5_3(true);
-      setF5_5_4(false);
-    };
-    // Request
-    const handleRequest1 = () => {
-      setRequest1(!request1);
-    };
-    const handleRequest2 = () => {
-      setRequest2(!request2);
-    };
-    const handleRequest3 = () => {
-      setRequest3(!request3);
-    };
-    const handleRequest4 = () => {
-      setRequest4(!request4);
-    };
-    const handleRequest5 = () => {
-      setRequest5(!request5);
-    };
-    // Appoitment
-    const handleAppointment1 = () => {
-      setAppointment1(!appointment1);
-    };
-    const handleAppointment2 = () => {
-      setAppointment2(!appointment2);
-    };
-    const handleAppointment3 = () => {
-      setAppointment3(!appointment3);
-    };
-    const handleAppointment4 = () => {
-      setAppointment4(!appointment4);
-    };
-    // Submit
-    const handleSubmit = async () => {
-      setIndicatorLoad(true);
-      // f4
-      let f4 = "";
-      if (f4_1) f4 += "Anemia, ";
-      if (f4_2) f4 += "Asthma, ";
-      if (f4_3) f4 += "Arthritis, ";
-      if (f4_4) f4 += "Cancer, ";
-      if (f4_5) f4 += "Gout , ";
-      if (f4_6) f4 += "Diabetes, ";
-      if (f4_7) f4 += "Emotional Disorder, ";
-      if (f4_8) f4 += "Epilepsy Seizures, ";
-      if (f4_9) f4 += "Fainting Spells, ";
-      if (f4_10) f4 += "Gallstones, ";
-      if (f4_11) f4 += "Heart Disease, ";
-      if (f4_12) f4 += "Heart Attack, ";
-      if (f4_17) f4 += "Thyroid Problems, ";
-      if (f4_18) f4 += "Tuberculosis, ";
-      if (f4_19) f4 += "Venereal Disease, ";
-      if (f4_20) f4 += "Neurological Disorders, ";
-      if (f4_21) f4 += "Disorders, ";
-      if (f4_22) f4 += "Lung Disease, ";
-      if (f4_24) f4 += f4_other;
-      // exercices
-      let exercices = "";
-      if (f5_1_1) exercices = "Never";
-      if (f5_1_2) exercices = "Regularly";
-      // alcohol
-      let alcohol = "";
-      if (f5_3_1) alcohol = "Don’t drink";
-      if (f5_3_2) alcohol = "Occasional";
-      if (f5_3_3) alcohol = "Daily";
-      // smoke
-      let smoke = "";
-      if (f5_5_1) smoke = "Never";
-      if (f5_5_2) smoke = "Stopped";
-      if (f5_5_3) smoke = "Daily";
-      // request
-      let requestService = "";
-      if (request1) requestService += "Expert Consultation";
-      if (request2) requestService += "Second Opinion";
-      if (request3) requestService += "Treatment In USA";
-      if (request4) requestService += "Surrogate USA";
-      if (request5) requestService += request_other;
-      // appointment
-      let appointment = "";
-      if (appointment1) appointment += "ASAP";
-      if (appointment2) appointment += "4-7 Days";
-      if (appointment3) appointment += "Morning India time: 5.30am - 10am";
-      if (appointment4) appointment += "Evening India time: 5.30pm - 12am";
-      if (verifiedIsGood !== 1 || phone.length === 0) {
-        setErrorsOfUserPhone(
-          "Phone Number verification is required! PLease try again!"
-        );
-      }
-      else if (f3.length === 0) {
-        setErrorsOfUser(
-          " Reason for consultation is required! PLease try again!"
-        );
-      } else {
-        let user = {
-          type_form: "intake_form",
-          doc_name: doctorName ? doctorName : "_blank",
-          name: name ? name : "_blank",
-          birth: birth ? birth : "_blank",
-          gender: gender ? gender : "_blank",
-          phone_number: `+91${phone}`,
-          patient_medical_history: f4 ? f4 : "_blank",
-          father: "_blank",
-          mother: "_blank",
-          brother: "_blank",
-          sister: "_blank",
-          comments: "_blank",
-          current_medication: medication ? medication : "_blank",
-          list_allergies: "_blank",
-          healthy_unhealthy: "_blank",
-          reason_for_consultation: f3 ? f3 : "_blank",
-          question1: q1 ? q1 : "_blank",
-          question2: q2 ? q2 : "_blank",
-          question3: q3 ? q3 : "_blank",
-          appointment: appointment ? appointment : "_blank",
-        };
-        console.log("user ::: ", user);
-        await fetch("https://app.medipocket.world/intake_form/", {
-          method: "POST",
-          headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(user),
+  const handleVerifyPhone = (e) => {
+    e.preventDefault();
+    console.log("here handleVerifyPhone");
+    try {
+      // generateRecaptcha();
+      console.log("Phone Number =>", phone)
+      let appVerifier = window.recaptchaVerifier;
+      signInWithPhoneNumber(auth, `+91${phone}`, appVerifier)
+        .then((confirmationResult) => {
+          window.confirmationResult = confirmationResult;
+          setPhoneVerified(true);
+          console.log("sucsessfull OTP =>")
         })
-          .then((response) => response.text())
-          .then((res) => {
-            console.log("res from intakeForm => ", res);
-            setIndicatorLoad(false);
-            setHelp(true);
-          })
-          .catch((err) => {
-            setIndicatorLoad(false);
-            console.log("==============================================");
-            console.log("Error =>", err);
-          });
-        console.log("DONE");
-      }
-
-      setIndicatorLoad(false);
-    };
-    useEffect(() => {
-      window.scrollTo(0, 0);
-    }, []);
-    const recaptchaLoaded = (value) => {
-      console.log('recapcha loaded', value)
-      if (value) {
-        setShowCaptcha(false)
-        handleSubmit()
-      }
+        .catch((e) => {
+          console.log("error =>", e);
+        });
+    } catch (error) {
+      console.log("error from recapther", error);
     }
-    return (
+  };
+
+  // f2
+  const [name, setName] = useState("");
+  const [birth, setBirth] = useState("");
+  const [gender, setGender] = useState("");
+  const [phone, setPhone] = useState("");
+  // f3
+  const [f3, setF3] = useState("");
+  // f4
+  // const [f4, setF4] = useState([]);
+  const [f4_1, setF4_1] = useState(false);
+  const [f4_2, setF4_2] = useState(false);
+  const [f4_3, setF4_3] = useState(false);
+  const [f4_4, setF4_4] = useState(false);
+  const [f4_5, setF4_5] = useState(false);
+  const [f4_6, setF4_6] = useState(false);
+  const [f4_7, setF4_7] = useState(false);
+  const [f4_8, setF4_8] = useState(false);
+  const [f4_9, setF4_9] = useState(false);
+  const [f4_10, setF4_10] = useState(false);
+  const [f4_11, setF4_11] = useState(false);
+  const [f4_12, setF4_12] = useState(false);
+  // Not Used
+  const [f4_13, setF4_13] = useState(false);
+  const [f4_14, setF4_14] = useState(false);
+  const [f4_15, setF4_15] = useState(false);
+  const [f4_16, setF4_16] = useState(false);
+  // Not Used
+  const [f4_17, setF4_17] = useState(false);
+  const [f4_18, setF4_18] = useState(false);
+  const [f4_19, setF4_19] = useState(false);
+  const [f4_20, setF4_20] = useState(false);
+  const [f4_21, setF4_21] = useState(false);
+  const [f4_22, setF4_22] = useState(false);
+  const [f4_23, setF4_23] = useState(false);
+  const [f4_24, setF4_24] = useState(false);
+  const [f4_other, setF4_other] = useState("");
+  // Medication
+  const [medication, setMedication] = useState("");
+  // Allergies
+  const [allergies, setAllergies] = useState("");
+
+  // f5
+  // f5_1
+  const [f5_1_1, setF5_1_1] = useState(false);
+  const [f5_1_2, setF5_1_2] = useState(false);
+  const [f5_1_3, setF5_1_3] = useState(false);
+  const [f5_1_4, setF5_1_4] = useState(false);
+  // f5_3
+  const [f5_3_1, setF5_3_1] = useState(false);
+  const [f5_3_2, setF5_3_2] = useState(false);
+  const [f5_3_3, setF5_3_3] = useState(false);
+  const [f5_3_4, setF5_3_4] = useState(false);
+
+  // f5_5
+  const [f5_5_1, setF5_5_1] = useState(false);
+  const [f5_5_2, setF5_5_2] = useState(false);
+  const [f5_5_3, setF5_5_3] = useState(false);
+  const [f5_5_4, setF5_5_4] = useState(false);
+  // f6
+  const [father, setFather] = useState("");
+  const [mother, setMother] = useState("");
+  const [brother, setBrother] = useState("");
+  const [sister, setSister] = useState("");
+  // Top 5 Questions
+  const [q1, setQ1] = useState("");
+  const [q2, setQ2] = useState("");
+  const [q3, setQ3] = useState("");
+  // Request
+  const [request1, setRequest1] = useState(false);
+  const [request2, setRequest2] = useState(false);
+  const [request3, setRequest3] = useState(false);
+  const [request4, setRequest4] = useState(false);
+  const [request5, setRequest5] = useState(false);
+  const [request_other, setRequest_other] = useState("");
+  // Appointment
+  const [appointment1, setAppointment1] = useState(false);
+  const [appointment2, setAppointment2] = useState(false);
+  const [appointment3, setAppointment3] = useState(false);
+  const [appointment4, setAppointment4] = useState(false);
+  //   Error
+  const [nameError, setNameError] = useState("");
+  const [birthError, setBirthError] = useState("");
+  const [genderError, setGenderError] = useState("");
+  const [phoneError, setPhoneError] = useState("");
+  // f4
+  const handleOtherf4 = () => {
+    setF4_24(!f4_24);
+  };
+  // f5
+  // f5_1
+  const handlef5_1_1 = () => {
+    setF5_1_1(true);
+    setF5_1_2(false);
+    setF5_1_3(false);
+    setF5_1_4(false);
+  };
+  const handlef5_1_2 = () => {
+    setF5_1_1(false);
+    setF5_1_2(true);
+    setF5_1_3(false);
+    setF5_1_4(false);
+  };
+  // f5_3
+  const handlef5_3_1 = () => {
+    setF5_3_1(true);
+    setF5_3_2(false);
+    setF5_3_3(false);
+    setF5_3_4(false);
+  };
+  const handlef5_3_2 = () => {
+    setF5_3_1(false);
+    setF5_3_2(true);
+    setF5_3_3(false);
+    setF5_3_4(false);
+  };
+  const handlef5_3_3 = () => {
+    setF5_3_1(false);
+    setF5_3_2(false);
+    setF5_3_3(true);
+    setF5_3_4(false);
+  };
+  // f5_5
+  const handlef5_5_1 = () => {
+    setF5_5_1(true);
+    setF5_5_2(false);
+    setF5_5_3(false);
+    setF5_5_4(false);
+  };
+  const handlef5_5_2 = () => {
+    setF5_5_1(false);
+    setF5_5_2(true);
+    setF5_5_3(false);
+    setF5_5_4(false);
+  };
+  const handlef5_5_3 = () => {
+    setF5_5_1(false);
+    setF5_5_2(false);
+    setF5_5_3(true);
+    setF5_5_4(false);
+  };
+  // Request
+  const handleRequest1 = () => {
+    setRequest1(!request1);
+  };
+  const handleRequest2 = () => {
+    setRequest2(!request2);
+  };
+  const handleRequest3 = () => {
+    setRequest3(!request3);
+  };
+  const handleRequest4 = () => {
+    setRequest4(!request4);
+  };
+  const handleRequest5 = () => {
+    setRequest5(!request5);
+  };
+  // Appoitment
+  const handleAppointment1 = () => {
+    setAppointment1(!appointment1);
+  };
+  const handleAppointment2 = () => {
+    setAppointment2(!appointment2);
+  };
+  const handleAppointment3 = () => {
+    setAppointment3(!appointment3);
+  };
+  const handleAppointment4 = () => {
+    setAppointment4(!appointment4);
+  };
+  // Submit
+  const handleSubmit = async () => {
+    setIndicatorLoad(true);
+    // f4
+    let f4 = "";
+    if (f4_1) f4 += "Anemia, ";
+    if (f4_2) f4 += "Asthma, ";
+    if (f4_3) f4 += "Arthritis, ";
+    if (f4_4) f4 += "Cancer, ";
+    if (f4_5) f4 += "Gout , ";
+    if (f4_6) f4 += "Diabetes, ";
+    if (f4_7) f4 += "Emotional Disorder, ";
+    if (f4_8) f4 += "Epilepsy Seizures, ";
+    if (f4_9) f4 += "Fainting Spells, ";
+    if (f4_10) f4 += "Gallstones, ";
+    if (f4_11) f4 += "Heart Disease, ";
+    if (f4_12) f4 += "Heart Attack, ";
+    if (f4_17) f4 += "Thyroid Problems, ";
+    if (f4_18) f4 += "Tuberculosis, ";
+    if (f4_19) f4 += "Venereal Disease, ";
+    if (f4_20) f4 += "Neurological Disorders, ";
+    if (f4_21) f4 += "Disorders, ";
+    if (f4_22) f4 += "Lung Disease, ";
+    if (f4_24) f4 += f4_other;
+    // exercices
+    let exercices = "";
+    if (f5_1_1) exercices = "Never";
+    if (f5_1_2) exercices = "Regularly";
+    // alcohol
+    let alcohol = "";
+    if (f5_3_1) alcohol = "Don’t drink";
+    if (f5_3_2) alcohol = "Occasional";
+    if (f5_3_3) alcohol = "Daily";
+    // smoke
+    let smoke = "";
+    if (f5_5_1) smoke = "Never";
+    if (f5_5_2) smoke = "Stopped";
+    if (f5_5_3) smoke = "Daily";
+    // request
+    let requestService = "";
+    if (request1) requestService += "Expert Consultation";
+    if (request2) requestService += "Second Opinion";
+    if (request3) requestService += "Treatment In USA";
+    if (request4) requestService += "Surrogate USA";
+    if (request5) requestService += request_other;
+    // appointment
+    let appointment = "";
+    if (appointment1) appointment += "ASAP";
+    if (appointment2) appointment += "4-7 Days";
+    if (appointment3) appointment += "Morning India time: 5.30am - 10am";
+    if (appointment4) appointment += "Evening India time: 5.30pm - 12am";
+    if (verifiedIsGood !== 1 || phone.length === 0) {
+      setErrorsOfUserPhone(
+        "Phone Number verification is required! PLease try again!"
+      );
+    }
+    else if (f3.length === 0) {
+      setErrorsOfUser(
+        " Reason for consultation is required! PLease try again!"
+      );
+    } else {
+      let user = {
+        type_form: "intake_form",
+        doc_name: doctorName ? doctorName : "_blank",
+        name: name ? name : "_blank",
+        birth: birth ? birth : "_blank",
+        gender: gender ? gender : "_blank",
+        phone_number: `+91${phone}`,
+        patient_medical_history: f4 ? f4 : "_blank",
+        father: "_blank",
+        mother: "_blank",
+        brother: "_blank",
+        sister: "_blank",
+        comments: "_blank",
+        current_medication: medication ? medication : "_blank",
+        list_allergies: "_blank",
+        healthy_unhealthy: "_blank",
+        reason_for_consultation: f3 ? f3 : "_blank",
+        question1: q1 ? q1 : "_blank",
+        question2: q2 ? q2 : "_blank",
+        question3: q3 ? q3 : "_blank",
+        appointment: appointment ? appointment : "_blank",
+      };
+      console.log("user ::: ", user);
+      await fetch("https://app.medipocket.world/intake_form/", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(user),
+      })
+        .then((response) => response.text())
+        .then((res) => {
+          console.log("res from intakeForm => ", res);
+          setIndicatorLoad(false);
+          setHelp(true);
+        })
+        .catch((err) => {
+          setIndicatorLoad(false);
+          console.log("==============================================");
+          console.log("Error =>", err);
+        });
+      console.log("DONE");
+    }
+
+    setIndicatorLoad(false);
+  };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  const recaptchaLoaded = (value) => {
+    console.log('recapcha loaded', value)
+    if (value) {
+      setShowCaptcha(false)
+      handleSubmit()
+    }
+  }
+  return (
+    <div className="intake__Conatiner">
+      {/* captchaaaa */}
+
+      {
+        showCaptcha && <div className="Captcha_model">
+
+          <ReCAPTCHA
+
+            sitekey="6LeJKyQlAAAAADuvOFB547VTfpuMdARKc5zm_9B4"
+            onChange={recaptchaLoaded}
+          />
+
+        </div>
+      }
       <div className="age-container">
-        {/* captchaaaa */}
-
-        {
-          showCaptcha && <div className="Captcha_model">
-
-            <ReCAPTCHA
-
-              sitekey="6LfDHSElAAAAAMveYbt_YsZESLzNap5lvn5uPfWR"
-              onChange={recaptchaLoaded}
-            />
-
-          </div>
-        }
         {/* subContainer */}
         <div className="age-subContainer">
 
@@ -563,7 +563,7 @@ export default function IntakeForm() {
                       type={"tel"}
                       pattern={'[0-9]{10}'}
                       value={phone}
-                      
+
                       onChange={(e) => setPhone(e.target.value.substring(0, 10))}
                       placeholder="PhoneNumber"
                     />
@@ -583,37 +583,37 @@ export default function IntakeForm() {
                   ) : null}
 
                   {/* {phone.length === 10 && (
-                    <button
-                      disabled={verifiedIsGood !== 0}
-                      style={{
-                        width: "80px",
-                        backgroundColor: "#384062",
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        padding: "0px",
-                        position: "absolute",
-                        top: errorsOfUser.length > 0 ? 22 : 20,
-                        right: 4,
-                        borderRadius: "8px",
-                        cursor: "pointer",
-                      }}
-                      // id="sign-in-button"
-                      // onClick={handleVerifyPhone}
-                      type="submit"
-                    >
-                      <p
-                        style={{
-                          fontSize: 16,
-                          color: "#ffffff",
-                          lineHeight: "6px",
-                          padding: "0px",
-                        }}
-                      >
-                        Verify
-                      </p>
-                    </button>
-                  )} */}
+          <button
+            disabled={verifiedIsGood !== 0}
+            style={{
+              width: "80px",
+              backgroundColor: "#384062",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              padding: "0px",
+              position: "absolute",
+              top: errorsOfUser.length > 0 ? 22 : 20,
+              right: 4,
+              borderRadius: "8px",
+              cursor: "pointer",
+            }}
+            // id="sign-in-button"
+            // onClick={handleVerifyPhone}
+            type="submit"
+          >
+            <p
+              style={{
+                fontSize: 16,
+                color: "#ffffff",
+                lineHeight: "6px",
+                padding: "0px",
+              }}
+            >
+              Verify
+            </p>
+          </button>
+        )} */}
                   <div id="recaptcha-container"></div>
                 </form>
                 {phoneVerified && (
@@ -1196,5 +1196,6 @@ export default function IntakeForm() {
           </div>
         )}
       </div>
-    );
-  }
+    </div>
+  );
+}

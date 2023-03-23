@@ -1,4 +1,10 @@
 /* from age */
+.intake__Conatiner {
+    width: 100%;
+    position: relative;
+    margin: auto;
+}
+
 .age-container {
     display: flex;
     flex: 1;
@@ -8,10 +14,12 @@
     height: 100%;
     position: relative;
 }
+
 .age-subContainer {
     display: flex;
     flex-direction: column;
 }
+
 .age-header {
     width: 100%;
     display: flex;
@@ -21,37 +29,45 @@
     background-color: #f0f4f7;
     height: 60px;
 }
+
 .age-headerSub {
     padding: 10px;
     cursor: pointer;
 }
+
 .age-backIcon {
     color: #384062;
     font-size: 24px;
     margin-right: 10px;
 }
+
 .age-titleContainer {
     padding: 5px;
 }
+
 .age_emptySpace {
     width: 60px;
 }
-.age-scrollContainer {   
+
+.age-scrollContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: #f0f4f7;
 }
+
 .shadow1 {
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 2px 0 rgba(0, 0, 0, 0.19);
 }
+
 /* intake form */
 .intake-imgStyle {
     width: 100px;
     height: 40px;
     object-fit: contain;
 }
+
 .intake-card {
     width: 90%;
     border-radius: 25px;
@@ -59,9 +75,11 @@
     padding: 30px 15px;
     margin: 15px;
 }
+
 .intake-error-field {
     border: 2px solid red !important;
 }
+
 .intake-card-title {
     color: #384062;
     font-size: 24px;
@@ -71,6 +89,7 @@
     padding-left: 10px;
     margin-bottom: 5px;
 }
+
 .intake-card-title3 {
     color: #384062;
     font-size: 16px;
@@ -80,6 +99,7 @@
     padding-left: 10px;
     margin-bottom: 5px;
 }
+
 .intake-card-title4 {
     color: #384062;
     font-size: 18px;
@@ -87,6 +107,7 @@
     padding-left: 5px;
     margin-top: 10px;
 }
+
 .intake-inputs-container {
     display: flex;
     flex-direction: column;
@@ -98,10 +119,12 @@
     border-radius: 20px;
     margin-bottom: 0;
 }
+
 .intake-input-container {
     width: 100%;
 }
-.intake-input{
+
+.intake-input {
     outline: none;
     border: 0;
     font-size: 16px;
@@ -112,15 +135,19 @@
     color: #000000;
     padding: 10px;
 }
+
 .intake-input-with-label {
     margin-top: 0;
 }
+
 .intake-input-with-label-title {
     margin-top: 20px;
 }
+
 .intake-input-other {
     width: 100%;
 }
+
 .intake-input-container22 {
     width: 100%;
     display: flex;
@@ -128,27 +155,32 @@
     align-items: center;
     margin: 15px 5px;
 }
+
 .intake-checkbox-container {
     width: 50%;
     display: flex;
     flex-direction: row;
     align-items: center;
 }
+
 .intake-checkbox {
     margin-right: 15px;
     border-radius: 6px;
     padding: 5px;
     border: 2px solid #40e0d0;
 }
+
 .intake-checkbox-title {
     margin: 0 5px;
     margin-right: 10px;
     font-size: 16px;
     color: #000000;
 }
+
 .intake-checkbox-container-margin {
     margin-bottom: 15px;
 }
+
 /* submit */
 .submit-container {
     /* position: absolute;
@@ -156,10 +188,11 @@
     width: 30%;
     margin: 20px 0;
     cursor: pointer;
-    
+
 }
+
 .submit1 {
-    background-color: #40e0d0 ;
+    background-color: #40e0d0;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -169,6 +202,7 @@
     width: 80%;
     margin-bottom: 50px;
 }
+
 .submit-text {
     color: #ffffff;
     font-size: 20px;
@@ -176,11 +210,13 @@
     margin: 0;
     padding: 12px 0;
 }
+
 /* doctor List */
 .searchMain {
     /* padding: 10px 20px; */
     width: 100%;
 }
+
 .searchContainer {
     /* width: 100%; */
     background-color: #ffffff;
@@ -192,37 +228,44 @@
     border-radius: 8px;
     cursor: pointer;
 }
+
 .searchContainer1 {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
+
 .saerch {
-width: 20px;
-height: 20px;
-margin-right: 10px;
-object-fit: contain;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    object-fit: contain;
 }
+
 .searchInput {
-font-size: 18px;
-margin-right: 10px;
-color: #6E8FA3;
+    font-size: 18px;
+    margin-right: 10px;
+    color: #6E8FA3;
 }
+
 .searchInput1 {
-font-size: 18px;
-font-weight: 700;
+    font-size: 18px;
+    font-weight: 700;
 }
+
 .specContainer {
     margin: 10px;
     margin-top: 20px;
     width: 100%;
 }
-.specTitle{
+
+.specTitle {
     font-size: 22px;
     font-weight: 700;
     color: #3C4248;
     max-width: 80%;
 }
+
 .filter-model-container {
     position: absolute;
     top: 100px;
@@ -235,11 +278,13 @@ font-weight: 700;
     align-items: center;
     max-width: 600px !important;
 }
+
 .filter-model {
     z-index: 100000000000;
     background-color: #f0f4f7;
     width: 80%;
 }
+
 .doctor-model-card-by-model {
     display: flex;
     flex-direction: column;
@@ -248,14 +293,16 @@ font-weight: 700;
     width: 100%;
     border-radius: 15px;
     background-color: #ffffff;
-    
+
 }
-.sumpthom-model{
+
+.sumpthom-model {
     font-size: 14px;
     line-height: 10px;
     color: #6E8FA3;
     padding: 8px 0;
 }
+
 .model-content {
     margin: 0px;
     background-color: #f0f4f7;
@@ -263,20 +310,24 @@ font-weight: 700;
     padding: 20px;
     width: 100%;
 }
+
 .ModelTitleView {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
+
 .optionContent {
     width: 100%;
     cursor: pointer;
 }
+
 .optionContainer {
     width: 100%;
     /* padding: 5px 10px; */
     margin-bottom: 12px;
 }
+
 .close-model {
     display: flex;
     flex-direction: row;
@@ -285,6 +336,7 @@ font-weight: 700;
     height: 50px;
     cursor: pointer;
 }
+
 .close-text {
     color: #000000;
     font-size: 20px;
@@ -293,6 +345,7 @@ font-weight: 700;
     border-radius: 50px;
     border: 2px solid #000000;
 }
+
 .model-title-text {
     color: #000000;
     font-size: 28px;
@@ -301,6 +354,7 @@ font-weight: 700;
     text-align: center;
     margin-top: 10px;
 }
+
 /* doctor List */
 /* appointment */
 .home-subContainer {
@@ -309,49 +363,56 @@ font-weight: 700;
     flex-direction: column;
     height: 100%;
 }
+
 /* appointment */
 /* intakeform */
-.success-model-intakeform{
+.success-model-intakeform {
     position: absolute;
     top: 30%;
     left: 5%;
     right: 0;
     width: 80%;
-    height:200px;
+    height: 200px;
     background-color: #ffffff;
     border-radius: 20px;
     padding: 28px;
     cursor: pointer;
 }
+
 .backhomeBtn {
     background-color: #40e0d0;
     border-radius: 8px;
     width: auto;
     margin: 0;
     padding: 0;
-    padding: 10px ;
+    padding: 10px;
 }
+
 .backhomeText {
     color: #ffffff;
     font-size: 18px;
     margin: 0;
     text-align: center;
 }
+
 .intakeForm-concon {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
+
 /* intakeform */
 .prefix-container {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
-.prefix-container input{
+
+.prefix-container input {
     border-radius: 0 8px 8px 0;
 }
+
 .prefix {
     outline: none;
     border: 0;
@@ -368,38 +429,60 @@ font-weight: 700;
 
 
 /* captcha model */
-.Captcha_model{
+.Captcha_model {
     z-index: 500;
-    background-color: #f0f4f7;
+    background-color: rgba(256, 256, 256, 0.7);
     width: 100%;
-    height: 100vh;
+    height: 100%;
     position: fixed;
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    margin-left: auto;
+    margin-right: auto;
+    
 
-   
+
 }
-.Captcha_model div{
-    margin-left: 3rem;
+
+.Captcha_model div {
+    margin-left: 10rem;
 }
+
 /* media query */
+@media screen and (max-width: 1200px) {
+    .Captcha_model div {
+        margin-left: 6rem !important;
+    }
+}
 @media only screen and (max-width: 1000px) {
     .age-container {
         padding: 0 5px;
     }
+
     .submit-container {
         width: 80%;
     }
+
     .filter-model {
         left: 20%;
     }
+    .Captcha_model div {
+        margin-left: 5rem !important;
+    }
+}
+@media screen and (max-width: 900px) {
+    .Captcha_model div {
+        margin-left: 3rem !important;
+    }
+}
+@media screen and (max-width: 800px) {
+    .Captcha_model div {
+        margin-left: 2rem !important;
+    }
 }
 @media screen and (max-width: 700px) {
-    .Captcha_model div{
+    .Captcha_model div {
         margin-left: .4rem !important;
     }
 }
-
-
-
